@@ -1,0 +1,111 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Helvetica';
+}
+body
+{
+	margin: 0;
+	padding: 0;
+	background: url(background.jpg);
+	background-size: cover;
+	background-position: center;
+	font-family: Helvetica;
+}
+
+.signupbox{
+	width: 320px;
+	height: 530px;
+	background: #000;
+	color: #fff;
+	top: 55%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-55%, -50%);
+	box-sizing: border-box;
+	padding: 60px 30px;
+}
+
+.logo{
+	height:40px;
+	padding: 0 5px;
+}
+.profile
+{
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	position: absolute;
+	top: -45px;
+	left: calc(50% - 50px);
+}
+h3
+{
+	margin: 0;
+	padding: 0 0 5px;
+	text-align: center;
+	font-size: 22px;
+}
+
+.signupbox p
+{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 14px;
+	margin-top:3px;
+}
+
+.signupbox input
+{
+	width: 100%;
+	margin-bottom: 6px;
+}
+
+.signupbox input[type="text"], input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 30px;
+	color: #fff;
+	font-size: 14px;
+}
+
+.signupbox input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	color: #000;
+	font-size: 18px;
+	border-radius: 20px;
+	font-family: Helvetica;
+}
+
+.signupbox input[type="submit"]:hover
+{
+	cursor: pointer;
+	background: #ffc107;
+	color: #000;
+}
+
+.signupbox a
+{
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 20px;
+	color: darkgrey;
+
+}
+
+.signupbox a:hover
+{
+	color: #ffc107;
+}
+
+#nm,#emailid,#password,#cpass{
+	font-size:14px;
+}

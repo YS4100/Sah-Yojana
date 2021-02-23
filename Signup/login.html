@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="style_login.css">
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+	<div class='header' id='topheader'>
+			
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container text-uppercase ps-2">
+			<img class="logo" src="logoo.png" >
+		  <a class="navbar-brand" href="#">Sah-Yojana</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav ml-auto">
+		      <li class="nav-item">
+		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\index.html">Home</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\About Us\about_us.html">About Us</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\Yojana\yojana.html">Yojana</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">FAQ</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Bookmarked</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\Contact Us\contact_us.html">Contact Us</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Profile</a>
+		      </li>
+		      
+		    </ul>
+		  </div>
+		</div>
+		</nav>
+	</div>
+	<div class="loginbox">
+		<img src="profile.png" class="profile">
+		<h1>LOGIN</h1>
+		<form name="login" onsubmit="return validation()" action='#'>
+			<p>Username</p>
+			<input type="text" name="user" placeholder="Enter Username">
+			<span id="username" class="text-danger font-weight-bold"></span>
+			<p>Password</p>
+			<input type="password" name="pass" placeholder="Enter Password">
+			<span id="password" class="text-danger font-weight-bold"></span>
+			<input type="submit" name="" value="LOGIN">
+			<a href="#">Lost your password?</a><br>
+			<a href="signup.html">Don't have an account?</a>
+		</form>
+	</div>
+	<!--<section>
+	<div class="footer-basic">
+	<footer>
+		<p class="copyright">Copyright © Sah-Yojana 2021</p>
+        </footer>
+    </div>
+</section>-->
+	<script type="text/javascript">
+		
+	function validation(){
+		var username=document.login.user.value;
+		var password=document.login.pass.value;
+
+		if(username=="" && password==""){
+			document.getElementById('username').innerHTML=" *Please enter the username!";
+			document.getElementById('password').innerHTML=" *Please enter the password!";
+			return false;
+		}
+		else if(username!="" && password==""){
+			//document.getElementById('username').innerHTML=" *Please enter the username!";
+			document.getElementById('password').innerHTML=" *Please enter the password!";
+			return false;
+		}
+		else if(username=="" && password!=""){
+			document.getElementById('username').innerHTML=" *Please enter the username!";
+			//document.getElementById('password').innerHTML=" *Please enter the password!";
+			return false;
+		}
+	}
+	</script>
+</body>
+</html>

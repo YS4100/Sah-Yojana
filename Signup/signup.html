@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signup</title>
+	<link rel="stylesheet" type="text/css" href="style_signup.css">
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+	<div class='header' id='topheader'>
+			
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container text-uppercase ps-2">
+			<img class="logo" src="logoo.png" >
+		  <a class="navbar-brand" href="#">Sah-Yojana</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav ml-auto">
+		      <li class="nav-item">
+		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\index.html">Home</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\About Us\about_us.html">About Us</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\Yojana\yojana.html">Yojana</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">FAQ</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Bookmarked</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\Contact Us\contact_us.html">Contact Us</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Profile</a>
+		      </li>
+		      
+		    </ul>
+		  </div>
+		</div>
+		</nav>
+	</div>
+	<div class="signupbox">
+		<img src="profile.png" class="profile">
+		<h3>SIGNUP</h3>
+		<form name="signup" onsubmit="return validation()" action='#'>
+			<p>Name</p>
+			<input type="text" name="name" placeholder="Enter your name">
+			<span id="nm" class="text-danger font-weight-bold"></span>
+			<p>Email ID</p>
+			<input type="text" name="email" placeholder="Enter your Email ID">
+			<span id="emailid" class="text-danger font-weight-bold"></span>
+			<p>Password</p>
+			<input type="password" name="pass" placeholder="Enter Password">
+			<span id="password" class="text-danger font-weight-bold"></span>
+			<p>Confirm password</p>
+			<input type="password" name="confpass" placeholder="Confirm Password">
+			<span id="cpass" class="text-danger font-weight-bold"></span><br><br>
+			<input type="submit" name="" value="SIGNUP">
+			<a href="login.html">Already have an account? Login Here!</a><br><br>
+		</form>
+	</div>
+	<script type="text/javascript">
+		
+	function validation(){
+
+		var name=document.signup.name.value;
+		var email=document.signup.email.value;
+		var password=document.signup.pass.value;
+		var confpass=document.signup.confpass.value;
+		var atposition=email.indexOf("@");  
+		var dotposition=email.lastIndexOf(".");  
+		//var passw = '/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/';
+
+		if(name==""){
+			document.getElementById('nm').innerHTML=" *Please enter your name!";
+			return false;
+		}
+
+		if(email==""){
+			document.getElementById('emailid').innerHTML=" *Please enter the username!";
+			return false;
+		}
+		
+		if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
+  				document.getElementById('username').innerHTML=" *Please enter a valid email address!";
+  				return false;  
+  		}  
+		if(password==""){
+			document.getElementById('password').innerHTML=" *Please enter the password!";
+			return false;
+		}
+		if(password.length<7){
+			document.getElementById('password').innerHTML=" *Password length must be atleast 7 characters!";
+			return false;
+		}
+		
+		/*if(password.value.match(passw)==false) 
+		{ 
+			document.getElementById('password').innerHTML=" *Password should have atleast one uppercase letter and a numeric digit!";
+			return false;
+		}*/
+		if(confpass==""){
+			document.getElementById('cpass').innerHTML=" *Please re-enter the password!";
+			return false;
+		}
+		if(password!=confpass){
+			document.getElementById('cpass').innerHTML=" *Passwords didn't match!";
+			return false;
+		}
+	}
+	</script>
+</body>
+</html>
