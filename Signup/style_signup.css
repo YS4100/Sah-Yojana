@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Helvetica';
+	font-family: Poppins, sans-serif;
 }
 body
 {
@@ -11,7 +11,7 @@ body
 	background: url(background.jpg);
 	background-size: cover;
 	background-position: center;
-	font-family: Helvetica;
+	font-family: Poppins, sans-serif;
 }
 
 .signupbox{
@@ -82,7 +82,7 @@ h3
 	color: #000;
 	font-size: 18px;
 	border-radius: 20px;
-	font-family: Helvetica;
+	font-family: Poppins, sans-serif;
 }
 
 .signupbox input[type="submit"]:hover
