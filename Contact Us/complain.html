@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Contact Us</title>
-	<link rel="stylesheet" type="text/css" href="style_contactus.css">
+	<title>Complain Page</title>
+	<link rel="stylesheet" type="text/css" href="style_complain.css">
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -36,8 +36,8 @@
 		      <li class="nav-item">
 		        <a class="nav-link" href="#">Bookmarked</a>
 		      </li>
-		      <li class="nav-item active">
-		        <a class="nav-link" href="#">Contact Us<span class="sr-only">(current)</span></a>
+		      <li class="nav-item">
+		        <a class="nav-link" href="contact_us.html">Contact Us</a>
 		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="#">Profile</a>
@@ -47,28 +47,33 @@
 		  </div>
 		</div>
 		</nav>
-		<div class="header1">
-		<h1>Contact Us</h1>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
+		<h1 align="center" style="margin-top: 30px">Add a Complain</h1>
+		<div class="form">
+		<form>
+			<input type="text" id="name" name="" placeholder="Name">
+			<input type="text" id="email" name="" placeholder="Email ID">
+			<input type="text" id="yojananame" name="" placeholder="Add Yojana Name">
+			<label for="issue" id="label">Choose an Issue:</label>
+			<select name="issue" id="issue">
+  			<option value="application">Issue  regarding Application</option>
+  			<option value="guidelines">Issue regarding Guidelines of Yojana</option>
+  			<option value="eligibilty">Issue regarding Eligibility of Yojana</option>
+			</select>
+			<input type="text" id="msg" name="" placeholder="Message">
+		</form>
 		</div>
-		
 		<div class="header-buttons">
-			<a href="complain.html">Add a complain</a>
+			<a href="complain.html">Submit</a>
 			
 		</div>
+
 	</div>
 	<div class="footer-basic">
 			<footer>
 				<p class="copyright">Copyright © Sah-Yojana 2021</p>
         	</footer>
-	</div>
+        	</div>
+	
 	
 	
 </body>

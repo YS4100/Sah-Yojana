@@ -57,10 +57,6 @@ body
 {
 	text-align: center;
 }
-.header-button
-{
-	align-self: right;
-}
 .header-buttons a{
 	border: 1px solid black;
 	border-radius: 100px;
@@ -69,7 +65,7 @@ body
 	outline:none;
 	color: black;
 	font-size: 1rem;
-	font-weight: 400;
+	font-weight: bold;
 	line-height: 1.4;
 	text-align: center;
 }
