@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FAQ</title>
+	<link rel="stylesheet" type="text/css" href="style_faq.css">
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
+</head>
+<body>
+	<div class='header' id='topheader'>
+			
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container text-uppercase ps-2">
+			<img class="logo" src="logoo.png" >
+		  <a class="navbar-brand" href="#">Sah-Yojana</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav ml-auto">
+		      <li class="nav-item">
+		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\index.html">Home</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\About Us\about_us.html">About Us</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\Yojana\yojana.html">Yojana</a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#">FAQ<span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Bookmarked</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\Contact Us\contact_us.html">Contact Us</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Profile</a>
+		      </li>
+		      
+		    </ul>
+		  </div>
+		</div>
+		</nav>
+		<div class="container"> 
+  
+  <section>
+  <h1> Frequenty Asked Questions </h1>
+    <a href="http://arielbeninca.com" target="_blank"><p>Get Answers to all your Questions </p></a>
+  </section>
+<div class="toggle">
+	<div class="toggle-title ">
+		<h3>
+		<i></i>
+		<span class="title-name">How to apply for the schemes?</span>
+		</h3>
+	</div>
+	<div class="toggle-inner">
+		<p>Visit the schemes page from the home page and click on the yojana tab visible at the top right navigation bar. Further click on the apply button to apply for the selected scheme.</p>
+	</div>
+	</div><!-- END OF TOGGLE -->
+	
+	
+	<div class="toggle">
+		<div class="toggle-title ">
+			<h3>
+			<i></i>
+			<span class="title-name">How to view the guidelines?</span>
+			</h3>
+		</div>
+		
+		<div class="toggle-inner">
+			<p>Visit the yojana page to get the info about the scheme. You can also watch the video to know about the guidelines and the eligibility.</p>
+		</div>
+		</div><!-- END OF TOGGLE -->
+		
+		<div class="toggle">
+			<div class="toggle-title  ">
+				<h3>
+				<i></i>
+				<span class="title-name"> How to know if I am eligible for the yojana?</span>
+				</h3>
+			</div>
+			
+			<div class="toggle-inner">
+				<p>Based on the details you provide in the profile you will get the recommendations of the yojana's on the yojana page.</p>
+			</div>
+			
+			</div><!-- END OF TOGGLE -->
+			
+  
+  
+		<div class="toggle">
+			<div class="toggle-title  ">
+				<h3>
+				<i></i>
+				<span class="title-name"> Would I be able to know the recommended yojana without creating an account?</span>
+				</h3>
+			</div>
+			
+			<div class="toggle-inner">
+				<p>No, you won't be able to know the recommended yojana's without creating account. After login/sign up you need to fill up the profile details after which you will be suggested yojana's based on your eligibilty.</p>
+			</div>
+			
+			</div><!-- END OF TOGGLE -->
+			
+  
+  
+		
+  
+  
+  
+		</div>
+	</div>
+	<div class="footer-basic">
+			<footer>
+				<p class="copyright">Copyright © Sah-Yojana 2021</p>
+        	</footer>
+	</div>
+	<script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
+	<script type="text/javascript">
+		if( jQuery(".toggle .toggle-title").hasClass('active') ){
+		jQuery(".toggle .toggle-title.active").closest('.toggle').find('.toggle-inner').show();
+	}
+	jQuery(".toggle .toggle-title").click(function(){
+		if( jQuery(this).hasClass('active') ){
+			jQuery(this).removeClass("active").closest('.toggle').find('.toggle-inner').slideUp(100);
+		}
+		else{	jQuery(this).addClass("active").closest('.toggle').find('.toggle-inner').slideDown(100);
+		}
+	});
+	</script>
+	
+</body>
+</html>

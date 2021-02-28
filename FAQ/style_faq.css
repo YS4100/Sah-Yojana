@@ -1,0 +1,145 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Poppins, sans-serif;
+}
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: Poppins, sans-serif;
+	background: linear-gradient(rgba(256,256,256,0.7),rgba(256,256,256,0.7)), url(background.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	background-size: cover;
+}
+
+.logo{
+	height:40px;
+	padding: 0 5px;
+}
+
+/* Styles for page */
+.container {
+	width: 70%;
+}
+
+body {
+	color: #4B4B4B;
+	font-family: sans-serif;
+}
+
+body a {
+	cursor: pointer;
+	color: #4B4B4B;
+	text-decoration: none;
+}
+
+body section {
+	margin-top: 20px;
+	margin-bottom: 70px;
+}
+
+body section h1 {
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: normal;
+	letter-spacing: 10px;
+	font-size: 25px;
+	line-height: 1.5;
+}
+
+body section p, body section a {
+	text-align: center;
+	letter-spacing: 3px;
+}
+
+span {
+	letter-spacing: 0px;
+}
+
+p {
+	font-weight: 200;
+	line-height: 1.5;
+	font-size: 14px;
+}
+.toggle
+{
+	font-family: Poppins, sans-serif;
+}
+/* Styles for Accordion */
+.toggle:last-child {
+	border-bottom: 1px solid #dddddd;
+}
+
+.toggle .toggle-title {
+	position: relative;
+	display: block;
+	border-top: 1px solid #dddddd;
+	margin-bottom: 6px;
+}
+
+.toggle .toggle-title h3 {
+	font-size: 20px;
+	margin: 0px;
+	line-height: 1;
+	cursor: pointer;
+	font-weight: 200;
+}
+
+.toggle .toggle-inner {
+	padding: 7px 25px 10px 25px;
+	display: none;
+	margin: -7px 0 6px;
+}
+
+.toggle .toggle-inner div {
+	max-width: 100%;
+}
+
+.toggle .toggle-title .title-name {
+	display: block;
+	padding: 25px 25px 14px;
+}
+
+.toggle .toggle-title a i {
+	font-size: 22px;
+	margin-right: 5px;
+}
+
+.toggle .toggle-title i {
+	position: absolute;
+	
+	width: 24px;
+	height: 24px;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	margin: 20px;
+	right: 0;
+}
+
+.toggle .toggle-title.active i {
+	
+}
+
+.footer-basic {
+  position: fixed;
+  background-color:#808080;
+  bottom: 0;
+  width: 100%;
+  
+}
+
+
+.footer-basic .copyright {
+  margin-top:7px;
+  text-align:center;
+  font-size:13px;
+  color: white;
+  margin-bottom:7px;
+}

@@ -9,7 +9,7 @@ body
 	margin: 0;
 	padding: 0;
 	font-family: Poppins, sans-serif;
-	background: linear-gradient(rgba(256,256,256,0.4),rgba(256,256,256,0.4)), url(background.jpg);
+	background: linear-gradient(rgba(256,256,256,0.7),rgba(256,256,256,0.7)), url(background.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	position: relative;
@@ -35,65 +35,24 @@ body
 	text-align: center;
 	position: relative;
 }
-
-.header1
+.header h1
 {
+	text-transform: uppercase;
 	text-align: center;
-	position: relative;
-	margin-top: 10%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	font-weight: normal;
+	letter-spacing: 10px;
+	font-size: 25px;
+	line-height: 1.5;
+	margin-top: 50px;
 }
-
-.header1 h1
-{
-	color: black;
-	font-size: 50px;
-	font-family: Poppins, sans-serif;
-	font-weight: bold;
-}
-
-.header1 p
-{
-	color: black;
+.header p{
+	padding: 50px 15px;
+	text-align: center;
 	font-size: 17px;
-	padding: 0 50px;
 	font-family: Poppins, sans-serif;
-}
-
-.form
-{
-	position: absolute;
-	top: 55%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	text-align: center;
 
 }
 
-input
-{
-	width: 100%;
-	margin: 30px 0;
-	background: rgba(0,0,0,0);
-	border: none;
-	border-bottom: 1px solid black;
-}
-
-#msg
-{
-	margin-top: 60px;
-}
-#name, #email
-{
-	margin-top: 20px;
-}
-::-webkit-input-placeholder
-{
-	color: black;
-	font-size: 12px;
-	letter-spacing: 2px;
-}
 
 .header-buttons a{
 	position: absolute;
@@ -107,7 +66,7 @@ input
 	font-weight: 400;
 	line-height: 1.4;
 	text-align: center;
-	margin-left: 600px;
+	margin-left: 570px;
 	margin-top: 0;
 	font-weight: bold;
 
