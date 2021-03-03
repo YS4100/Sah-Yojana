@@ -25,7 +25,7 @@ p{
 .header
 {
 	width:100%;
-	background-image: linear-gradient(rgba(256,256,256,0.4),rgba(256,256,256,0.4)), url(Image.png);
+	background-image: linear-gradient(rgba(256,256,256,0.6),rgba(256,256,256,0.6)), url(Image.png);
 	height: 100vh;
 	background-size: 100% 100%;
 	background-position: center;

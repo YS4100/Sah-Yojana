@@ -8,7 +8,7 @@ body
 {
 	margin: 0;
 	padding: 0;
-	background: url(background.jpg);
+	background: linear-gradient(rgba(256,256,256,0.7),rgba(256,256,256,0.7)), url(background.jpg);
 	background-size: cover;
 	background-position: center;
 	font-family: Poppins, sans-serif;
@@ -16,10 +16,10 @@ body
 
 .signupbox{
 	width: 320px;
-	height: 530px;
+	height: 580px;
 	background: #000;
 	color: #fff;
-	top: 55%;
+	top: 60%;
 	left: 50%;
 	position: absolute;
 	transform: translate(-55%, -50%);
@@ -106,6 +106,17 @@ h3
 	color: #ffc107;
 }
 
-#nm,#emailid,#password,#cpass{
+#nm,#emailid,#password,#cpass,#mobile{
 	font-size:14px;
+}
+
+.signupbox input[type="tel"],input[type="email"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 30px;
+	color: #fff;
+	font-size: 14px;
 }

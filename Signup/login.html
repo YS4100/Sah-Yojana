@@ -51,10 +51,10 @@
 	<div class="loginbox">
 		<img src="profile.png" class="profile">
 		<h1>LOGIN</h1>
-		<form name="login" onsubmit="return validation()" action='#'>
-			<p>Username</p>
-			<input type="text" name="user" placeholder="Enter Username">
-			<span id="username" class="text-danger font-weight-bold"></span>
+		<form name="login" onsubmit="return validation()" action='#' novalidate>
+			<p>Email ID</p>
+			<input type="email" name="email" placeholder="Enter Email Id">
+			<span id="emailid" class="text-danger font-weight-bold"></span>
 			<p>Password</p>
 			<input type="password" name="pass" placeholder="Enter Password">
 			<span id="password" class="text-danger font-weight-bold"></span>
@@ -73,22 +73,22 @@
 	<script type="text/javascript">
 		
 	function validation(){
-		var username=document.login.user.value;
+		var email=document.login.email.value;
 		var password=document.login.pass.value;
+		var atposition=email.indexOf("@");  
+		var dotposition=email.lastIndexOf("."); 
 
-		if(username=="" && password==""){
-			document.getElementById('username').innerHTML=" *Please enter the username!";
-			document.getElementById('password').innerHTML=" *Please enter the password!";
+		if(email==""){
+			document.getElementById('emailid').innerHTML=" *Please enter the Email ID!";
 			return false;
 		}
-		else if(username!="" && password==""){
+		if(atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
+  				document.getElementById('emailid').innerHTML=" *Please enter a valid email address!";
+  				return false;  
+  		} 
+		if(password==""){
 			//document.getElementById('username').innerHTML=" *Please enter the username!";
 			document.getElementById('password').innerHTML=" *Please enter the password!";
-			return false;
-		}
-		else if(username=="" && password!=""){
-			document.getElementById('username').innerHTML=" *Please enter the username!";
-			//document.getElementById('password').innerHTML=" *Please enter the password!";
 			return false;
 		}
 	}

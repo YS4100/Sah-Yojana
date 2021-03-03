@@ -7,7 +7,7 @@
 body{
 	margin: 0;
 	padding: 0;
-	background: linear-gradient(rgba(256,256,256,0.4),rgba(256,256,256,0.4)),url(background.jpg);
+	background: linear-gradient(rgba(256,256,256,0.7),rgba(256,256,256,0.7)),url(background.jpg);
 	background-size: cover;
 	background-position: center;
 	font-family: Poppins, sans-serif;
@@ -60,7 +60,7 @@ h1
 	margin-bottom: 10px;
 }
 
-.loginbox input[type="text"], input[type="password"]
+.loginbox input[type="text"], input[type="password"], input[type="email"]
 {
 	border: none;
 	border-bottom: 1px solid #fff;
