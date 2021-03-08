@@ -109,3 +109,11 @@ h1
 	text-align: center;
 	position: relative;
 }
+.alert{
+  text-align: center;
+  padding:2px;
+  background:red;
+  color:#fff;
+  margin-bottom:2px;
+  display:none;
+}

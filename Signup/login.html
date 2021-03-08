@@ -51,14 +51,15 @@
 	<div class="loginbox">
 		<img src="profile.png" class="profile">
 		<h1>LOGIN</h1>
-		<form name="login" onsubmit="return validation()" action='#' novalidate>
+		<div class="alert">Invalid Login!</div>
+		<form name="login" action='#' id="login" novalidate>
 			<p>Email ID</p>
-			<input type="email" name="email" placeholder="Enter Email Id">
+			<input type="email" name="email" id="email" placeholder="Enter Email Id">
 			<span id="emailid" class="text-danger font-weight-bold"></span>
 			<p>Password</p>
-			<input type="password" name="pass" placeholder="Enter Password">
+			<input type="password" name="pass" id="pass" placeholder="Enter Password">
 			<span id="password" class="text-danger font-weight-bold"></span>
-			<input type="submit" name="" value="LOGIN">
+			<input type="submit" id="submit" name="" value="LOGIN">
 			<a href="frgtpwd.html">Lost your password?</a><br>
 			<a href="signup.html">Don't have an account?</a>
 		</form>
@@ -70,28 +71,7 @@
         </footer>
     </div>
 </section>-->
-	<script type="text/javascript">
-		
-	function validation(){
-		var email=document.login.email.value;
-		var password=document.login.pass.value;
-		var atposition=email.indexOf("@");  
-		var dotposition=email.lastIndexOf("."); 
-
-		if(email==""){
-			document.getElementById('emailid').innerHTML=" *Please enter the Email ID!";
-			return false;
-		}
-		if(atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
-  				document.getElementById('emailid').innerHTML=" *Please enter a valid email address!";
-  				return false;  
-  		} 
-		if(password==""){
-			//document.getElementById('username').innerHTML=" *Please enter the username!";
-			document.getElementById('password').innerHTML=" *Please enter the password!";
-			return false;
-		}
-	}
-	</script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+	<script src="login.js"></script>
 </body>
 </html>

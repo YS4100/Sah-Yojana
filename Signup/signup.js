@@ -10,7 +10,7 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  var userRef = firebase.database().ref('user');
+  //var userRef = firebase.database().ref('user');
 
 // Listen for form submit
 document.getElementById('submit').addEventListener('click', submitForm);
@@ -28,7 +28,7 @@ function submitForm(e){
 
   // Save message
   if(checkForm(name, email, phone, pass, confpass)){
-  saveMessage(name, email, phone, pass, confpass);
+  createUser(name, email, phone, pass, confpass);
 
   // Show alert
   document.querySelector('.alert').style.display = 'block';
@@ -37,10 +37,12 @@ function submitForm(e){
   setTimeout(function(){
     document.querySelector('.alert').style.display = 'none';
   },3000);
+
+  document.getElementById('signup').reset();
+  // Clear form
 }
 
-document.getElementById('signup').reset();
-  // Clear form
+
  
 
 }
@@ -99,13 +101,13 @@ function getInputVal(id){
 }
 
 // Save message to firebase
-function saveMessage(name, email, phone, password){
+function createUser(name, email, phone, password){
  
-    var newUserRef = userRef.push();
-    newUserRef.set({
-      name: name,
-      email:email,
-      phone:phone,
-      password:password
-    });
+    firebase.auth().createUserWithEmailAndPassword(email,password).then(function(){
+      var id=firebase.auth().currentUser.uid;
+      firebase.database().ref('Users/'+id).set({
+       name: name,
+       phone:phone
+      });
+    })
 }
