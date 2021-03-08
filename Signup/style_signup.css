@@ -8,7 +8,7 @@ body
 {
 	margin: 0;
 	padding: 0;
-	background: linear-gradient(rgba(256,256,256,0.7),rgba(256,256,256,0.7)), url(background.jpg);
+	background: linear-gradient(rgba(256,256,256,0.6),rgba(256,256,256,0.6)), url(background.jpg);
 	background-size: cover;
 	background-position: center;
 	font-family: Poppins, sans-serif;
@@ -16,10 +16,10 @@ body
 
 .signupbox{
 	width: 320px;
-	height: 580px;
+	height: 550px;
 	background: #000;
 	color: #fff;
-	top: 60%;
+	top: 57%;
 	left: 50%;
 	position: absolute;
 	transform: translate(-55%, -50%);
@@ -119,4 +119,13 @@ h3
 	height: 30px;
 	color: #fff;
 	font-size: 14px;
+}
+
+.alert{
+  text-align: center;
+  padding:2px;
+  background:#79c879;
+  color:#fff;
+  margin-bottom:2px;
+  display:none;
 }

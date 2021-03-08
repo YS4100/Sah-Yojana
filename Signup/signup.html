@@ -51,84 +51,30 @@
 	<div class="signupbox">
 		<img src="profile.png" class="profile">
 		<h3>SIGNUP</h3>
-		<form name="signup" onsubmit="return validation()" action="C:\Users\Yashvi\Desktop\Sah-Yojana\Profile\profile.html" novalidate>
+		<div class="alert">Message Sent</div>
+		<form name="signup"  novalidate id="signup">
 			<p>Name</p>
-			<input type="text" name="name" placeholder="Enter your name">
+			<input type="text" name="name" id="name" placeholder="Enter your name">
 			<span id="nm" class="text-danger font-weight-bold"></span>
 			<p>Email ID</p>
-			<input type="text" name="email" placeholder="Enter your Email ID">
+			<input type="text" name="email" id="email" placeholder="Enter your Email ID">
 			<span id="emailid" class="text-danger font-weight-bold"></span>
 			<p>Mobile Number</p>
 			<input type="tel" id="phone" name="phone" placeholder="Enter your Mobile Number">
 			<span id="mobile" class="text-danger font-weight-bold"></span>
 			<p>Password</p>
-			<input type="password" name="pass" placeholder="Enter Password">
+			<input type="password" name="pass" id="pass"placeholder="Enter Password">
 			<span id="password" class="text-danger font-weight-bold"></span>
 			<p>Confirm password</p>
-			<input type="password" name="confpass" placeholder="Confirm Password">
+			<input type="password" name="confpass" id="confpass" placeholder="Confirm Password">
 			<span id="cpass" class="text-danger font-weight-bold"></span><br><br>
-			<input type="submit" name="" value="SIGNUP">
+			<input type="submit" id="submit" name="" value="SIGNUP">
 			<a href="login.html">Already have an account? Login Here!</a><br><br>
 		</form>
 	</div>
-	<script type="text/javascript">
-		
-	function validation(){
-
-		var name=document.signup.name.value;
-		var email=document.signup.email.value;
-		var password=document.signup.pass.value;
-		var confpass=document.signup.confpass.value;
-		var atposition=email.indexOf("@");  
-		var dotposition=email.lastIndexOf("."); 
-		//var passw = '/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/';
-		var mobile=document.signup.phone.value;
-
-
-		if(name==""){
-			document.getElementById('nm').innerHTML=" *Please enter your name!";
-			return false;
-		}
-
-		if(email==""){
-			document.getElementById('emailid').innerHTML=" *Please enter the Email ID!";
-			return false;
-		}
-		
-		if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
-  				document.getElementById('emailid').innerHTML=" *Please enter a valid email address!";
-  				return false;  
-  		}  
-  		if(mobile==""){
-  			document.getElementById('mobile').innerHTML=" *Please enter the Mobile Number!";
-			return false;
-  		}
-  		if(isNaN(mobile)){
-  			document.getElementById('mobile').innerHTML=" *Please enter a valid Mobile Number!";
-			return false;
-  		}
-  		if(mobile.length!=10){
-  			document.getElementById('mobile').innerHTML=" *Mobile Number should be of 10 digits!";
-			return false;
-  		}
-		if(password==""){
-			document.getElementById('password').innerHTML=" *Please enter the password!";
-			return false;
-		}
-		if(password.length<7){
-			document.getElementById('password').innerHTML=" *Password length must be atleast 7 characters!";
-			return false;
-		}
-		
-		if(confpass==""){
-			document.getElementById('cpass').innerHTML=" *Please re-enter the password!";
-			return false;
-		}
-		if(password!=confpass){
-			document.getElementById('cpass').innerHTML=" *Passwords didn't match!";
-			return false;
-		}
-	}
-	</script>
+	
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="signup.js"></script>
 </body>
 </html>
