@@ -12,6 +12,18 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 // Listen for form submit
 firebase.auth().onAuthStateChanged(user => {
+   document.getElementById('home').onclick=function(){
+  
+ if(user==null)
+ {
+  //console.log("aaaaaaaaaaaaaaaaaaaaaa");
+  window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index.html");
+ }
+ else if(user!=null)
+ {
+    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");
+ }
+};
   document.getElementById('yojana').onclick=function(){
   
  if(user==null)
