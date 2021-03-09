@@ -13,6 +13,56 @@ var firebaseConfig = {
   //var userRef = firebase.database().ref('user');
 
 // Listen for form submit
+// Listen for form submit
+firebase.auth().onAuthStateChanged(user => {
+  document.getElementById('home').onclick=function(){
+  
+ if(user==null)
+ {
+  //console.log("aaaaaaaaaaaaaaaaaaaaaa");
+  window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index.html");
+ }
+ else if(user!=null)
+ {
+    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");
+ }
+};
+  document.getElementById('yojana').onclick=function(){
+  
+ if(user==null)
+ {
+  //console.log("aaaaaaaaaaaaaaaaaaaaaa");
+  window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");
+ }
+ else if(user!=null)
+ {
+    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Yojana/yojana.html");
+ }
+};
+document.getElementById('bookmark').onclick=function(){
+  //var user=firebase.auth().currentUser;
+ if(user==null)
+ {
+  window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");
+ }
+ else
+ {
+    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Bookmark/bookmark.html");
+ }
+};
+document.getElementById('profile').onclick=function(){
+  //var user=firebase.auth().currentUser;
+ if(user==null)
+ {
+  window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");
+ }
+ else
+ {
+    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");
+ }
+};
+})
+
 document.getElementById('submit').addEventListener('click', submitForm);
 
 // Submit form
@@ -56,12 +106,14 @@ function getInputVal(id){
   return document.getElementById(id).value;
 }
 
+
+    
 // Save message to firebase
 function loginUser(email,pass){
- 
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
     firebase.auth().signInWithEmailAndPassword(email,pass).then(function(){
     var id=firebase.auth().currentUser.uid;
-    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index.html");
+    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");
     localStorage.setItem('id',id);
    
    }).catch(function(){

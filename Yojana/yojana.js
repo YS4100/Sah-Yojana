@@ -11,8 +11,11 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   //var userRef = firebase.database().ref('user');
+
+// Listen for form submit
+// Listen for form submit
 firebase.auth().onAuthStateChanged(user => {
-    document.getElementById('home').onclick=function(){
+  document.getElementById('home').onclick=function(){
   
  if(user==null)
  {
@@ -59,31 +62,3 @@ document.getElementById('profile').onclick=function(){
  }
 };
 })
-// Listen for form submit
-document.getElementById('submit').addEventListener('click', submitForm);
-
-// Submit form
-function submitForm(e){
-  e.preventDefault();
-
-  // Get values
-  var email = getInputVal('email');
-  var auth=firebase.auth();
-  if(email!=""){
-    auth.sendPasswordResetEmail(email).then(function(){
-        document.querySelector('.alert').style.display = 'block';
-        setTimeout(function(){
-        document.querySelector('.alert').style.display = 'none';
-      },3000);
-
-      document.getElementById('fgtpwd').reset();
-    }).catch(function(){
-      document.getElementById('emailid').innerHTML=" *Email not registered!";
-    });
-  }
-}
-
-// Function to get get form values
-function getInputVal(id){
-  return document.getElementById(id).value;
-}
