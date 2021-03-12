@@ -1,0 +1,101 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Poppins, sans-serif;
+}
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: Poppins, sans-serif;
+	background: linear-gradient(rgba(256,256,256,0.4),rgba(256,256,256,0.4)), url(background.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	background-size: cover;
+}
+
+.logo{
+	height:40px;
+	padding: 0 5px;
+}
+.header
+{
+	width:100%;
+	height: 100vh;
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.header-section{
+	width: 100%
+	height: inherit;
+	text-align: center;
+	position: relative;
+}
+
+
+.form
+{
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: center;
+  width: 400px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+select,input {
+  height: 30px;
+  flex: 0 0 200px;
+  margin-left: 10px;
+  /*background: rgba(0,0,0,0);
+	border: none;
+	border-bottom: 1px solid black;*/
+}
+
+.header-buttons a{
+	position: absolute;
+	border: 1px solid black;
+	border-radius: 100px;
+	margin: 0 5px;
+	padding: 12px 35px;
+	outline:none;
+	color: black;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.4;
+	text-align: center;
+	margin-left: 550px;
+	margin-top: 25%;
+	font-weight: bold;
+
+}
+.header-buttons a:hover{
+	color:#50d1c0;
+	background: white;
+	text-decoration: none;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
+.footer-basic {
+  padding:3px 0;
+  background-color:#808080;
+  
+}
+
+
+.footer-basic .copyright {
+  margin-top:7px;
+  text-align:center;
+  font-size:13px;
+  color: white;
+  margin-bottom:7px;
+}
