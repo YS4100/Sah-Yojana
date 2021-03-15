@@ -62,3 +62,35 @@ document.getElementById('profile').onclick=function(){
  }
 };
 })
+  function setter(){
+    var queryString = location.search.substring(1);
+    var idd = queryString.split("?");
+    firebase.database().ref('Yojanas').once("value").then(function(snapshot) {
+        snapshot.forEach(
+        function(ChildSnapshot){
+      const data= ChildSnapshot.val();
+      //console.log(data);
+      if(data.id==idd[0]){
+          var _name=document.getElementById('name');
+          _name.innerHTML=data.name;
+          var _desc=document.getElementById('desc');
+          _desc.innerHTML=data.description;
+          var _video=document.getElementById('video');
+          _video.setAttribute('src',data.video);
+          var _elig=document.getElementById('eligibility');
+          _elig.innerHTML=data.eligibility;
+          var _guide=document.getElementById('guidelines');
+          _guide.innerHTML=data.description;
+          document.body.style.background='linear-gradient(rgba(256,256,256,0.7),rgba(256,256,256,0.7)), url('+data.image+'), center, no-repeat, cover';
+        }
+      });
+    });
+    /*var name = myData[0];
+    var desc = myData[1];
+    var video = myData[2];
+    var img = myData[3];
+    var elig=myData[4];*/
+   
+  }
+
+  window.addEventListener('load', setter);

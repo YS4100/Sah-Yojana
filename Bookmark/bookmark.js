@@ -15,7 +15,7 @@ var firebaseConfig = {
 // Listen for form submit
 // Listen for form submit
 firebase.auth().onAuthStateChanged(user => {
-    document.getElementById('home').onclick=function(){
+  document.getElementById('home').onclick=function(){
   
  if(user==null)
  {

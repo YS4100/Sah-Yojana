@@ -129,13 +129,29 @@ body
  .blog-card .description .read-more {
 	 text-align: right;
 }
+.blog-card .description .read-morer {
+	 text-align: right;
+}
  .blog-card .description .read-more a {
 	 color: #5ad67d;
 	 display: inline-block;
 	 position: relative;
 }
+ .blog-card .description .read-morer a {
+	 color: #5ad67d;
+	 display: inline-block;
+	 position: relative;
+}
  .blog-card .description .read-more a:after {
-	 content: "\f061";
+	 content: "\f062";
+	 font-family: FontAwesome;
+	 margin-left: -10px;
+	 opacity: 0;
+	 vertical-align: middle;
+	 transition: margin 0.3s, opacity 0.3s;
+}
+.blog-card .description .read-morer  a:after {
+	 content: "\f00d";
 	 font-family: FontAwesome;
 	 margin-left: -10px;
 	 opacity: 0;
@@ -143,6 +159,10 @@ body
 	 transition: margin 0.3s, opacity 0.3s;
 }
  .blog-card .description .read-more a:hover:after {
+	 margin-left: 5px;
+	 opacity: 1;
+}
+.blog-card .description .read-morer a:hover:after {
 	 margin-left: 5px;
 	 opacity: 1;
 }
