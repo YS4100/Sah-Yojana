@@ -254,14 +254,14 @@ body
 	
 }
 
-#SocialWelfare:before
+#Social-Welfare:before
 {
 	font-family: FontAwesome;
 	content:"\f0c0";
 	margin-right: 10px;
 	
 }
-#SeniorCitizen:before
+#Senior-Citizen:before
 {
 	font-family: FontAwesome;
 	content:"\f193";
@@ -285,6 +285,8 @@ body
 .sidenav a:hover {
   color: #000;
 }
+
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}

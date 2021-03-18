@@ -117,6 +117,31 @@ document.getElementById('profile').onclick=function(){
     blog_card.append(descrip);
     ul.append(blog_card);
   }
+  function disp(){
+      var cnt=0;
+      document.getElementById('list').innerHTML='';
+      var idd=this.id;
+      document.getElementById(idd).style.background='color(grey)';
+      //console.log(idd);
+      var ref = firebase.database().ref("Yojanas");
+      firebase.database().ref('Yojanas').once("value").then(function(snapshot) {
+        snapshot.forEach(
+        function(ChildSnapshot){
+          var name=ChildSnapshot.val().name;
+          var id=ChildSnapshot.val().id;
+          var domain=ChildSnapshot.val().domain;
+          var desc=ChildSnapshot.val().description;
+          var video=ChildSnapshot.val().video;
+          var img=ChildSnapshot.val().image;
+          var elig=ChildSnapshot.val().eligibility;
+          if(domain==idd){
+          addi(name,domain,desc,video,img,id,cnt);
+          cnt++;
+        }
+        }
+      );
+    });
+  }
    var cnt=0;
   function fetch(){
     firebase.database().ref('Yojanas').once("value").then(function(snapshot) {
@@ -134,6 +159,13 @@ document.getElementById('profile').onclick=function(){
         }
       );
     });
+     window.addEventListener('load', fetch);
+  document.getElementById('Agriculture').addEventListener('click',disp);
+  document.getElementById('Social-Welfare').addEventListener('click',disp);
+  document.getElementById('Education').addEventListener('click',disp);
+  document.getElementById('Homes').addEventListener('click',disp);
+  document.getElementById('Senior-Citizen').addEventListener('click',disp);
+  document.getElementById('Health').addEventListener('click',disp);
   }
 
    window.addEventListener('load', fetch);

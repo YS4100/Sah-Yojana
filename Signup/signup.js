@@ -150,12 +150,13 @@ function getInputVal(id){
 
 // Save message to firebase
 function createUser(name, email, phone, password){
- 
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
     firebase.auth().createUserWithEmailAndPassword(email,password).then(function(){
       var id=firebase.auth().currentUser.uid;
       firebase.database().ref('Users/'+id).set({
        name: name,
-       phone:phone
+       phone:phone,
+       bookmarked:"abc?"
       });
     })
 }
