@@ -143,7 +143,7 @@ body
 	 position: relative;
 }
  .blog-card .description .read-more a:after {
-	 content: "\f062";
+	 content: "\f061";
 	 font-family: FontAwesome;
 	 margin-left: -10px;
 	 opacity: 0;

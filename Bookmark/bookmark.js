@@ -63,15 +63,70 @@ document.getElementById('profile').onclick=function(){
 };
 })
 function addi(name,domain,desc,video,img,id,cnt){
-    let ul=document.getElementById("list");
-    var blog_card=document.createElement('div');
+    /*let ul=document.getElementById("list");
+    var blog_card=document.createElement('div');*/
+
+    
+
     if(cnt%2==0){
-        blog_card.className="blog-card";
+        //blog_card.className="blog-card";
+        document.getElementById('list').innerHTML+=`
+        <div class="blog-card">
+        <div class="meta">
+        <div class="photo" style="background-image: url(${img})"></div>
+        <ul class="details">
+
+          <li class="tags">
+            <ul>
+              <li><a href='${video}'>Video</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+        <div class="description">
+          <h1>${name}</h1>
+          <h2>${domain}</h2>
+          <p id="description2"> ${desc}</p>
+          <p class="read-more">
+            <a href="C:/Users/Yashvi/Desktop/Sah-Yojana/Yojana/readmore.html?${id}">Read More</a>
+          </p>
+          <p class="read-morer" >
+          <a href="remove.html?${id}" >Remove</a>
+          </p>
+        </div>
+      </div>
+      `
     }
     else{
-      blog_card.className="blog-card alt";
+      document.getElementById('list').innerHTML+=`
+        <div class="blog-card alt">
+        <div class="meta">
+        <div class="photo" style="background-image: url(${img})"></div>
+        <ul class="details">
+
+          <li class="tags">
+            <ul>
+              <li><a href='${video}'>Video</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+        <div class="description">
+          <h1>${name}</h1>
+          <h2>${domain}</h2>
+          <p id="description2"> ${desc}</p>
+          <p class="read-more">
+            <a href="C:/Users/Yashvi/Desktop/Sah-Yojana/Yojana/readmore.html?${id}">Read More</a>
+          </p>
+          <p class="read-morer" >
+          <a href="remove.html?${id}" >Remove</a>
+          </p>
+        </div>
+      </div>
+      `
+
     }
-    var meta=document.createElement('div');
+        /*var meta=document.createElement('div');
     meta.className="meta";
     var photo=document.createElement('div');
     photo.className="photo";
@@ -115,25 +170,25 @@ function addi(name,domain,desc,video,img,id,cnt){
     descrip.append(_desc);
     descrip.append(_read);
     blog_card.append(descrip);
-    ul.append(blog_card);
+    ul.append(blog_card);*/
   }
 function disp(){
   var cnt=0;
   firebase.auth().onAuthStateChanged(user => {
     if(user){
- var user = firebase.auth().currentUser.uid;
-  var ref = firebase.database().ref('Users/').child(user);
-  ref.once("value").then(function(snapshot){
-  var data = snapshot.val().bookmarked;
+    var user = firebase.auth().currentUser.uid;
+    var ref = firebase.database().ref('Users/').child(user);
+    ref.once("value").then(function(snapshot){
+    var data = snapshot.val().bookmarked;
   //var str = data.split("?");
 
-   console.log(data);
+   //console.log(data);
 
    firebase.database().ref('Yojanas').once("value").then(function(snapshot) {
    snapshot.forEach(
           function(ChildSnapshot){
           var c=ChildSnapshot.val().id;
-          console.log(c);
+          //console.log(c);
           if((data).search(c)!=-1){
           var domain=ChildSnapshot.val().domain;
           var name=ChildSnapshot.val().name;
@@ -154,4 +209,30 @@ function disp(){
 }
 });
 }
+
+
+
+
+
 window.addEventListener('load', disp);
+
+/*document.addEventListener('DOMContentLoaded',function(){
+  firebase.auth().onAuthStateChanged(user => {
+    if(user){
+  firebase.database().ref('Yojanas').once("value").then(function(snapshot) {
+   snapshot.forEach(
+          function(ChildSnapshot){
+          var c=ChildSnapshot.val().id;
+           var d = document.getElementById(c)
+           d.addEventListener('click', function()
+            {
+              console.log("aaa");
+              remove(this.id);
+            });
+        })
+ })
+}
+})
+});
+*/
+//document.getElementById
