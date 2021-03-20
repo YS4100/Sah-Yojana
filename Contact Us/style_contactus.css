@@ -35,13 +35,13 @@ body
 	text-align: center;
 	position: relative;
 }
-.header h1
+.header h2
 {
 	text-transform: uppercase;
 	text-align: center;
 	font-weight: normal;
 	letter-spacing: 10px;
-	font-size: 25px;
+	
 	line-height: 1.5;
 	margin-top: 50px;
 }

@@ -11,7 +11,15 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   //var userRef = firebase.database().ref('user');
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
 
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
 // Listen for form submit
 // Listen for form submit
 firebase.auth().onAuthStateChanged(user => {
@@ -142,6 +150,8 @@ document.getElementById('profile').onclick=function(){
       );
     });
   }
+
+
    var cnt=0;
   function fetch(){
     firebase.database().ref('Yojanas').once("value").then(function(snapshot) {
@@ -159,13 +169,33 @@ document.getElementById('profile').onclick=function(){
         }
       );
     });
-     window.addEventListener('load', fetch);
+
+     //window.addEventListener('load', fetch);
+     document.getElementById('all').addEventListener('click',fetchall);
   document.getElementById('Agriculture').addEventListener('click',disp);
   document.getElementById('Social-Welfare').addEventListener('click',disp);
   document.getElementById('Education').addEventListener('click',disp);
   document.getElementById('Homes').addEventListener('click',disp);
   document.getElementById('Senior-Citizen').addEventListener('click',disp);
   document.getElementById('Health').addEventListener('click',disp);
+  }
+  function fetchall(){
+    location.reload();
+    firebase.database().ref('Yojanas').once("value").then(function(snapshot) {
+        snapshot.forEach(
+        function(ChildSnapshot){
+          var name=ChildSnapshot.val().name;
+          var id=ChildSnapshot.val().id;
+          var domain=ChildSnapshot.val().domain;
+          var desc=ChildSnapshot.val().description;
+          var video=ChildSnapshot.val().video;
+          var img=ChildSnapshot.val().image;
+          var elig=ChildSnapshot.val().eligibility;
+          addi(name,domain,desc,video,img,id,cnt);
+          cnt++;
+        }
+      );
+    });
   }
 
    window.addEventListener('load', fetch);

@@ -50,18 +50,24 @@
     </div>
     </nav>
 
-
-  <div class="sidenav">
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+<!-- <div class="sidenav"> -->
+  <a href="#" id="all">All</a>
   <a href="#" id="Agriculture">Agriculture</a>
   <a href="#" id="Homes">Homes</a>
   <a href="#" id="Social-Welfare">Social-Welfare</a>
   <a href="#" id="Senior-Citizen">Senior-Citizen</a>
   <a href="#" id="Education">Education</a>
   <a href="#" id="Health">Health</a>
-</div>
+</div> 
 
-<div class="recommended">
-  <h2 align="center"> Recommended Yojanas</h2>
+
+    <!-- Page Content -->
+    
+<div class="recommended" id="main">
+  <button class="openbtn" onclick="openNav()" id="btn">☰ CATEGORIES</button>  
+  <h2 align="center" id="title"> RECOMMENDED YOJANAS</h2>
   <ul id="list"></ul>
 <!--<div class="blog-card">
     <div class="meta">
@@ -167,5 +173,6 @@
   <script src="yojana.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
 </body>
 </html>
