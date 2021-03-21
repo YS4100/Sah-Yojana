@@ -153,6 +153,7 @@ document.getElementById('profile').onclick=function(){
 
 
    var cnt=0;
+   var yojanas=[];
   function fetch(){
     firebase.database().ref('Yojanas').once("value").then(function(snapshot) {
         snapshot.forEach(
@@ -165,6 +166,7 @@ document.getElementById('profile').onclick=function(){
           var img=ChildSnapshot.val().image;
           var elig=ChildSnapshot.val().eligibility;
           addi(name,domain,desc,video,img,id,cnt);
+          yojanas.push(name);
           cnt++;
         }
       );
@@ -197,6 +199,43 @@ document.getElementById('profile').onclick=function(){
       );
     });
   }
+document.getElementById('searchBar').addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    const searchString = document.getElementById('searchBar').value.toLowerCase();
+    const filteredYojanas=new Array();
+    for(var i=0;i<yojanas.length;i++){
+      if(yojanas[i].toLowerCase().includes(searchString)){
+        filteredYojanas.push(yojanas[i]);
+      }
+    }
+  displayYojanas(filteredYojanas);
+  }
+  
+});
 
+  function displayYojanas(filteredYojanas){
+    var cnt=0;
+    console.log('filteredYojanas');
+    document.getElementById('list').innerHTML='';
+    var ref = firebase.database().ref("Yojanas");
+      firebase.database().ref('Yojanas').once("value").then(function(snapshot) {
+        snapshot.forEach(
+        function(ChildSnapshot){
+          var name=ChildSnapshot.val().name;
+          var id=ChildSnapshot.val().id;
+          var domain=ChildSnapshot.val().domain;
+          var desc=ChildSnapshot.val().description;
+          var video=ChildSnapshot.val().video;
+          var img=ChildSnapshot.val().image;
+          var elig=ChildSnapshot.val().eligibility;
+          if(filteredYojanas.includes(name)){
+          addi(name,domain,desc,video,img,id,cnt);
+          cnt++;
+        }
+        }
+      );
+    });
+  }
    window.addEventListener('load', fetch);
 
