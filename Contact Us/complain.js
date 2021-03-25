@@ -15,7 +15,13 @@ var firebaseConfig = {
 // Listen for form submit
 // Listen for form submit
 firebase.auth().onAuthStateChanged(user => {
-    document.getElementById('home').onclick=function(){
+  document.getElementById('submit').onclick=function(){
+    if(user==null)
+    {
+      window.alert("Please login to add complain");
+    }
+  }
+ document.getElementById('home').onclick=function(){
   
  if(user==null)
  {
@@ -62,3 +68,25 @@ document.getElementById('profile').onclick=function(){
  }
 };
 })
+function addcomplain(){
+      
+      firebase.auth().onAuthStateChanged(user => {
+      var user = firebase.auth().currentUser.uid;
+      var name=document.getElementById('name').value;
+      var email=document.getElementById('email').value;
+      var yojana=document.getElementById('yojananame').value;
+      var issue=document.getElementById('issue').value;
+      var msg=document.getElementById('msg').value;
+      var ref=firebase.database().ref('Complaints/');
+      ref.push({
+       user: user,
+       name: name,
+       email:email,
+       yojana: yojana,
+       issue: issue,
+       msg:msg
+      });
+      document.getElementById('compform').reset();
+    });
+}
+//document.getElementById('complain').addEventListener('click',addcomplain);

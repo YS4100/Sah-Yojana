@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Yojana</title>
+  <title>Admin Yojana</title>
   <link rel="stylesheet" type="text/css" href="style_yojana_admin.css">
   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,24 +42,79 @@
     </nav>
 
 
-  <div class="sidenav">
+<!-- <div id="mySidebar" class="sidebar">
+  
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#" id="all">All</a>
   <a href="#" id="Agriculture">Agriculture</a>
   <a href="#" id="Homes">Homes</a>
-  <a href="#" id="SocialWelfare">Social Welfare</a>
-  <a href="#" id="SeniorCitizen">Senior Citizen</a>
+  <a href="#" id="Social-Welfare">Social-Welfare</a>
+  <a href="#" id="Senior-Citizen">Senior-Citizen</a>
   <a href="#" id="Education">Education</a>
   <a href="#" id="Health">Health</a>
-</div>
+</div>  -->
 
-<div class="header-buttons" align="center" id="add">
-      <a href="" id="addyojana" >Add Yojana</a>
+
+    <!-- Page Content -->
+ <input type="text" name="search" placeholder="Search Yojana.." id="searchBar" class="searchBar">   
+<div class="recommended" id="main">
+  <!-- <button class="openbtn" onclick="openNav()" id="btn">☰ CATEGORIES</button>  --> 
+  <div class="header-buttons">
+  <a href="admin_add_yojana.html">+ ADD YOJANA</a>
+</div>
+  <ul id="list"></ul>
+<!--<div class="blog-card">
+    <div class="meta">
+      <div class="photo" style="background-image: url(y2.png)"></div>
+      <ul class="details">
+
+        <li class="tags">
+          <ul>
+            <li><a href="https://www.youtube.com/watch?v=j9jWfNXDyes&feature=emb_imp_woyt">Video</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
+    <div class="description">
+      <h1>Pradhan Mantri Jan Aarogya Yojana</h1>
+      <h2>Opening a door to the future</h2>
+      <p id="description2"> </p>
+      <p class="read-more">
+        <a href="readmore.html">Read More</a>
+      </p>
+    </div>
+  </div>
+  <div class="blog-card alt">
+    <div class="meta">
+      <div class="photo" style="background-image: url(y1.png)"></div>
+      <ul class="details">
+        
+        <li class="tags">
+          <ul>
+            <li><a href="#">Video</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="description">
+      <h1>Pradhan Mantri Aawas Yojana</h1>
+      <h2>Java is not the same as JavaScript</h2>
+      <p id="description1"></p>
+      <p class="read-more">
+        <a href="#">Read More</a>
+      </p>
+    </div>
+  </div>
+
+</div>
+<div class="others">
+  <h2 align="center">Other Yojanas</h2>
 <div class="blog-card">
     <div class="meta">
       <div class="photo" style="background-image: url(y2.png)"></div>
       <ul class="details">
-        <!--<li class="author"><a href="#">John Doe</a></li>
-        <li class="date">Aug. 24, 2015</li> -->
+        
         <li class="tags">
           <ul>
             <li><a href="https://www.youtube.com/watch?v=j9jWfNXDyes&feature=emb_imp_woyt">Video</a></li>
@@ -72,10 +127,7 @@
       <h2>Opening a door to the future</h2>
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
       <p class="read-more">
-        <a href="readmore.html">Update</a>
-      </p>
-      <p class="read-morer">
-        <a href="readmore.html">Remove</a>
+        <a href="readmore.html">Read More</a>
       </p>
     </div>
   </div>
@@ -83,8 +135,7 @@
     <div class="meta">
       <div class="photo" style="background-image: url(y1.png)"></div>
       <ul class="details">
-        <!--<li class="author"><a href="#">Jane Doe</a></li>
-        <li class="date">July. 15, 2015</li>-->
+       
         <li class="tags">
           <ul>
             <li><a href="#">Video</a></li>
@@ -98,48 +149,24 @@
       <h2>Java is not the same as JavaScript</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
       <p class="read-more">
-        <a href="#">Update</a>
-      </p>
-      <p class="read-morer">
-        <a href="readmore.html">Remove</a>
+        <a href="#">Read More</a>
       </p>
     </div>
   </div>
 
-<div class="blog-card">
-    <div class="meta">
-      <div class="photo" style="background-image: url(y2.png)"></div>
-      <ul class="details">
-        <!--<li class="author"><a href="#">John Doe</a></li>
-        <li class="date">Aug. 24, 2015</li> -->
-        <li class="tags">
-          <ul>
-            <li><a href="https://www.youtube.com/watch?v=j9jWfNXDyes&feature=emb_imp_woyt">Video</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="description">
-      <h1>Pradhan Mantri Jan Aarogya Yojana</h1>
-      <h2>Opening a door to the future</h2>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
-      <p class="read-more">
-        <a href="readmore.html">Update</a>
-      </p>
-      <p class="read-morer">
-        <a href="readmore.html">Remove</a>
-      </p>
-    </div>
-  </div>
-  
-
+</div>
 </div>
 
 </div>
     <div class="footer-basic">
       <footer>
         <p class="copyright">Copyright © Sah-Yojana 2021</p>
-          </footer>
+          </footer> -->
   </div>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="yojana_admin.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
 </body>
 </html>

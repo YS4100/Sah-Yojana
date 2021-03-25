@@ -216,23 +216,3 @@ function disp(){
 
 window.addEventListener('load', disp);
 
-/*document.addEventListener('DOMContentLoaded',function(){
-  firebase.auth().onAuthStateChanged(user => {
-    if(user){
-  firebase.database().ref('Yojanas').once("value").then(function(snapshot) {
-   snapshot.forEach(
-          function(ChildSnapshot){
-          var c=ChildSnapshot.val().id;
-           var d = document.getElementById(c)
-           d.addEventListener('click', function()
-            {
-              console.log("aaa");
-              remove(this.id);
-            });
-        })
- })
-}
-})
-});
-*/
-//document.getElementById

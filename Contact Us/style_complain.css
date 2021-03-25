@@ -123,3 +123,8 @@ input
   color: white;
   margin-bottom:7px;
 }
+.header h2
+{
+	letter-spacing: 10px;
+	font-family: Poppins, sans-serif;
+}

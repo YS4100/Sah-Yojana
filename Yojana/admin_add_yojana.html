@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Yojana Admin</title>
+	<link rel="stylesheet" type="text/css" href="style_admin_add_yojana.css">
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
+</head>
+<body>
+	<div class='header' id='topheader'>
+			
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container text-uppercase ps-2">
+			<img class="logo" src="logoo.png" >
+		  <a class="navbar-brand" href="#">Sah-Yojana</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav ml-auto">
+		      <li class="nav-item">
+          <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\index_login_admin.html" >Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="yojana_admin.html" >Yojana</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\Contact U\complaints_admin.html">Complaints</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\Reports\reports_admin.html">Reports</a>
+        </li>
+		      
+		    </ul>
+		  </div>
+		</div>
+		</nav>
+    <br>
+    <h1 align="center"> ADD YOJANA </h1>
+	<form class="p-3" id="addy">
+  <div class="form-group">
+    <label for="name"> Yojana Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Enter Yojana Name">
+    <label for="id"> Yojana ID</label>
+    <input type="text" name="" class="form-control" id="id" placeholder="Enter Yojana ID">
+    <label for="domain" id="label">Domain:</label>
+      <select name="domain" id="domain" class="form-control">
+        <option value="Agriculture">Agriculture</option>
+        <option value="Senior-Citizen">Senior Citizen</option>
+        <option value="Education">Education</option>
+        <option value="Health">Health</option>
+        <option value="Social-Welfare">Social Welfare</option>
+        <option value="Homes">Homes</option>
+      </select>
+
+    <label for="description">Desciption</label>
+    <textarea class="form-control" id="description" rows="3"></textarea>
+    <label for="guidelines">Guidelines</label>
+    <textarea class="form-control" id="guidelines" rows="3"></textarea>
+    <label for="eligibility">Eligibility</label>
+    <textarea class="form-control" id="eligibility" rows="3"></textarea>
+    
+    <label for="image">Image URL</label>
+    <input type="text" name="" class="form-control" id="image" placeholder="Enter Image URL">
+    
+    <label for="video">Video URL</label>
+    <input type="text" name="" class="form-control" id="video" placeholder="Enter Video URL">
+    <br>
+    <div align="center">
+      <div class="header-buttons">
+      <a href="#" id="submit">SUBMIT</a>
+    </div>
+</div>
+</form>
+
+		
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="admin_add_yojana.js">
+    
+
+  </script>
+</body>
+</html>

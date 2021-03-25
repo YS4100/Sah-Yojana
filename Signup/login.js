@@ -114,6 +114,10 @@ function loginUser(email,pass){
     firebase.auth().signInWithEmailAndPassword(email,pass).then(function(){
     var id=firebase.auth().currentUser.uid;
     window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");
+    if(email=="sahyojana@gmail.com")
+      window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login_admin.html");
+    else
+      window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");
     localStorage.setItem('id',id);
    
    }).catch(function(){

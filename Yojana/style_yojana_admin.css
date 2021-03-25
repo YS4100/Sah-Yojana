@@ -2,24 +2,42 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Helvetica';
+	font-family: Poppins, sans-serif;
 }
 body
 {
 	margin: 0;
 	padding: 0;
-	font-family: 'Helvetica';
+	font-family: Poppins, sans-serif;
 	background: linear-gradient(rgba(256,256,256,0.4),rgba(256,256,256,0.9)), url(background.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	position: relative;
 	background-size: cover;
 }
+#title
+{
+	letter-spacing: 10px;
+}
+a{ text-decoration: none; }
+
+a:hover{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+p{
+	font-size: 0.9rem;
+	line-height: 1.6;
+	font-weight: 400;
+	color: #606060
+}
 
 .logo{
 	height:40px;
 	padding: 0 5px;
-	margin-left: 90px;
+	margin-left: 0;
 }
 
  .blog-card {
@@ -34,7 +52,8 @@ body
 	 border-radius: 5px;
 	 overflow: hidden;
 	 z-index: 0;
-	 width: 780px;
+	 width: 880px;
+}
 }
  .blog-card a {
 	 color: inherit;
@@ -238,7 +257,7 @@ body
   margin-bottom:7px;
 }
 
-.sidenav {
+/*.sidenav {
   height: 100%;
   width: 210px;
   position: fixed;
@@ -259,7 +278,13 @@ body
   display: block;
   font-family: Poppins, sans-serif;
 }
-
+*/
+#all:before
+{
+	font-family: FontAwesome;
+	content: "\f000";
+	margin-right: 10px;
+}
 #Agriculture:before
 {
 	font-family: FontAwesome;
@@ -274,22 +299,14 @@ body
 	
 }
 
-#SocialWelfare:before
+#Social-Welfare:before
 {
 	font-family: FontAwesome;
 	content:"\f0c0";
 	margin-right: 10px;
 	
 }
-
-#addyojana:before
-{
-	font-family: FontAwesome;
-	content:"\f067";
-	margin-right: 10px;
-	
-}
-#SeniorCitizen:before
+#Senior-Citizen:before
 {
 	font-family: FontAwesome;
 	content:"\f193";
@@ -310,20 +327,86 @@ body
 	margin-right: 10px;
 	
 }
-.sidenav a:hover {
+/*.sidenav a:hover {
   color: #000;
 }
+*/
+/*
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-
+*/
 .recommended,.others h2{
-	margin: 30px 0;
+	
+}
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f2f2f2;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  font-family: Poppins, sans-serif;
+
 }
 
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #808080;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 17px;
+  cursor: pointer;
+  background-color: #e6e6e6;
+  color: black;
+  padding: 5px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #a6a6a6;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+.searchBar
+{
+	/*display: block;*/
+	position: absolute;
+	/*z-index: 0;*/
+	width: 357px;
+    top: 70px;
+    right: 10px;
+    overflow-x: hidden;
+
+ 
+}
 .header-buttons{
-	margin: 30px 0px;
+	margin: 0px 550px;
 }
 .header-buttons a{
 	border: 1px solid black;

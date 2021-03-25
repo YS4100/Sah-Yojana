@@ -33,29 +33,11 @@ p{
 	font-weight: 400;
 	color: #606060
 }
-.header
-{
-	width:100%;
-	background-image: linear-gradient(rgba(256,256,256,0.6),rgba(256,256,256,0.6)), url(Image.png);
-	height: 100vh;
-	background-size: 100% 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	position: relative;
-}
-.header-section{
-	width: 100%
-	height: inherit;
-	text-align: center;
-	position: relative;
-}
-.header-section h1{
-	font-size: 70px;
-}
+
 .logo{
 	height:40px;
 	padding: 0 5px;
-	margin-left: 0px;
+	margin-left: 0;
 }
 
  .blog-card {
@@ -70,7 +52,8 @@ p{
 	 border-radius: 5px;
 	 overflow: hidden;
 	 z-index: 0;
-	 width: 780px;
+	 width: 880px;
+}
 }
  .blog-card a {
 	 color: inherit;
@@ -389,4 +372,16 @@ p{
 #main {
   transition: margin-left .5s;
   padding: 16px;
+}
+.searchBar
+{
+	/*display: block;*/
+	position: absolute;
+	/*z-index: 0;*/
+	width: 357px;
+    top: 70px;
+    right: 10px;
+    overflow-x: hidden;
+
+ 
 }
