@@ -110,7 +110,7 @@ function getInputVal(id){
     
 // Save message to firebase
 function loginUser(email,pass){
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
     firebase.auth().signInWithEmailAndPassword(email,pass).then(function(){
     var id=firebase.auth().currentUser.uid;
     window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");

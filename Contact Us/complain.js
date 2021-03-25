@@ -69,7 +69,7 @@ document.getElementById('profile').onclick=function(){
 };
 })
 function addcomplain(){
-      
+      console.log('hiiiiiiiiiiiiii');
       firebase.auth().onAuthStateChanged(user => {
       var user = firebase.auth().currentUser.uid;
       var name=document.getElementById('name').value;
@@ -77,7 +77,7 @@ function addcomplain(){
       var yojana=document.getElementById('yojananame').value;
       var issue=document.getElementById('issue').value;
       var msg=document.getElementById('msg').value;
-      var ref=firebase.database().ref('Complaints/');
+      var ref=firebase.database().ref('Complaints');
       ref.push({
        user: user,
        name: name,
@@ -89,4 +89,4 @@ function addcomplain(){
       document.getElementById('compform').reset();
     });
 }
-//document.getElementById('complain').addEventListener('click',addcomplain);
+document.getElementById('submit').addEventListener('click',addcomplain);
