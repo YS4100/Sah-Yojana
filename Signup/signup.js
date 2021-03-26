@@ -156,7 +156,8 @@ function createUser(name, email, phone, password){
       firebase.database().ref('Users/'+id).set({
        name: name,
        phone:phone,
-       bookmarked:"abc?"
+       bookmarked:"abc?",
+       email: email
       });
     })
 }

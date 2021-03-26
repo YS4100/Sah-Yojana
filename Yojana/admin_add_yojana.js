@@ -10,7 +10,6 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-
   function addyojana(){
     var name=document.getElementById('name').value;
     var id=document.getElementById('id').value;
@@ -31,6 +30,26 @@ var firebaseConfig = {
       eligibility:elig,
       guidelines:guide
       });
+    firebase.database().ref('Users').once("value").then(function(snapshot) {
+        snapshot.forEach(
+        function(ChildSnapshot){
+          var email=ChildSnapshot.val().email;
+          var user_name=ChildSnapshot.val().name;
+          var sub = `Announcement: ${name}`;
+          var body = `<p>Hello ${user_name},<br><br>
+          <b>${name}</b> has been posted on the website. Please visit the website to know the guidelines and eligibility of yojana.<br><br>
+          Regards,<br>Team Sah-Yojana.</p>`;
+          Email.send({
+            SecureToken: "6874ee7a-699d-49b4-8501-c21635e200b2",
+            To: email,
+            From: "sahyojana@gmail.com",
+            Subject: sub,
+            Body: body
+          })
+  }
+  )
+      });
     document.getElementById("addy").reset();
   }
  document.getElementById('submit').addEventListener('click', addyojana);
+ //window.addEventListener('load',emails);
