@@ -49,15 +49,9 @@
 		</nav>
 	<form class="p-3">
   <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" placeholder="Enter your Name">
-    <label for="email">Email ID</label>
-    <input type="email" name="" class="form-control" id="email" placeholder="Enter your Email ID">
-    <label for="mobile">Mobile Number</label>
-    <input type="tel" name="" class="form-control" id="mobile" placeholder="Enter your Mobile Number">
     <label for="age">Age</label>
     <input type="number" name="" class="form-control" id="age" placeholder="Enter your Age">
-    <label for="gender" id="label">Gender:</label>
+    <label for="gender" >Gender:</label>
 			<select name="gender" id="gender" class="form-control">
   			<option value="male">Male</option>
   			<option value="female">Female</option>
@@ -71,27 +65,122 @@
     <input type="text" name="" class="form-control" id="state" placeholder="Enter your State">
     <label for="country">Country</label>
     <input type="text" name="" class="form-control" id="country" placeholder="Enter your Country">
+
+    <label for="caste">Caste</label>
+    <select name="caste" id="caste" class="form-control">
+        <option value="general">General</option>
+        <option value="obc">OBC</option>
+        <option value="sc">Scheduled Caste</option>
+        <option value="st">Scheduled Tribe</option>
+      </select>
+    <label for="annualincome">Annual Income</label>
+    <input type="number" name="" class="form-control" id="annualincome" placeholder="Enter your Annual Income">  
+    <label for="bpl" >Do you fall under BPL category?</label>
+      <select name="bpl" id="bpl" class="form-control">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
   </div>
-  
+
+    
   <div class="form-group">
-    <label for="seeAnotherField">What is your Profession?</label>
-    <select class="form-control" id="seeAnotherField">
-          <option value="no">Farmer</option>
-          <option value="yes">Student</option>
+    <label for="occupation">Occupation:</label>
+    <select class="form-control" id="occupation">
+          <option value="farmer">Farmer</option>
+          <option value="student">Student</option>
+          <option value="business">Business</option>
+          <option value="retired">Retired</option>
+          <option value="labourer">Labourer</option>
+          <option value="job">Job</option>
     </select>
   </div>
   
-  <div class="form-group" id="otherFieldDiv">
-    <label for="otherField">Here you go!</label>
-    <select class="form-control" id="otherField">
-      <option>Yay</option>
-      <option>Woo</option>
-      <option>Hazah</option>
-      <option>Yipee</option>
-      <option>Hoorah</option>
+  <div class="form-group" id="farmer">
+    <label for="land">Hectars of land:</label>
+    <input type="number" name="" class="form-control" id="land" placeholder="">  
+    <label for="scale">Scale of farming:</label>
+    <select class="form-control" id="scale">
+      <option value="small">Small</option>
+      <option value="marginal">Marginal</option>
+      <option value="large">Large</option>
     </select>
   </div>
+
+  <div class="form-group" id="student">
+    <label for="qualification">Qualification:</label>
+    <select class="form-control" id="qualification">
+      <option value="school">School</option>
+      <option value="diploma">Diploma</option>
+      <option value="undergraduate">Undergraduate</option>
+      <option value="graduate">Graduate</option>
+      <option value="phd">Ph.D.</option>
+    </select>
+
+    <div class="form-group" id="school">
+      <label for="std">Standard:</label>
+      <input type="number" name="" class="form-control" id="std" placeholder="Enter the standard in which you are currently studying">
+      <label for="type">Type of School:</label>
+      <select class="form-control" id="type">
+      <option value="private">Private</option>
+      <option value="government">Government</option>
+    </select>
+    </div>
+
+    <div class="form-group" id="diploma">
+      <label for="diplomayear">Year of study:</label>
+      <input type="number" name="" class="form-control" id="diplomayear" placeholder="Enter the year in which you are currently studying">
+      <label for="diplomabranch">Branch:</label>
+      <input type="text" name="" class="form-control" id="diplomabranch" placeholder="Enter the branch in which you are currently studying">
+    </div>
+
+     <div class="form-group" id="undergraduate">
+      <label for="undergraduatedegree">Degree:</label>
+      <select class="form-control" id="undergraduatedegree">
+      <option value="btech">B.Tech/B.Eng</option>
+      <option value="bsc">B.Sc.</option>
+      <option value="bpharm">B.Pharm.</option>
+      <option value="bcom">B.Com./B.B.A</option>
+      <option value="mbbs">M.B.B.S</option>
+      <option value="ba">B.A.</option>
+      </select>
+      <label for="undergraduateyear">Year of study:</label>
+      <input type="number" name="" class="form-control" id="undergraduateyear" placeholder="Enter the year in which you are currently studying">
+      <label for="undergraduatebranch">Branch:</label>
+      <input type="text" name="" class="form-control" id="undergraduatebranch" placeholder="Enter the branch in which you are currently studying">
+    </div>
+
+    <div class="form-group" id="graduate">
+      <label for="graduatedegree">Degree:</label>
+      <select class="form-control" id="graduatedegree">
+      <option value="mtech">M.Tech/M.Eng/M.S.</option>
+      <option value="msc">M.Sc.</option>
+      <option value="mpharm">M.Pharm.</option>
+      <option value="mcom">M.Com./M.B.A</option>
+      <option value="ma">M.A.</option>
+      </select>
+      <label for="graduateyear">Year of study:</label>
+      <input type="number" name="" class="form-control" id="graduateyear" placeholder="Enter the year in which you are currently studying">
+      <label for="graduatebranch">Branch:</label>
+      <input type="text" name="" class="form-control" id="graduatebranch" placeholder="Enter the branch in which you are currently studying">
+    </div>
+
+    <div class="form-group" id="phd">
+      <label for="phdbranch">Branch:</label>
+      <input type="text" name="" class="form-control" id="phdbranch" placeholder="Enter the branch in which you are currently studying">
+    </div>
+
+  </div>
   
+  <div class="form-group" id="job">
+      <label for="std">Standard:</label>
+      <input type="number" name="" class="form-control" id="std" placeholder="Enter the standard in which you are currently studying">
+      <label for="type">Type of School:</label>
+      <select class="form-control" id="type">
+      <option value="private">Private</option>
+      <option value="government">Government</option>
+    </select>
+    </div>
+
   <div class="form-group">
     <label for="seeAnotherFieldGroup">Do You Want To See Another Group of Fields?</label>
     <select class="form-control" id="seeAnotherFieldGroup">
@@ -131,7 +220,7 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript">
-		$("#seeAnotherField").change(function() {
+		$("#occupation").change(function() {
   if ($(this).val() == "yes") {
     $('#otherFieldDiv').show();
     $('#otherField').attr('required', '');

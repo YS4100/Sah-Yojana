@@ -80,7 +80,7 @@ document.getElementById('profile').onclick=function(){
           var _elig=document.getElementById('eligibility');
           _elig.innerHTML=data.eligibility;
           var _guide=document.getElementById('guidelines');
-          _guide.innerHTML=data.description;
+          _guide.innerHTML=data.guidelines;
           document.body.style.background='linear-gradient(rgba(256,256,256,0.7),rgba(256,256,256,0.7)), url('+data.image+'), center, no-repeat, cover';
         }
       });
@@ -118,4 +118,20 @@ function bookmark()
 }
 });
 }
-  window.addEventListener('load', setter);
+
+function apply()
+{
+  var queryString = location.search.substring(1);
+  var idd = queryString.split("?");
+  firebase.auth().onAuthStateChanged(user => {
+  if(user){
+  //var user = firebase.auth().currentUser.uid;
+  var ref = firebase.database().ref('Yojanas/' + idd);
+  ref.once("value").then(function(snapshot){
+   var data=snapshot.val().applylink;
+   window.location.replace(data);
+  });
+}
+});
+}
+window.addEventListener('load', setter);
