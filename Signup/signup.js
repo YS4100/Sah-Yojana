@@ -87,6 +87,7 @@ function submitForm(e){
   },3000);
 
   document.getElementById('signup').reset();
+  //window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");
   // Clear form
 }
 

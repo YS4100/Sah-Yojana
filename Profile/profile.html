@@ -47,17 +47,18 @@
 		  </div>
 		</div>
 		</nav>
-	<form class="p-3">
+<form class="p-3">
+  <h2 align="center"> EDIT PROFILE </h2><br><br>
   <div class="form-group">
     <label for="age">Age</label>
     <input type="number" name="" class="form-control" id="age" placeholder="Enter your Age">
     <label for="gender" >Gender:</label>
-			<select name="gender" id="gender" class="form-control">
-  			<option value="male">Male</option>
-  			<option value="female">Female</option>
-  			<option value="others">Others</option>
-			</select>
-	<label for="Address">Address</label>
+      <select name="gender" id="gender" class="form-control">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="others">Others</option>
+      </select>
+  <label for="Address">Address</label>
     <input type="text" name="" class="form-control" id="address" placeholder="Enter your Address">
     <label for="city">City</label>
     <input type="text" name="" class="form-control" id="city" placeholder="Enter your City">
@@ -86,6 +87,7 @@
   <div class="form-group">
     <label for="occupation">Occupation:</label>
     <select class="form-control" id="occupation">
+          <option value="none">Select Occupation</option>
           <option value="farmer">Farmer</option>
           <option value="student">Student</option>
           <option value="business">Business</option>
@@ -109,12 +111,14 @@
   <div class="form-group" id="student">
     <label for="qualification">Qualification:</label>
     <select class="form-control" id="qualification">
+      <option value="none">Select Qualification</option>
       <option value="school">School</option>
       <option value="diploma">Diploma</option>
       <option value="undergraduate">Undergraduate</option>
       <option value="graduate">Graduate</option>
       <option value="phd">Ph.D.</option>
     </select>
+  </div>
 
     <div class="form-group" id="school">
       <label for="std">Standard:</label>
@@ -169,71 +173,195 @@
       <input type="text" name="" class="form-control" id="phdbranch" placeholder="Enter the branch in which you are currently studying">
     </div>
 
-  </div>
   
   <div class="form-group" id="job">
-      <label for="std">Standard:</label>
-      <input type="number" name="" class="form-control" id="std" placeholder="Enter the standard in which you are currently studying">
-      <label for="type">Type of School:</label>
-      <select class="form-control" id="type">
+      <label for="companyjob">Company:</label>
+      <input type="text" name="" class="form-control" id="companyjob" placeholder="Enter the company in which you are currently working">
+      <label for="typecompany">Type of Company:</label>
+      <select class="form-control" id="typecompany">
       <option value="private">Private</option>
       <option value="government">Government</option>
     </select>
     </div>
 
-  <div class="form-group">
-    <label for="seeAnotherFieldGroup">Do You Want To See Another Group of Fields?</label>
-    <select class="form-control" id="seeAnotherFieldGroup">
-          <option value="no">Not Particularly.</option>
-          <option value="yes">I Guess!</option>
+    <div class="form-group" id="labourer">
+      <label for="companylab">Employed at:</label>
+      <input type="text" name="" class="form-control" id="companylab" placeholder="Enter the company in which you are currently working">
+      <label for="typejob">Type of Job:</label>
+      <select class="form-control" id="typejob">
+      <option value="full">Full Time</option>
+      <option value="part">Part Time</option>
     </select>
-  </div>
-  
-  <div class="form-group" id="otherFieldGroupDiv">
-    <div class="row">
-      <div class="col-6">
-        <label for="otherField1">Group: Heres One!</label>
-        <input type="text" class="form-control w-100" id="otherField1">
-      </div>
-      <div class="col-6">
-        <label for="otherField2">Group: Another One!</label>
-        <input type="text" class="form-control w-100" id="otherField2">
-      </div>
     </div>
-  </div>
-  
-  <div class="form-group">
-    <label for="comments">Comments</label>
-    <textarea class="form-control" id="comments" rows="3"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+
+    <div class="form-group" id="business">
+      <label for="businessdetails">Business Details:</label>
+      <input type="text" name="" class="form-control" id="businessdetails" placeholder="">
+      <label for="partnership">Is your business in partnership?</label>
+      <select class="form-control" id="partnership">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+    </div>
+
+    <div class="form-group" id="retired">
+      <label for="pension">Are you Pensioned?</label>
+      <select class="form-control" id="pension">
+      <option value="yes">Yes</option>
+      <option value="part">No</option>
+    </select>
+    </div>
 </form>
+<div class="header-buttons">
+      <a href="#" onclick="submit()">SUBMIT</a>
+     </div>
+    
+  </div>
+    <div class="footer-basic">
+      <footer>
+        <p class="copyright">Copyright © Sah-Yojana 2021</p>
+          </footer>
+  </div>
 
-		
-	</div>
-		<div class="footer-basic">
-			<footer>
-				<p class="copyright">Copyright © Sah-Yojana 2021</p>
-        	</footer>
-	</div>
 
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		$("#occupation").change(function() {
-  if ($(this).val() == "yes") {
-    $('#otherFieldDiv').show();
-    $('#otherField').attr('required', '');
-    $('#otherField').attr('data-error', 'This field is required.');
-  } else {
-    $('#otherFieldDiv').hide();
-    $('#otherField').removeAttr('required');
-    $('#otherField').removeAttr('data-error');
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $("#occupation").change(function() {
+      if ($(this).val() == "none") {
+    $('#farmer').hide();
+    $('#student').hide();
+    $('#job').hide();
+    $('#retired').hide();
+    $('#business').hide();
+    $('#labourer').hide();
+    $('#school').hide();
+    $('#diploma').hide();
+    $('#undergraduate').hide();
+    $('#graduate').hide();
+    $('#phd').hide();
+  } 
+  else if ($(this).val() == "farmer") {
+    $('#farmer').show();
+    $('#student').hide();
+    $('#job').hide();
+    $('#retired').hide();
+    $('#business').hide();
+    $('#labourer').hide();
+    $('#school').hide();
+    $('#diploma').hide();
+    $('#undergraduate').hide();
+    $('#graduate').hide();
+    $('#phd').hide();
+  } 
+  else if($(this).val() == "student") {
+    $('#farmer').hide();
+    $('#student').show();
+    $('#job').hide();
+    $('#retired').hide();
+    $('#business').hide();
+    $('#labourer').hide();
+    $('#school').hide();
+    $('#diploma').hide();
+    $('#undergraduate').hide();
+    $('#graduate').hide();
+    $('#phd').hide();
+    
   }
+  else if ($(this).val() == "job") {
+   $('#farmer').hide();
+    $('#student').hide();
+    $('#job').show();
+    $('#retired').hide();
+    $('#business').hide();
+    $('#labourer').hide();
+    $('#school').hide();
+    $('#diploma').hide();
+    $('#undergraduate').hide();
+    $('#graduate').hide();
+    $('#phd').hide();
+  } 
+  else if ($(this).val() == "retired") {
+    $('#farmer').hide();
+    $('#student').hide();
+    $('#job').hide();
+    $('#retired').show();
+    $('#business').hide();
+    $('#labourer').hide();
+    $('#school').hide();
+    $('#diploma').hide();
+    $('#undergraduate').hide();
+    $('#graduate').hide();
+    $('#phd').hide();
+  } 
+  else if ($(this).val() == "business") {
+    $('#farmer').hide();
+    $('#student').hide();
+    $('#job').hide();
+    $('#retired').hide();
+    $('#business').show();
+    $('#labourer').hide();
+    $('#school').hide();
+    $('#diploma').hide();
+    $('#undergraduate').hide();
+    $('#graduate').hide();
+    $('#phd').hide();
+  } 
+  else if ($(this).val() == "labourer") {
+    $('#farmer').hide();
+    $('#student').hide();
+    $('#job').hide();
+    $('#retired').hide();
+    $('#business').hide();
+    $('#labourer').show();
+    $('#school').hide();
+    $('#diploma').hide();
+    $('#undergraduate').hide();
+    $('#graduate').hide();
+    $('#phd').hide();
+  } 
 });
-$("#seeAnotherField").trigger("change");
+$("#occupation").trigger("change");
 
-$("#seeAnotherFieldGroup").change(function() {
+$("#qualification").change(function(){
+    if($(this).val()=='school'){
+      $('#school').show();
+      $('#diploma').hide();
+      $('#undergraduate').hide();
+      $('#graduate').hide();
+      $('#phd').hide();
+    }
+    else if($(this).val()=='diploma'){
+      $('#school').hide();
+      $('#diploma').show();
+      $('#undergraduate').hide();
+      $('#graduate').hide();
+      $('#phd').hide();
+    }
+    else if($(this).val()=='undergraduate'){
+      $('#school').hide();
+      $('#diploma').hide();
+      $('#undergraduate').show();
+      $('#graduate').hide();
+      $('#phd').hide();
+    }
+    else if($(this).val()=='graduate'){
+      $('#school').hide();
+      $('#diploma').hide();
+      $('#undergraduate').hide();
+      $('#graduate').show();
+      $('#phd').hide();
+    }
+    else if($(this).val()=='phd'){
+      $('#school').hide();
+      $('#diploma').hide();
+      $('#undergraduate').hide();
+      $('#graduate').hide();
+      $('#phd').show();
+    }
+  });
+$("#qualification").trigger("change");
+
+/*$("#seeAnotherFieldGroup").change(function() {
   if ($(this).val() == "yes") {
     $('#otherFieldGroupDiv').show();
     $('#otherField1').attr('required', '');
@@ -248,9 +376,9 @@ $("#seeAnotherFieldGroup").change(function() {
     $('#otherField2').removeAttr('data-error');
   }
 });
-$("#seeAnotherFieldGroup").trigger("change");
+$("#seeAnotherFieldGroup").trigger("change");*/
 
-	</script>
+  </script>
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
   <script src="profile.js"></script>
 </body>

@@ -51,6 +51,34 @@ body
 	font-family: Poppins, sans-serif;
 
 }
+.header-buttons a{
+	border: 1px solid black;
+	border-radius: 100px;
+	margin: 50px 600px 100px;
+	padding: 12px 35px;
+	outline:none;
+	color: black;
+	font-size: 1rem;
+	font-weight: bold;
+	line-height: 1.4;
+	text-align: center;
+}
+
+.header-buttons a:hover{
+	color:#50d1c0;
+	background: white;
+	text-decoration: none;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
+.header h2
+{
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: normal;
+	letter-spacing: 10px;
+	
+	line-height: 1.5;
+}
 form {
   max-width: 900px;
   display: block;
