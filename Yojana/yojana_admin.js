@@ -67,7 +67,7 @@ function closeNav() {
     _linkread.className="read-more";
     //var data=[name,desc,video,img,elig];
     //localStorage.setItem('objectToPass',data);
-    _linkread.setAttribute('href',''+id);
+    _linkread.setAttribute('href','admin_update.html?'+id);
     _linkread.innerHTML="Update";
 
     var _reader=document.createElement('p');

@@ -20,6 +20,7 @@ var firebaseConfig = {
     var elig=document.getElementById('eligibility').value;
     var guide=document.getElementById('guidelines').value;
     var applylink = document.getElementById('applylink').value;
+    var criteria = document.getElementById('criteria').value;
     //console.log(name);
     firebase.database().ref('Yojanas/' + id).set({
       name:name,
@@ -30,7 +31,8 @@ var firebaseConfig = {
       image:img,
       eligibility:elig,
       guidelines:guide,
-      applylink: applylink
+      applylink: applylink,
+      criteria: criteria
       });
     firebase.database().ref('Users').once("value").then(function(snapshot) {
         snapshot.forEach(

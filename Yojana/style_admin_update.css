@@ -1,0 +1,88 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Poppins, sans-serif;
+}
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: Poppins, sans-serif;
+	background: linear-gradient(rgba(256,256,256,0.4),rgba(256,256,256,0.9)), url(background.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	background-size: cover;
+}
+#title
+{
+	letter-spacing: 10px;
+}
+a{ text-decoration: none; }
+
+a:hover{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+p{
+	font-size: 0.9rem;
+	line-height: 1.6;
+	font-weight: 400;
+	color: #606060
+}
+
+.logo{
+	height:40px;
+	padding: 0 5px;
+	margin-left: 0;
+}
+.header h2
+{
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: normal;
+	letter-spacing: 10px;
+	margin-top: 20px;
+	line-height: 1;
+}
+form {
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+}
+input{
+	width: 400px;
+	float:right;
+}
+
+textarea
+{
+	width: 400px;
+	float:right;
+}
+.header-buttons{
+	margin-bottom: 10px;
+}
+.header-buttons a{
+	border: 1px solid black;
+	border-radius: 100px;
+	/*margin: 50px 600px 100px;*/
+	padding: 12px 35px;
+	outline:none;
+	color: black;
+	font-size: 1rem;
+	font-weight: bold;
+	line-height: 1.4;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.header-buttons a:hover{
+	color:#50d1c0;
+	background: white;
+	text-decoration: none;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
