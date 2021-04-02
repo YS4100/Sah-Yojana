@@ -58,7 +58,14 @@ document.getElementById('profile').onclick=function(){
  }
  else
  {
-    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");
+   var temp = firebase.auth().currentUser.uid;
+    firebase.database().ref('Users/' +temp ).once("value").then(function(snapshot){
+       var flag = snapshot.val().completeprofile;
+       if(flag == "no")
+         window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");
+       else
+         window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/edit_profile.html");
+    }); 
  }
 };
 })
@@ -70,7 +77,7 @@ function submit()
     {
       var user = firebase.auth().currentUser.uid;
       var age = document.getElementById('age').value;
-      var gender = document.getElementById('gender'),value;
+      var gender = document.getElementById('gender').value;
       var address = document.getElementById('address').value;
       var city = document.getElementById('city').value;
       var state = document.getElementById('state').value;
@@ -79,6 +86,7 @@ function submit()
       var annualincome = document.getElementById('annualincome').value;
       var bpl = document.getElementById('bpl').value;
       var occupation = document.getElementById('occupation').value;
+      //console.log('Hiii');
       if(occupation=='farmer')
       {
         var land = document.getElementById('land').value;
@@ -105,6 +113,7 @@ function submit()
         {
           var std = document.getElementById('std').value;
           var type = document.getElementById('type').value;
+
           firebase.database().ref('Users/' + user).update({
           age : age,
           gender :  gender,
@@ -205,7 +214,8 @@ function submit()
         });
         }
       }
-      else if(qualification=='job'){
+
+      else if(occupation=='job'){
         var company= document.getElementById('companyjob').value;
         var typecompany= document.getElementById('typecompany').value;
         firebase.database().ref('Users/' + user).update({
@@ -219,13 +229,12 @@ function submit()
           annualincome : annualincome,
           bpl : bpl,
           occupation : occupation,
-          qualification: qualification,
           company: company,
           typeofcompany:typecompany
       });
     }
 
-    else if(qualification=='retired'){
+    else if(occupation=='retired'){
         var pension= document.getElementById('pension').value;
         firebase.database().ref('Users/' + user).update({
           age : age,
@@ -238,14 +247,14 @@ function submit()
           annualincome : annualincome,
           bpl : bpl,
           occupation : occupation,
-          qualification: qualification,
           pensioned: pension
       });
     }
 
-    else if(qualification=='labourer'){
+    else if(occupation=='labourer'){
         var companylab= document.getElementById('companylab').value;
         var typejob= document.getElementById('typejob').value;
+        console.log('Hiii');
         firebase.database().ref('Users/' + user).update({
           age : age,
           gender :  gender,
@@ -257,13 +266,12 @@ function submit()
           annualincome : annualincome,
           bpl : bpl,
           occupation : occupation,
-          qualification: qualification,
           employedat: companylab,
           typeofjob: typejob
       });
     }
 
-    else if(qualification=='business'){
+    else if(occupation=='business'){
         var details= document.getElementById('businessdetails').value;
         var partner= document.getElementById('partnership').value;
         firebase.database().ref('Users/' + user).update({
@@ -277,11 +285,18 @@ function submit()
           annualincome : annualincome,
           bpl : bpl,
           occupation : occupation,
-          qualification: qualification,
           details: details,
           partnership: partner
       });
     }
+
+
   }
-});
+ 
+  setTimeout(myURL,8000);
+   function myURL(){
+          window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");  
+         }
+  });
+
 }

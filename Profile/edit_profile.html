@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Signup</title>
-	<link rel="stylesheet" type="text/css" href="style_signup.css">
+	<title>Edit Profile</title>
+	<link rel="stylesheet" type="text/css" href="style_edit_profile.css">
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -39,45 +39,31 @@
 		      <li class="nav-item">
 		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\Contact Us\contact_us.html">Contact Us</a>
 		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#" id="profile">Profile</a>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#" id="profile">Profile<span class="sr-only">(current)</span></a>
 		      </li>
 		      
 		    </ul>
 		  </div>
 		</div>
 		</nav>
-	</div>
-	<div class="signupbox">
-		<img src="profile.png" class="profile">
-		<h3>SIGNUP</h3>
-		<div class="alert">Registered Successfully!</div>
-		<form name="signup"  novalidate id="signup" action="C:\Users\Yashvi\Desktop\Sah-Yojana\Profile\profile.html">
-			<p>Name</p>
-			<input type="text" name="name" id="name" placeholder="Enter your name">
-			<span id="nm" class="text-danger font-weight-bold"></span>
-			<p>Email ID</p>
-			<input type="text" name="email" id="email" placeholder="Enter your Email ID">
-			<span id="emailid" class="text-danger font-weight-bold"></span>
-			<p>Mobile Number</p>
-			<input type="tel" id="phone" name="phone" placeholder="Enter your Mobile Number">
-			<span id="mobile" class="text-danger font-weight-bold"></span>
-			<p>Password</p>
-			<input type="password" name="pass" id="pass"placeholder="Enter Password">
-			<span id="password" class="text-danger font-weight-bold"></span>
-			<p>Confirm password</p>
-			<input type="password" name="confpass" id="confpass" placeholder="Confirm Password">
-			<span id="cpass" class="text-danger font-weight-bold"></span><br><br>
-			<input type="submit" id="submit" name="" value="SIGNUP">
-			<a href="login.html">Already have an account? Login Here!</a><br><br>
-		</form>
-	</div>
-	
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <h2 align="center"> EDIT PROFILE </h2><br><br>
+  <form class='p-3'>
+  <div id="data" class='form-group'>
+
+  </div>
+
+</form>
+<div class="header-buttons" align="center">
+      <a href="#" onclick="submit()">Save Changes</a>
+     </div>
+</div>
+<br><br>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-  <script src="signup.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="edit_profile.js"></script>
 </body>
 </html>

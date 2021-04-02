@@ -43,18 +43,21 @@ body
 	letter-spacing: 10px;
 	font-size: 25px;
 	line-height: 1.5;
+
 }
 .header p{
 	padding: 0 15px;
-	text-align: center;
 	font-size: 17px;
 	font-family: Poppins, sans-serif;
 
 }
+.header-buttons{
+	margin-bottom: 10px;
+}
 .header-buttons a{
 	border: 1px solid black;
 	border-radius: 100px;
-	margin: 50px 600px 100px;
+	/*margin: 50px 600px 100px;*/
 	padding: 12px 35px;
 	outline:none;
 	color: black;
@@ -62,6 +65,7 @@ body
 	font-weight: bold;
 	line-height: 1.4;
 	text-align: center;
+	margin-bottom: 10px;
 }
 
 .header-buttons a:hover{
@@ -76,22 +80,10 @@ body
 	text-align: center;
 	font-weight: normal;
 	letter-spacing: 10px;
-	
-	line-height: 1.5;
+	margin-top: 20px;
+	line-height: 1;
 }
-.header h7
-{
-	text-transform: uppercase;
-	text-align: center;
-	font-weight: normal;
-	line-height: 1.5;
-	margin-left: 150px;
-}
-form {
-  max-width: 900px;
-  display: block;
-  margin: 0 auto;
-}
+
 
 .footer-basic {
 	position: fixed;
@@ -107,4 +99,17 @@ form {
   font-size:13px;
   color: white;
   margin-bottom:7px;
+}
+
+#data{
+	margin-left: 20px;
+}
+form {
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+}
+input{
+	width: 400px;
+	float:right;
 }

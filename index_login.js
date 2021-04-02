@@ -58,7 +58,16 @@ document.getElementById('profile').onclick=function(){
  }
  else
  {
-    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");
+    var temp = firebase.auth().currentUser.uid;
+
+    firebase.database().ref('Users/' + temp ).once("value").then(function(snapshot){
+       var flag = snapshot.val().completeprofile;
+       console.log(flag);
+       if(flag == "no")
+         window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");
+       else
+         window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/edit_profile.html");
+    }); 
  }
 };
 })
