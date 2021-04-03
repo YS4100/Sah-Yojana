@@ -13,7 +13,6 @@ var firebaseConfig = {
 // Listen for form submit
 firebase.auth().onAuthStateChanged(user => {
    document.getElementById('home').onclick=function(){
-  
  if(user==null)
  {
   //console.log("aaaaaaaaaaaaaaaaaaaaaa");
@@ -66,3 +65,18 @@ document.getElementById('profile').onclick=function(){
  }
 };
 })
+/*function verify()
+{
+  firebase.auth().onAuthStateChanged(user => {
+    var user=firebase.auth().currentUser.uid;
+    if(user==null)
+    {
+       window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index.html"); 
+    }
+    else
+    {
+       window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");
+    }
+  });
+}*/
+window.addEventListener('load',verify);

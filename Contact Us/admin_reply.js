@@ -66,7 +66,9 @@ function sendEmail(){
         Body: reply,
       })
         .then(function (message) {
-          alert("mail sent successfully")
+          alert("mail sent successfully");
+          ref.remove();
+          
         });
   });
   });

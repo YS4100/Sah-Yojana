@@ -94,7 +94,7 @@ function submitForm(e){
   },3000);
 
   document.getElementById('signup').reset();
-  setTimeout(myURL,8000);
+  setTimeout(myURL,5000);
    function myURL(){
           window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");  
          }

@@ -87,216 +87,230 @@ function submit()
       var bpl = document.getElementById('bpl').value;
       var occupation = document.getElementById('occupation').value;
       //console.log('Hiii');
-      if(occupation=='farmer')
-      {
-        var land = document.getElementById('land').value;
-        var scale = document.getElementById('scale').value;
-        firebase.database().ref('Users/' + user).update({
-          age : age,
-          gender :  gender,
-          address : address,
-          city : city,
-          state : state,
-          country : country,
-          caste : caste,
-          annualincome : annualincome,
-          bpl : bpl,
-          occupation : occupation,
-          hectaresofland : land,
-          scaleoffarming : scale
-        });
+      if(user=="" || age=="" || gender=="" || address=="" || city=="" || state=="" || country=="" || caste=="" || annualincome=="" || bpl=="" || occupation=="" ){
+        alert("Please Complete the Profile before submitting!");
       }
-      else if(occupation == 'student')
+      else
       {
-        var qualification = document.getElementById('qualification').value;
-        if(qualification=='school')
-        {
-          var std = document.getElementById('std').value;
-          var type = document.getElementById('type').value;
+              if(occupation=='farmer')
+              {
+              var land = document.getElementById('land').value;
+              var scale = document.getElementById('scale').value;
+              firebase.database().ref('Users/' + user).update({
+                age : age,
+                gender :  gender,
+                address : address,
+                city : city,
+                state : state,
+                country : country,
+                caste : caste,
+                annualincome : annualincome,
+                bpl : bpl,
+                occupation : occupation,
+                hectaresofland : land,
+                scaleoffarming : scale,
+                completeprofile: "yes"
+              });
+            }
+            else if(occupation == 'student')
+            {
+              var qualification = document.getElementById('qualification').value;
+              if(qualification=='school')
+              {
+                var std = document.getElementById('std').value;
+                var type = document.getElementById('type').value;
 
-          firebase.database().ref('Users/' + user).update({
-          age : age,
-          gender :  gender,
-          address : address,
-          city : city,
-          state : state,
-          country : country,
-          caste : caste,
-          annualincome : annualincome,
-          bpl : bpl,
-          occupation : occupation,
-          qualification: qualification,
-          standard: std,
-          typeofschool:type
-        });
-        }
-        else if(qualification=='diploma')
-        {
-          var diplomayear=document.getElementById('diplomayear').value;
-          var diplomabranch=document.getElementById('diplomabranch').value;
-          firebase.database().ref('Users/' + user).update({
-          age : age,
-          gender :  gender,
-          address : address,
-          city : city,
-          state : state,
-          country : country,
-          caste : caste,
-          annualincome : annualincome,
-          bpl : bpl,
-          occupation : occupation,
-          qualification: qualification,
-          year: diplomayear,
-          branch:diplomabranch
-        });
-        }
-        else if(qualification=='undergraduate')
-        {
-          var undergraduatedegree=document.getElementById('undergraduatedegree').value;
-          var undergraduatebranch=document.getElementById('undergraduatebranch').value;
-          var undergraduateyear=document.getElementById('undergraduateyear').value;
-          firebase.database().ref('Users/' + user).update({
-          age : age,
-          gender :  gender,
-          address : address,
-          city : city,
-          state : state,
-          country : country,
-          caste : caste,
-          annualincome : annualincome,
-          bpl : bpl,
-          occupation : occupation,
-          qualification: qualification,
-          degree: undergraduatedegree,
-          branch: undergraduatebranch,
-          year: undergraduateyear
-        });
-        }
-        else if(qualification=='graduate')
-        {
-          var graduatedegree=document.getElementById('graduatedegree').value;
-          var graduatebranch=document.getElementById('graduatebranch').value;
-          var graduateyear=document.getElementById('graduateyear').value;
-          firebase.database().ref('Users/' + user).update({
-          age : age,
-          gender :  gender,
-          address : address,
-          city : city,
-          state : state,
-          country : country,
-          caste : caste,
-          annualincome : annualincome,
-          bpl : bpl,
-          occupation : occupation,
-          qualification: qualification,
-          degree: graduatedegree,
-          branch: graduatebranch,
-          year: graduateyear
-        });
-        }
-        else if(qualification=='phd')
-        {
-          var phdbranch=document.getElementById('phdbranch').value;
-          
-          firebase.database().ref('Users/' + user).update({
-          age : age,
-          gender :  gender,
-          address : address,
-          city : city,
-          state : state,
-          country : country,
-          caste : caste,
-          annualincome : annualincome,
-          bpl : bpl,
-          occupation : occupation,
-          qualification: qualification,
-          branch: phdbranch
-        });
-        }
-      }
+                firebase.database().ref('Users/' + user).update({
+                age : age,
+                gender :  gender,
+                address : address,
+                city : city,
+                state : state,
+                country : country,
+                caste : caste,
+                annualincome : annualincome,
+                bpl : bpl,
+                occupation : occupation,
+                qualification: qualification,
+                standard: std,
+                typeofschool:type,
+                completeprofile: "yes"
+              });
+              }
+              else if(qualification=='diploma')
+              {
+                var diplomayear=document.getElementById('diplomayear').value;
+                var diplomabranch=document.getElementById('diplomabranch').value;
+                firebase.database().ref('Users/' + user).update({
+                age : age,
+                gender :  gender,
+                address : address,
+                city : city,
+                state : state,
+                country : country,
+                caste : caste,
+                annualincome : annualincome,
+                bpl : bpl,
+                occupation : occupation,
+                qualification: qualification,
+                year: diplomayear,
+                branch:diplomabranch,
+                completeprofile: "yes"
+              });
+              }
+              else if(qualification=='undergraduate')
+              {
+                var undergraduatedegree=document.getElementById('undergraduatedegree').value;
+                var undergraduatebranch=document.getElementById('undergraduatebranch').value;
+                var undergraduateyear=document.getElementById('undergraduateyear').value;
+                firebase.database().ref('Users/' + user).update({
+                age : age,
+                gender :  gender,
+                address : address,
+                city : city,
+                state : state,
+                country : country,
+                caste : caste,
+                annualincome : annualincome,
+                bpl : bpl,
+                occupation : occupation,
+                qualification: qualification,
+                degree: undergraduatedegree,
+                branch: undergraduatebranch,
+                year: undergraduateyear,
+                completeprofile: "yes"
+              });
+              }
+              else if(qualification=='graduate')
+              {
+                var graduatedegree=document.getElementById('graduatedegree').value;
+                var graduatebranch=document.getElementById('graduatebranch').value;
+                var graduateyear=document.getElementById('graduateyear').value;
+                firebase.database().ref('Users/' + user).update({
+                age : age,
+                gender :  gender,
+                address : address,
+                city : city,
+                state : state,
+                country : country,
+                caste : caste,
+                annualincome : annualincome,
+                bpl : bpl,
+                occupation : occupation,
+                qualification: qualification,
+                degree: graduatedegree,
+                branch: graduatebranch,
+                year: graduateyear,
+                completeprofile: "yes"
+              });
+              }
+              else if(qualification=='phd')
+              {
+                var phdbranch=document.getElementById('phdbranch').value;
+                
+                firebase.database().ref('Users/' + user).update({
+                age : age,
+                gender :  gender,
+                address : address,
+                city : city,
+                state : state,
+                country : country,
+                caste : caste,
+                annualincome : annualincome,
+                bpl : bpl,
+                occupation : occupation,
+                qualification: qualification,
+                branch: phdbranch,
+                completeprofile: "yes"
+              });
+              }
+            }
 
-      else if(occupation=='job'){
-        var company= document.getElementById('companyjob').value;
-        var typecompany= document.getElementById('typecompany').value;
-        firebase.database().ref('Users/' + user).update({
-          age : age,
-          gender :  gender,
-          address : address,
-          city : city,
-          state : state,
-          country : country,
-          caste : caste,
-          annualincome : annualincome,
-          bpl : bpl,
-          occupation : occupation,
-          company: company,
-          typeofcompany:typecompany
-      });
-    }
+            else if(occupation=='job'){
+              var company= document.getElementById('companyjob').value;
+              var typecompany= document.getElementById('typecompany').value;
+              firebase.database().ref('Users/' + user).update({
+                age : age,
+                gender :  gender,
+                address : address,
+                city : city,
+                state : state,
+                country : country,
+                caste : caste,
+                annualincome : annualincome,
+                bpl : bpl,
+                occupation : occupation,
+                company: company,
+                typeofcompany:typecompany,
+                completeprofile: "yes"
+            });
+          }
 
-    else if(occupation=='retired'){
-        var pension= document.getElementById('pension').value;
-        firebase.database().ref('Users/' + user).update({
-          age : age,
-          gender :  gender,
-          address : address,
-          city : city,
-          state : state,
-          country : country,
-          caste : caste,
-          annualincome : annualincome,
-          bpl : bpl,
-          occupation : occupation,
-          pensioned: pension
-      });
-    }
+          else if(occupation=='retired'){
+              var pension= document.getElementById('pension').value;
+              firebase.database().ref('Users/' + user).update({
+                age : age,
+                gender :  gender,
+                address : address,
+                city : city,
+                state : state,
+                country : country,
+                caste : caste,
+                annualincome : annualincome,
+                bpl : bpl,
+                occupation : occupation,
+                pensioned: pension,
+                completeprofile: "yes"
+            });
+          }
 
-    else if(occupation=='labourer'){
-        var companylab= document.getElementById('companylab').value;
-        var typejob= document.getElementById('typejob').value;
-        console.log('Hiii');
-        firebase.database().ref('Users/' + user).update({
-          age : age,
-          gender :  gender,
-          address : address,
-          city : city,
-          state : state,
-          country : country,
-          caste : caste,
-          annualincome : annualincome,
-          bpl : bpl,
-          occupation : occupation,
-          employedat: companylab,
-          typeofjob: typejob
-      });
-    }
+          else if(occupation=='labourer'){
+              var companylab= document.getElementById('companylab').value;
+              var typejob= document.getElementById('typejob').value;
+              console.log('Hiii');
+              firebase.database().ref('Users/' + user).update({
+                age : age,
+                gender :  gender,
+                address : address,
+                city : city,
+                state : state,
+                country : country,
+                caste : caste,
+                annualincome : annualincome,
+                bpl : bpl,
+                occupation : occupation,
+                employedat: companylab,
+                typeofjob: typejob,
+                completeprofile: "yes"
+            });
+          }
 
-    else if(occupation=='business'){
-        var details= document.getElementById('businessdetails').value;
-        var partner= document.getElementById('partnership').value;
-        firebase.database().ref('Users/' + user).update({
-          age : age,
-          gender :  gender,
-          address : address,
-          city : city,
-          state : state,
-          country : country,
-          caste : caste,
-          annualincome : annualincome,
-          bpl : bpl,
-          occupation : occupation,
-          details: details,
-          partnership: partner
-      });
-    }
-
-
-  }
+          else if(occupation=='business'){
+              var details= document.getElementById('businessdetails').value;
+              var partner= document.getElementById('partnership').value;
+              firebase.database().ref('Users/' + user).update({
+                age : age,
+                gender :  gender,
+                address : address,
+                city : city,
+                state : state,
+                country : country,
+                caste : caste,
+                annualincome : annualincome,
+                bpl : bpl,
+                occupation : occupation,
+                details: details,
+                partnership: partner,
+                completeprofile: "yes"
+            });
+          }
  
-  setTimeout(myURL,8000);
-   function myURL(){
-          window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");  
-         }
+          setTimeout(myURL,5000);
+           function myURL(){
+                  window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");  
+                 }
+       }
+}
   });
 
 }

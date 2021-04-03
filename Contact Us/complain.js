@@ -15,12 +15,6 @@ var firebaseConfig = {
 // Listen for form submit
 // Listen for form submit
 firebase.auth().onAuthStateChanged(user => {
-  document.getElementById('submit').onclick=function(){
-    if(user==null)
-    {
-      window.alert("Please login to add complain");
-    }
-  }
  document.getElementById('home').onclick=function(){
   
  if(user==null)
@@ -76,7 +70,7 @@ document.getElementById('profile').onclick=function(){
 };
 })
 function addcomplain(){
-      console.log('hiiiiiiiiiiiiii');
+      //console.log('hiiiiiiiiiiiiii');
       firebase.auth().onAuthStateChanged(user => {
       var user = firebase.auth().currentUser.uid;
       var name=document.getElementById('name').value;
