@@ -34,18 +34,18 @@ var firebaseConfig = {
         var applylink=snapshot.val().applylink;
 
         formdata.innerHTML+=`
-            name  : <input id="name" value="${name}"><br><br>
-            id  : <input id="id" value="${id}"><br><br>
-            domain  : <input id="domain" value="${domain}"><br><br>
-            description  : <textarea id="description" rows="3">${description}</textarea><br><br><br><br>
-            guidelines  : <textarea id="guidelines" rows="3">${guidelines}</textarea><br><br><br><br>
+            Name  : <input id="name" value="${name}"><br><br>
+            ID  : <input id="id" value="${id}"><br><br>
+            Domain  : <input id="domain" value="${domain}"><br><br>
+            Description  : <textarea id="description" rows="3">${description}</textarea><br><br><br><br>
+            Guidelines  : <textarea id="guidelines" rows="3">${guidelines}</textarea><br><br><br><br>
 
-            eligibility : <textarea id="eligibility" rows="3">${eligibility}</textarea><br><br><br><br>
+            Eligibility : <textarea id="eligibility" rows="3">${eligibility}</textarea><br><br><br><br>
 
-            image  : <input id="image" value="${image}"><br><br>
-            video  : <input id="video" value="${video}"><br><br>
-            criteria  : <input id="criteria" value="${criteria}"><br><br>
-            applylink  : <input id="applylink" value="${applylink}"><br><br>
+            Image  : <input id="image" value="${image}"><br><br>
+            Video  : <input id="video" value="${video}"><br><br>
+            Criteria  : <input id="criteria" value="${criteria}"><br><br>
+            Apply Link  : <input id="applylink" value="${applylink}"><br><br>
           `
       });
 

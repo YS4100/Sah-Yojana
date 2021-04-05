@@ -87,28 +87,101 @@ document.getElementById('profile').onclick=function(){
           var bpl=snapshot.val().bpl;
           var occupation=snapshot.val().occupation;
           formdata.innerHTML+=`
-            name  : <input id="name" value=${name}><br><br>
-            gender  : <input id="gender" value=${gender}><br><br>
-            age  : <input id="age" value=${age}><br><br>
-            phone  : <input id="phone" value=${phone}><br><br>
-            email  : <input id="email" value=${email}><br><br>
-            address : <input id="address" value=${address}><br><br>
-            city  : <input id="city" value=${city}><br><br>
-            state  : <input id="state" value=${state}><br><br>
-            country  : <input id="name" value=${country}><br><br>
-            caste  : <input id="caste" value=${caste}><br><br>
-            annualincome  : <input id="annualincome" value=${annualincome}><br><br>
-            bpl  : <input id="bpl" value=${bpl}><br><br>
-            occupation  : <input id="occupation" value=${occupation}><br><br>
+            Name  : <input id="name" value=${name} readonly><br><br>
+            Gender  : <input id="gender" value=${gender} readonly><br><br>
+            Age  : <input id="age" value=${age} ><br><br>
+            Phone  : <input id="phone" value=${phone}><br><br>
+            Email  : <input id="email" value=${email} readonly><br><br>
+            Address : <input id="address" value=${address}><br><br>
+            City  : <input id="city" value=${city}><br><br>
+            State  : <input id="state" value=${state}><br><br>
+            Country  : <input id="name" value=${country}><br><br>
+            Caste  : <input id="caste" value=${caste} readonly><br><br>
+            Annual Income  : <input id="annualincome" value=${annualincome}><br><br>
+            BPL  : <input id="bpl" value=${bpl}><br><br>
+            Occupation  : <input id="occupation" value=${occupation} readonly><br><br>
           `
           snapshot.forEach(property => {
           var prop = property.key;
           var val = property.val();
           var array=["name","gender","age","phone","address","state","city","country","bookmarked","email","caste","annualincome","bpl","occupation", "completeprofile"];
           if(array.includes(prop)==false){
-          formdata.innerHTML+=`
-            ${prop}  : <input id=${prop} value=${val}><br><br>
-          `
+          if(prop=="hectaresofland"){
+              formdata.innerHTML+=`
+              Hectares of Land  : <input id=${prop} value=${val}><br><br>
+              `
+            }
+            else if(prop=="scaleoffarming"){
+              formdata.innerHTML+=`
+              Scale of Farming  : <input id=${prop} value=${val}><br><br>
+              `
+            }
+            else if(prop=="qualification"){
+              formdata.innerHTML+=`
+              Qualification  : <input id=${prop} value=${val}><br><br>
+              `
+            }
+            else if(prop=="standard"){
+              formdata.innerHTML+=`
+              Standard  : <input id=${prop} value=${val}><br><br>
+              `
+            }
+            else if(prop=="typeofschool"){
+              formdata.innerHTML+=`
+              Type of School  : <input id=${prop} value=${val}><br><br>
+              `
+            }
+            else if(prop=="year"){
+              formdata.innerHTML+=`
+              Year  : <input id=${prop} value=${val}><br><br>
+              `
+            }
+            else if(prop=="branch"){
+              formdata.innerHTML+=`
+              Branch  : <input id=${prop} value=${val}><br><br>
+              `
+            }
+            else if(prop=="degree"){
+              formdata.innerHTML+=`
+              Degree  : <input id=${prop} value=${val}><br><br>
+              `
+            }
+            else if(prop=="company"){
+              formdata.innerHTML+=`
+              Company  : <input id=${prop} value=${val}><br><br>
+              `
+            }
+            else if(prop=="typeofcompany"){
+              formdata.innerHTML+=`
+              Type of Company  : <input id=${prop} value=${val}><br><br>
+              `
+            }
+            else if(prop=="pensioned"){
+              formdata.innerHTML+=`
+              Pensioned  : <input id=${prop} value=${val}><br><br>
+              `
+            }
+            else if(prop=="employedat"){
+              formdata.innerHTML+=`
+              Employed At  : <input id=${prop} value=${val}><br><br>
+              `
+            }
+            else if(prop=="typeofjob"){
+              formdata.innerHTML+=`
+              Type of Job  : <input id=${prop} value=${val}><br><br>
+              `
+            }
+            else if(prop=="details"){
+              formdata.innerHTML+=`
+              Details  : <input id=${prop} value=${val}><br><br>
+              `
+            }
+            else if(prop=="partnership"){
+              formdata.innerHTML+=`
+              Partnership  : <input id=${prop} value=${val}><br><br>
+              `
+            }
+
         }
         });
       }

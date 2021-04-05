@@ -32,7 +32,8 @@ var firebaseConfig = {
       eligibility:elig,
       guidelines:guide,
       applylink: applylink,
-      criteria: criteria
+      criteria: criteria,
+      disabled: "no"
       });
     firebase.database().ref('Users').once("value").then(function(snapshot) {
         snapshot.forEach(

@@ -106,7 +106,8 @@ function closeNav() {
           var video=ChildSnapshot.val().video;
           var img=ChildSnapshot.val().image;
           var elig=ChildSnapshot.val().eligibility;
-          if(domain==idd){
+          var disabled=ChildSnapshot.val().disabled;
+          if((domain==idd) && disabled=="no"){
           addi(name,domain,desc,video,img,id,cnt);
           cnt++;
         }
@@ -129,10 +130,13 @@ function closeNav() {
           var video=ChildSnapshot.val().video;
           var img=ChildSnapshot.val().image;
           var elig=ChildSnapshot.val().eligibility;
+          var disabled=ChildSnapshot.val().disabled;
+          if(disabled=="no"){
           addi(name,domain,desc,video,img,id,cnt);
           yojanas.push(name);
           cnt++;
         }
+      }
       );
     });
 
@@ -157,9 +161,12 @@ function closeNav() {
           var video=ChildSnapshot.val().video;
           var img=ChildSnapshot.val().image;
           var elig=ChildSnapshot.val().eligibility;
+          var disabled=ChildSnapshot.val().disabled;
+          if(disabled=="no"){
           addi(name,domain,desc,video,img,id,cnt);
           cnt++;
         }
+      }
       );
     });
   }
