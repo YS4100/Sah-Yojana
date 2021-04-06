@@ -142,5 +142,6 @@ function apply()
 });
 }
 
+
 window.addEventListener('load', setter);
 //window.addEventListener('load',scheduleMail);
