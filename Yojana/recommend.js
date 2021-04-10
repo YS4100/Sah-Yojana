@@ -136,9 +136,10 @@ function check(criteria,userid,name,domain,desc,video,img,id,cnt){
     var gender=snapshot.val().gender;
     var caste=snapshot.val().caste;
     var occ=snapshot.val().occupation;
+    var state=snapshot.val().state;
     age=parseInt(age);
     income=parseInt(income);
-    std=parseInt(std);
+  
     for(var i=0;i<criteria.length;i++){
       var compare=criteria[i].split("=");
       if(compare[0]=="agelow"){
@@ -166,6 +167,11 @@ function check(criteria,userid,name,domain,desc,video,img,id,cnt){
           cntyj=cntyj+1;
         }
       }
+      else if(compare[0]=="state"){
+        if(state.localeCompare(compare[1])==0){
+          cntyj=cntyj+1;
+        }
+      }
       else if(compare[0]=="gender"){
         if(gender.localeCompare(compare[1])==0){
           cntyj=cntyj+1;
@@ -188,8 +194,30 @@ function check(criteria,userid,name,domain,desc,video,img,id,cnt){
           cntyj=cntyj+1;
         }
       }
+      else if(occ=="student" && compare[0]=="year"){
+        var qual=snapshot.val().qualification;
+        if(qual=="diploma"){
+          var year=snapshot.val().diplomayear;
+          if(year==parseInt(compare[1])){
+            cntyj=cntyj+1;
+          }
+        }
+        if(qual=="undergraduate"){
+          var year=snapshot.val().undergraduateyear;
+          if(year==parseInt(compare[1])){
+            cntyj=cntyj+1;
+          }
+        }
+      }
+      else if(occ=="farmer" && compare[0]=="land"){
+        var land=snapshot.val().land;
+        if(land<=parseInt(compare[1])){
+          cntyj=cntyj+1;
+        }
+      }
       else if(occ=="student" && snapshot.val().qualification=="school" && compare[0]=="std"){
         var std=snapshot.val().standard;
+        std=parseInt(std);
         if(std==parseInt(compare[1])){
           //console.log("hi");
           cntyj=cntyj+1;

@@ -34,8 +34,8 @@ var firebaseConfig = {
         var applylink=snapshot.val().applylink;
 
         formdata.innerHTML+=`
-            Name  : <input id="name" value="${name}"><br><br>
-            ID  : <input id="id" value="${id}"><br><br>
+            Name  : <input id="name" value="${name}" readonly><br><br>
+            ID  : <input id="id" value="${id}" readonly><br><br>
             Domain  : <input id="domain" value="${domain}"><br><br>
             Description  : <textarea id="description" rows="3">${description}</textarea><br><br><br><br>
             Guidelines  : <textarea id="guidelines" rows="3">${guidelines}</textarea><br><br><br><br>

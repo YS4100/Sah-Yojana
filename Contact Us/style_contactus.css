@@ -55,7 +55,6 @@ body
 
 
 .header-buttons a{
-	position: absolute;
 	border: 1px solid black;
 	border-radius: 100px;
 	margin: 0 5px;
@@ -63,14 +62,11 @@ body
 	outline:none;
 	color: black;
 	font-size: 1rem;
-	font-weight: 400;
+	font-weight: bold;
 	line-height: 1.4;
 	text-align: center;
-	margin-left: 570px;
-	margin-top: 0;
-	font-weight: bold;
-
 }
+
 .header-buttons a:hover{
 	color:#50d1c0;
 	background: white;

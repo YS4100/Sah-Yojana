@@ -1,0 +1,63 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Poppins, sans-serif;
+}
+a{ text-decoration: none; }
+
+a:hover{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+p{
+	font-size: 0.9rem;
+	line-height: 1.6;
+	font-weight: 400;
+	color: #606060
+}
+.logo{
+	height:40px;
+	padding: 0 5px;
+}
+.header
+{
+	width:100%;
+	background-image: linear-gradient(rgba(256,256,256,0.6),rgba(256,256,256,0.6)), url(background.jpg);
+	height: 100vh;
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.header-section{
+	width: 100%
+	height: inherit;
+	text-align: center;
+	position: relative;
+}
+.header-section h1{
+	font-size: 70px;
+}
+ #map {
+        position: relative;
+        
+        width: 100%;
+      }
+      .marker {
+        background-image: url('https://docs.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png');
+        background-size: cover;
+        width: 40px;
+        height: 40px;
+        border-radius: 40%;
+        cursor: pointer;
+      }
+      .mapboxgl-popup {
+        max-width: 200px;
+      }
+      .mapboxgl-popup-content {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+      }

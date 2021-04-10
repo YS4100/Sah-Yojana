@@ -86,26 +86,8 @@ function submitForm(e){
   createUser(name, email, phone, pass, confpass);
 
   // Show alert
-  document.querySelector('.alert').style.display = 'block';
-
-  // Hide alert after 3 seconds
-  setTimeout(function(){
-    document.querySelector('.alert').style.display = 'none';
-  },3000);
-
-  document.getElementById('signup').reset();
-  setTimeout(myURL,5000);
-   function myURL(){
-          window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");  
-         }
-  
-
   // Clear form
 }
-
-
- 
-
 }
 function checkForm(name, email, phone, password,confpass){
   var atposition=email.indexOf("@");  
@@ -160,19 +142,51 @@ function checkForm(name, email, phone, password,confpass){
 function getInputVal(id){
   return document.getElementById(id).value;
 }
+function myURL(){
+                window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");  
+               }
+function sendVerification(name,email,phone){
+    var user = firebase.auth().currentUser;
+    //console.log(user.uid);
+    user.sendEmailVerification().then(function() {
+      // Email sent.
+      //alert('Verification Email Sent Succesfully!');
+          //console.log('hi');
+          var id=firebase.auth().currentUser.uid;
+          console.log(id);
+          firebase.database().ref('Users/'+id).set({
+           name: name,
+           phone:phone,
+           bookmarked:"abc?",
+           email: email,
+           completeprofile: "no"
+
+          });
+          document.querySelector('.alert').style.display = 'block';
+
+  // Hide alert after 3 seconds
+        setTimeout(function(){
+          document.querySelector('.alert').style.display = 'none';
+        },3000);
+
+        document.getElementById('signup').reset();
+        setTimeout(myURL,5000);
+              
+       // window.location.assign('F:/Sah-Yojana/Signup/login.html')
+        
+    }).catch(function(error) {
+        console.log(error);
+    });
+}
 
 // Save message to firebase
 function createUser(name, email, phone, password){
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
     firebase.auth().createUserWithEmailAndPassword(email,password).then(function(){
-      var id=firebase.auth().currentUser.uid;
-      firebase.database().ref('Users/'+id).set({
-       name: name,
-       phone:phone,
-       bookmarked:"abc?",
-       email: email,
-       completeprofile: "no"
-
-      });
+        sendVerification(name,email,phone);
+        
+    })
+    .catch(error =>{
+      alert(error);
     })
 }

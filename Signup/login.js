@@ -115,16 +115,31 @@ function getInputVal(id){
 
 
     
-// Save message to firebase
 function loginUser(email,pass){
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
     firebase.auth().signInWithEmailAndPassword(email,pass).then(function(){
     var id=firebase.auth().currentUser.uid;
-    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");
-    if(email=="sahyojana@gmail.com")
-      window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login_admin.html");
-    else
-      window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");
+    if(firebase.auth().currentUser.emailVerified){
+      if(email=="sahyojana@gmail.com")
+        window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login_admin.html");
+      else{
+        firebase.database().ref('Users/' +id ).once("value").then(function(snapshot){
+         var flag = snapshot.val().completeprofile;
+         if(flag == "no")
+           window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");
+         else
+           window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");
+      }); 
+      }
+  }
+  else{
+    document.querySelector('.alert').style.display = 'block';
+    setTimeout(function(){
+    document.querySelector('.alert').style.display = 'none';
+  },3000);
+
+  document.getElementById('login').reset();
+  }
     localStorage.setItem('id',id);
    
    }).catch(function(){

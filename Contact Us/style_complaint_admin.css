@@ -29,6 +29,16 @@ body
 	background-repeat: no-repeat;
 	position: relative;
 }
+.header h2
+{
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: normal;
+	letter-spacing: 10px;
+	
+	line-height: 1.5;
+	margin-top: 50px;
+}
 .header-section{
 	width: 100%
 	height: inherit;
