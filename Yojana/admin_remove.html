@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Remove Page</title>
+	<script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> 
+    </script>
+	<style> 
+      
+        /* Body alignment */     
+        body { 
+            text-align: center; 
+        } 
+          
+        /* Color for h1 tag */
+        h1 { 
+            color: blue; 
+        } 
+          
+        /* Designing dialog box */
+        #container { 
+            display: none; 
+            background-image: linear-gradient(to right, #66a80f, #c0eb75); 
+            background-size:cover; 
+            color: white; 
+            position: absolute; 
+            width: 350px; 
+            border-radius: 5px; 
+            left: 50%; 
+            margin-left: -160px; 
+            padding: 16px 8px 8px; 
+            box-sizing: border-box; 
+        } 
+          
+        /* Designing dialog box's okay buttun */
+        
+          
+        /* Dialog box message decorating */
+        #container .message { 
+            text-align: left; 
+            padding: 10px 30px; 
+        } 
+        .header-buttons a{
+    border: 1px solid black;
+    border-radius: 100px;
+    margin: 0 5px;
+    padding: 12px 35px;
+    outline:none;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.header-buttons a:hover{
+    color:#50d1c0;
+    background: white;
+    text-decoration: none;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
+    </style> 
+</head>
+<body>
+<h1>SAH-YOJANA</h1> 
+    <b>Choose Action for the Yojana</b> 
+    <br><br> 
+    <div id="container"> 
+       
+        
+        <button class="no">Unsubscribe</button> 
+    </div> 
+    <input type="button" value="Remove from Database" onclick="removeyojana();"  id="remove" > 
+    <input type="button" name="" value="Disable" onclick="disableyojana();" id="disable">
+</body>
+</html>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script src="admin_remove.js"></script>
