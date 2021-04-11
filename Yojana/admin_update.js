@@ -17,7 +17,7 @@ var firebaseConfig = {
     {
       var queryString = location.search.substring(1);
        var idd = queryString.split("?");
-       console.log(idd);
+       //console.log(idd);
       var formdata=document.getElementById('data');
      
       firebase.database().ref('Yojanas/' + idd).once("value").then(function(snapshot) {
@@ -63,11 +63,14 @@ var firebaseConfig = {
       ref.once("value").then(function(snapshot){
           snapshot.forEach(property => {
           var prop = property.key;
+          var array=["disabled"];
+          if(array.includes(prop)==false){
           var val= document.getElementById(prop).value;
  
           ref.update({
             [prop] : val
           });
+        }
         });
       }
       );
