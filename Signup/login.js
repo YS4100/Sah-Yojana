@@ -123,8 +123,12 @@ function loginUser(email,pass){
       if(email=="sahyojana@gmail.com")
         window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login_admin.html");
       else{
-        firebase.database().ref('Users/' +id ).once("value").then(function(snapshot){
+        var ref = firebase.database().ref('Users/' +id );
+        ref.once("value").then(function(snapshot){
          var flag = snapshot.val().completeprofile;
+         ref.update({
+          showprompt:"yes"
+         });
          if(flag == "no")
            window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");
          else

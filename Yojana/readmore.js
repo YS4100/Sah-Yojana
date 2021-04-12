@@ -99,6 +99,50 @@ document.getElementById('profile').onclick=function(){
     var elig=myData[4];*/
    
   }
+/*function bookmark()
+{
+  var queryString = location.search.substring(1);
+  var idd = queryString.split("?");
+  firebase.auth().onAuthStateChanged(user => {
+  if(user){
+  var user = firebase.auth().currentUser.uid;
+  var ref = firebase.database().ref('Users/').child(user);
+  ref.once("value").then(function(snapshot){
+   var data=snapshot.val().bookmarked;
+   if((data).search(idd[0])==-1){
+    //console.log(data);
+    data=data+idd+'?';
+    ref.update({
+      'bookmarked':data
+    });
+    //document.getElementById('bookmark_btn').disabled = true;
+   }
+   else
+   {
+    window.alert("Already bookmarked");
+   }
+  });
+}
+});
+}
+
+function apply()
+{
+  
+  var queryString = location.search.substring(1);
+  var idd = queryString.split("?");
+  firebase.auth().onAuthStateChanged(user => {
+  if(user){
+  //var user = firebase.auth().currentUser.uid;
+  var ref = firebase.database().ref('Yojanas/' + idd);
+  ref.once("value").then(function(snapshot){
+   var data=snapshot.val().applylink;
+   window.location.replace(data);
+  });
+}
+});
+}
+*/
 function bookmark()
 {
   var queryString = location.search.substring(1);
@@ -132,6 +176,18 @@ function apply()
   var idd = queryString.split("?");
   firebase.auth().onAuthStateChanged(user => {
   if(user){
+    var userid=firebase.auth().currentUser.uid;
+    var reff=firebase.database().ref('Users/'+userid);
+    reff.once("value").then(function(snapshot){
+   var pending=snapshot.val().applypending;
+   if((pending).search(idd[0])==-1){
+    //console.log(data);
+    pending=pending+'?'+idd;
+    reff.update({
+      'applypending':pending
+    });
+  }
+});
   //var user = firebase.auth().currentUser.uid;
   var ref = firebase.database().ref('Yojanas/' + idd);
   ref.once("value").then(function(snapshot){
@@ -141,7 +197,5 @@ function apply()
 }
 });
 }
-
-
 window.addEventListener('load', setter);
 //window.addEventListener('load',scheduleMail);

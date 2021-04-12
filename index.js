@@ -79,4 +79,4 @@ document.getElementById('profile').onclick=function(){
     }
   });
 }*/
-window.addEventListener('load',verify);
+//window.addEventListener('load',verify);

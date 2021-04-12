@@ -159,7 +159,10 @@ function sendVerification(name,email,phone){
            phone:phone,
            bookmarked:"abc?",
            email: email,
-           completeprofile: "no"
+           completeprofile: "no",
+           applydone: "abc",
+           applypending: "abc",
+           showprompt: "no"
 
           });
           document.querySelector('.alert').style.display = 'block';

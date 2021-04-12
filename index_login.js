@@ -85,3 +85,135 @@ function logout()
     window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index.html");
   }); 
 }
+
+/*function test(){
+  firebase.auth().onAuthStateChanged(user => {
+    if(user){
+      var user=firebase.auth().currentUser.uid;
+      //console.log(user);
+      var reff=firebase.database().ref('Users/'+user);
+        reff.once("value").then(function(snapshot){
+       var pending=snapshot.val().applypending;
+       var showprompt=snapshot.val().showprompt;
+       var applypending = pending.split("?");
+       var applydone=snapshot.val().applydone;
+       let ans=["junk"];
+       //console.log(applydone);
+       if(applypending.length>1 && showprompt=="yes"){
+        //console.log('hi');
+         //for(var i=1;i<applypending.length;i++){
+          //var id=applypending[i];
+          //if(id!=""){
+          firebase.database().ref('Yojanas').once("value").then(function(snapshot){
+            snapshot.forEach(
+              function(childSnapshot){
+                var name=childSnapshot.val().name;
+                var id = childSnapshot.val().id;
+                if(applypending.includes(id))
+                {
+                   var status = prompt("Have you applied to "+name+"?", "Enter Yes/No");
+                   ans.push(status.toLowerCase());
+                }
+              });
+         
+        });
+        //}
+      //}
+      console.log(ans);
+      for(var i=1;i<ans.length;i++)
+      {
+        //console.log('hi');
+        if(ans[i]=="yes")
+        {
+          var temp = '?' + applypending[i];
+          pending = pending.replace(temp,"");
+          applydone=applydone+'?'+id;
+        }
+        else
+        {
+          console.log('No');
+        }
+      }
+      //console.log(applydone);
+      //console.log(ans);
+       reff.update({
+        //showprompt:"no"
+            applydone:applydone,
+            applypending:pending
+        });
+
+     }
+   });
+      }
+    });
+}
+      
+
+window.addEventListener('load',test);*/
+function test(){
+  firebase.auth().onAuthStateChanged(user => {
+    if(user){
+      var user=firebase.auth().currentUser.uid;
+      //console.log(user);
+      var reff=firebase.database().ref('Users/'+user);
+        reff.once("value").then(function(snapshot){
+       var pending=snapshot.val().applypending;
+       var showprompt=snapshot.val().showprompt;
+       var applypending = pending.split("?");
+       var applydone=snapshot.val().applydone;
+       var email = snapshot.val().email;
+       var user_name = snapshot.val().name;
+       //console.log(applypending);
+       if(applypending.length>1 && showprompt=="yes"){
+          firebase.database().ref('Yojanas').once("value").then(function(snapshot){
+             snapshot.forEach(
+              function(childSnapshot){
+                var name=childSnapshot.val().name;
+                var id = childSnapshot.val().id;
+                if(applypending.includes(id))
+                {
+                   var status = prompt("Have you applied to "+name+"?", "Enter Yes/No");
+                   if(status.toLowerCase()=="yes"){
+                    //var appid = prompt("Please Enter your Application ID");
+                    //if(appid!=null)
+                    //{
+                      //var temp = appid;
+                    //}
+                    var temp = '?' + id ;
+                    pending = pending.replace(temp,"");
+                    applydone=applydone+'?'+id;
+                     console.log(applydone);
+                     reff.update({
+                    showprompt: "no",
+                    applydone: applydone,
+                    applypending: pending
+
+                    });
+                    var sub = `Announcement: ${name}`;
+                    var body = `<p>Hello ${user_name},<br><br>
+                    We got to know that you have applied for <b>${name}</b>. Please submit your feedback so that we can help you through the process.<br><br>
+                    Click <a href="https://forms.gle/NKXz1CbnHD4vH32A8">Here</a> to fill the feedback.<br><br>
+                    Regards,<br>Team Sah-Yojana.</p>`;
+                    Email.send({
+                      SecureToken: "6874ee7a-699d-49b4-8501-c21635e200b2",
+                      To: email,
+                      From: "sahyojana@gmail.com",
+                      Subject: sub,
+                      Body: body
+                    })
+
+                  }
+                   else{
+                     console.log('No');
+                    }
+                }
+              });
+           });
+
+        }
+      });
+      }
+    });
+};
+
+window.addEventListener('load',test);
