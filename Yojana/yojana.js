@@ -251,18 +251,6 @@ document.getElementById('searchBar').addEventListener("keyup", function(event) {
       );
     });
   }
-  function checkprofile(){
-    var user=firebase.auth().currentUser.uid;
-    firebase.database().ref('Users/'+user).once("value").then(function(snapshot) {
-      var complete=snapshot.val().completeprofile;
-      if(complete=="yes"){
-        window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Yojana/recommend.html");
-      }
-      else{
-        window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");
-      }
 
-  });
-  }
    window.addEventListener('load', fetch);
 

@@ -64,6 +64,28 @@ document.getElementById('profile').onclick=function(){
     });  
  }
 };
+document.getElementById('recommend').onclick=function(){
+     if(user==null)
+     {
+       window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");
+      }
+      else
+      {
+        window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Yojana/recommend.html");
+      }
+ };
+ document.getElementById('applied').onclick=function()
+ {
+  if(user==null)
+  {
+    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");
+  }
+  else
+  {
+    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Check Status/check_status.html");
+  }
+
+ };
 })
   function display(){
     firebase.auth().onAuthStateChanged(user => {
@@ -90,7 +112,7 @@ document.getElementById('profile').onclick=function(){
             Name  : <input id="name" value=${name} readonly><br><br>
             Gender  : <input id="gender" value=${gender} readonly><br><br>
             Age  : <input id="age" value=${age} ><br><br>
-            Phone  : <input id="phone" value=${phone}><br><br>
+            Phone  : <input id="phone" value=${phone} readonly><br><br>
             Email  : <input id="email" value=${email} readonly><br><br>
             Address : <input id="address" value=${address}><br><br>
             City  : <input id="city" value=${city}><br><br>
@@ -104,7 +126,7 @@ document.getElementById('profile').onclick=function(){
           snapshot.forEach(property => {
           var prop = property.key;
           var val = property.val();
-          var array=["name","gender","age","phone","address","state","city","country","bookmarked","email","caste","annualincome","bpl","occupation", "completeprofile"];
+          var array=["name","gender","age","phone","address","state","city","country","bookmarked","email","caste","annualincome","bpl","occupation", "completeprofile", "applypending", "applydone", "showprompt", "appid"];
           if(array.includes(prop)==false){
           if(prop=="hectaresofland"){
               formdata.innerHTML+=`
@@ -199,12 +221,18 @@ document.getElementById('profile').onclick=function(){
       var ref = firebase.database().ref('Users/'+user);
       ref.once("value").then(function(snapshot){
           snapshot.forEach(property => {
-          var prop = property.key;
-          var val= document.getElementById(prop).value;
+            var prop=property.key;
+            var arr =["completeprofile", "applypending", "applydone", "showprompt", "bookmarked", "appid"];
+            console.log(prop);
+            if(arr.includes(prop)==false)
+           {
+             //var prop = property.key;
+            var val= document.getElementById(prop).value;
  
           ref.update({
             [prop] : val
           });
+           }
         });
       }
       );

@@ -64,6 +64,28 @@ document.getElementById('profile').onclick=function(){
     }); 
  }
 };
+document.getElementById('recommend').onclick=function(){
+     if(user==null)
+     {
+       window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");
+      }
+      else
+      {
+        window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Yojana/recommend.html");
+      }
+ };
+ document.getElementById('applied').onclick=function()
+ {
+  if(user==null)
+  {
+    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");
+  }
+  else
+  {
+    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Check Status/check_status.html");
+  }
+
+ };
 })
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2FoeW9qYW5hIiwiYSI6ImNrbjQ3NmE2bzA0Mncydm9menh5ODBmdmoifQ.6m6uQrelwh7rR35GQRAElg';
 /*var map = new mapboxgl.Map({

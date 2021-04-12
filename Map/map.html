@@ -31,14 +31,19 @@
 	      <li class="nav-item">
 	        <a class="nav-link" href="C:/Users/Yashvi/Desktop/Sah-Yojana/About Us/about_us.html">About Us</a>
 	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#" id="yojana">Yojana</a>
-	      </li>
+	      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Yojana
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#" id="yojana">All Yojanas</a>
+          <a class="dropdown-item" href="#" id="recommend">Recommended Yojanas</a>
+          <a class="dropdown-item" href="#" id="bookmark">Bookmarked Yojanas</a>
+          <a class="dropdown-item" href="#" id="applied">Applied Yojanas</a>
+        </div>
+      </li>
 	      <li class="nav-item">
 	        <a class="nav-link" href="C:/Users/Yashvi/Desktop/Sah-Yojana/FAQ/faq.html">FAQ</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#" id="bookmark">Bookmarked</a>
 	      </li>
 	      <li class="nav-item active">
 	        <a class="nav-link" href="Contact Us/contact_us.html">Contact Us<span class="sr-only">(current)</span></a>
@@ -53,12 +58,11 @@
 	</nav>
 <div id='map' style='width: 100%; height: 100%;' align="center;"></div>
 </div>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
   <script src="map.js"></script>
 </body>
 </html>

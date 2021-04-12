@@ -10,12 +10,8 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  //var userRef = firebase.database().ref('user');
-
-// Listen for form submit
-// Listen for form submit
 firebase.auth().onAuthStateChanged(user => {
- document.getElementById('home').onclick=function(){
+   document.getElementById('home').onclick=function(){
   
  if(user==null)
  {
@@ -58,9 +54,11 @@ document.getElementById('profile').onclick=function(){
  }
  else
  {
-   var temp = firebase.auth().currentUser.uid;
-    firebase.database().ref('Users/' +temp ).once("value").then(function(snapshot){
+    var temp = firebase.auth().currentUser.uid;
+
+    firebase.database().ref('Users/' + temp ).once("value").then(function(snapshot){
        var flag = snapshot.val().completeprofile;
+       console.log(flag);
        if(flag == "no")
          window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");
        else
@@ -91,25 +89,46 @@ document.getElementById('recommend').onclick=function(){
 
  };
 })
-function addcomplain(){
-      //console.log('hiiiiiiiiiiiiii');
-      firebase.auth().onAuthStateChanged(user => {
-      var user = firebase.auth().currentUser.uid;
-      var name=document.getElementById('name').value;
-      var email=document.getElementById('email').value;
-      var yojana=document.getElementById('yojananame').value;
-      var issue=document.getElementById('issue').value;
-      var msg=document.getElementById('msg').value;
-      var ref=firebase.database().ref('Complaints');
-      ref.push({
-       user: user,
-       name: name,
-       email:email,
-       yojana: yojana,
-       issue: issue,
-       msg:msg
-      });
-      document.getElementById('compform').reset();
+
+  function addi(name, appid, link){
+    document.getElementById('list').innerHTML+=`
+    <div class="card">
+   
+    <div class="card-body">
+    <h5 class="card-title">${name}</h5>
+    <p class="card-text">Your Application ID is: ${appid}</p>
+    <a href="admin_reply.html?${link}" class="btn btn-primary">Check Application Status</a>
+  </div>
+  </div>
+  `
+  }
+
+  function display(){
+     firebase.auth().onAuthStateChanged(user => {
+    if(user){
+      var user=firebase.auth().currentUser.uid;
+       var ref = firebase.database().ref('Users/' + user);
+       ref.once("value").then(function(snapshot) {
+        var applydone = snapshot.val().applydone;
+        ref.child("appid").once("value").then(function(snap){
+          snap.forEach(property => {
+          var id = property.key;
+          var appid= property.val(); 
+          console.log(appid);
+           firebase.database().ref('Yojanas/' +id).once("value").then(function(snaps) {
+            var name=snaps.val().name;
+            var link = snaps.val().applylink;
+
+            addi(name, appid, link);
     });
-}
-document.getElementById('submit').addEventListener('click',addcomplain);
+          });
+        });
+
+       });
+    }
+  });
+   
+  }
+
+
+  window.addEventListener('load', display);

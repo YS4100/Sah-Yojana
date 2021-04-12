@@ -232,9 +232,14 @@ function check(criteria,userid,name,domain,desc,video,img,id,cnt){
 }
 
 function fetch(){
-  var cnt=0;
-  firebase.auth().onAuthStateChanged(user => {
+    firebase.auth().onAuthStateChanged(user => {
     if(user){
+   var user=firebase.auth().currentUser.uid;
+    firebase.database().ref('Users/'+user).once("value").then(function(snapshot) {
+      var complete=snapshot.val().completeprofile;
+      if(complete=="yes"){
+        var cnt=0;
+
       var userid=firebase.auth().currentUser.uid;
       //console.log(id);
       firebase.database().ref('Yojanas/').once("value").then(function(snapshot) {
@@ -257,7 +262,15 @@ function fetch(){
       );
       
     });
-    }
+  
+      }
+      else{
+        window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");
+      }
+      
+
+  });
+   }
 });
 }
 
