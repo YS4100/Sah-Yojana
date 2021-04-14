@@ -20,6 +20,8 @@ var firebaseConfig = {
     var elig=document.getElementById('eligibility').value;
     var guide=document.getElementById('guidelines').value;
     var applylink = document.getElementById('applylink').value;
+    var checkstatus = document.getElementById('checkstatuslink').value;
+    var helpline = document.getElementById('helpline').value;
     var criteria = document.getElementById('criteria').value;
     //console.log(name);
     firebase.database().ref('Yojanas/' + id).set({
@@ -33,6 +35,8 @@ var firebaseConfig = {
       guidelines:guide,
       applylink: applylink,
       criteria: criteria,
+      checkstatus: checkstatus,
+      helpline: helpline,
       disabled: "no"
       });
     firebase.database().ref('Users').once("value").then(function(snapshot) {

@@ -31,6 +31,7 @@ var firebaseConfig = {
         var image=snapshot.val().image;
         var video=snapshot.val().video;
         var criteria=snapshot.val().criteria;
+        var checkstatus = snapshot.val().checkstatus;
         var applylink=snapshot.val().applylink;
 
         formdata.innerHTML+=`
@@ -45,6 +46,7 @@ var firebaseConfig = {
             Image  : <input id="image" value="${image}"><br><br>
             Video  : <input id="video" value="${video}"><br><br>
             Criteria  : <input id="criteria" value="${criteria}"><br><br>
+            Check Status Link :   <input id="checkstatuslink" value="${checkstatus}"><br><br>
             Apply Link  : <input id="applylink" value="${applylink}"><br><br>
           `
       });

@@ -112,12 +112,12 @@ document.getElementById('recommend').onclick=function(){
             Name  : <input id="name" value=${name} readonly><br><br>
             Gender  : <input id="gender" value=${gender} readonly><br><br>
             Age  : <input id="age" value=${age} ><br><br>
-            Phone  : <input id="phone" value=${phone} readonly><br><br>
+            Phone  : <input id="phone" value=${phone}><br><br>
             Email  : <input id="email" value=${email} readonly><br><br>
             Address : <input id="address" value=${address}><br><br>
             City  : <input id="city" value=${city}><br><br>
             State  : <input id="state" value=${state}><br><br>
-            Country  : <input id="name" value=${country}><br><br>
+            Country  : <input id="country" value=${country}><br><br>
             Caste  : <input id="caste" value=${caste} readonly><br><br>
             Annual Income  : <input id="annualincome" value=${annualincome}><br><br>
             BPL  : <input id="bpl" value=${bpl}><br><br>
@@ -223,15 +223,21 @@ document.getElementById('recommend').onclick=function(){
           snapshot.forEach(property => {
             var prop=property.key;
             var arr =["completeprofile", "applypending", "applydone", "showprompt", "bookmarked", "appid"];
-            console.log(prop);
+            //console.log(prop);
             if(arr.includes(prop)==false)
            {
              //var prop = property.key;
             var val= document.getElementById(prop).value;
- 
-          ref.update({
-            [prop] : val
-          });
+            if(val!="")
+            {
+               ref.update({
+              [prop] : val
+              });
+            }
+            else
+            {
+              alert("Field cannot be empty!!");
+            }
            }
         });
       }

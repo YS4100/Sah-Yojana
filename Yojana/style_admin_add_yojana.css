@@ -35,14 +35,15 @@ body
 	text-align: center;
 	position: relative;
 }
-.header h1
+.header h2
 {
 	text-transform: uppercase;
 	text-align: center;
 	font-weight: normal;
 	letter-spacing: 10px;
 	font-size: 25px;
-	line-height: 1.5;
+
+	margin-top: 0;
 }
 .header p{
 	padding: 0 15px;
@@ -57,6 +58,10 @@ form {
   margin: 0 auto;
 }
 label{
+	margin-top: 5px;
+}
+.header-buttons
+{
 	margin-top: 5px;
 }
 .header-buttons a{

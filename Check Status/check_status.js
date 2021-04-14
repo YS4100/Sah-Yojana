@@ -90,19 +90,32 @@ document.getElementById('recommend').onclick=function(){
  };
 })
 
-  function addi(name, appid, link){
+  function addi(name, appid, link, helpline){
     document.getElementById('list').innerHTML+=`
     <div class="card">
    
     <div class="card-body">
     <h5 class="card-title">${name}</h5>
-    <p class="card-text">Your Application ID is: ${appid}</p>
-    <a href="admin_reply.html?${link}" class="btn btn-primary">Check Application Status</a>
+    <p class="card-text">Your Application ID is: ${appid}<br>Helpline Number: ${helpline}</p>
+    <a href="#" class="btn btn-primary" onclick="check('${link}')">Check Application Status</a>
   </div>
   </div>
   `
   }
 
+function check(link)
+{
+  console.log(link);
+  if(link=="")
+  {
+    console.log("hi");
+    alert("Tracking not available for this yojana");
+  }
+  else
+  {
+    window.location.replace(link);
+  }
+}
   function display(){
      firebase.auth().onAuthStateChanged(user => {
     if(user){
@@ -114,12 +127,13 @@ document.getElementById('recommend').onclick=function(){
           snap.forEach(property => {
           var id = property.key;
           var appid= property.val(); 
-          console.log(appid);
+          //console.log(appid);
            firebase.database().ref('Yojanas/' +id).once("value").then(function(snaps) {
             var name=snaps.val().name;
-            var link = snaps.val().applylink;
+            var link = snaps.val().checkstatus;
+            var helpline = snaps.val().helpline;
 
-            addi(name, appid, link);
+            addi(name, appid, link, helpline);
     });
           });
         });

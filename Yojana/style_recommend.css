@@ -16,11 +16,6 @@ body
 	background-size: cover;
 }
 
-
-#title
-{
-	letter-spacing: 10px;
-}
 a{ text-decoration: none; }
 
 a:hover{
@@ -42,6 +37,17 @@ p{
 	margin-left: 0;
 }
 
+#title
+{
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: normal;
+	letter-spacing: 10px;
+	line-height: 1.5;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
  .blog-card {
 	 display: flex;
 	 flex-direction: column;
@@ -55,6 +61,7 @@ p{
 	 overflow: hidden;
 	 z-index: 0;
 	 width: 880px;
+}
 }
 }
  .blog-card a {
@@ -105,17 +112,7 @@ p{
  .blog-card .details ul li {
 	 display: inline-block;
 }
- /*.blog-card .details .author:before {
-	 content: "\f001";
-	 font-family: FontAwesome3
-	 margin-right: 10px;
-	 
-}
- .blog-card .details .date:before {
-	 font-family: FontAwesome;
-	 margin-right: 10px;
-	 content: "\f133";
-}*/
+
  .blog-card .details .tags ul:before {
 	 font-family: FontAwesome;
 	 content: "\f03d";
