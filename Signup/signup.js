@@ -213,5 +213,6 @@ function createUser(name, email, phone, password){
     })
     .catch(error =>{
       alert(error);
+      document.getElementById('signup').reset();
     })
 }

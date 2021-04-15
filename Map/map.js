@@ -105,7 +105,20 @@ style: 'mapbox://styles/mapbox/streets-v11'
             },
             'properties': {
               'title': 'PWD Office',
-              'description': 'Ambavadi, Ahmedabad'
+              'description': 'Aam Aadmi Bima Yojana',
+              'office': '2nd Ln, Panchavati Society, Gulbai Tekra, Ahmedabad, Gujarat 380015'
+            }
+          },
+           {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Point',
+              'coordinates': [72.65718,23.22150]
+            },
+            'properties': {
+              'title': 'New Sachivalay',
+              'description': 'Pradhan Mantri Kisaan Maandhan Yojana',
+              'office': 'Agriculture, Farmers Welfare and Co-operation Department, Block No. 5, First floor,New Sachivalaya ,Gandhinagar, Gujarat'
             }
           },
           {
@@ -116,18 +129,20 @@ style: 'mapbox://styles/mapbox/streets-v11'
             },
             'properties': {
               'title': 'Municipal Office',
-              'description': 'Grant Road, Mumbai'
+              'description': 'Doodh Sanjeevani Yojana',
+              'office': 'Grant Road (W), Nana Chowk, Mumbai, Maharashtra 400007'
             }
           },
           {
             'type': 'Feature',
             'geometry': {
               'type': 'Point',
-              'coordinates': [77.08190, 28.63881]
+              'coordinates': [77.21498, 28.61124]
             },
             'properties': {
-              'title': 'Delhi Officers Administration',
-              'description': 'Tilak Nagar, Delhi'
+              'title': 'Nirman Bhawan',
+              'description': 'Pradhan Mantri Awas Yojana',
+              'office': 'Rajpath Area, Central Secretariat, New Delhi, Delhi 110001'
             }
           },
           {
@@ -138,7 +153,8 @@ style: 'mapbox://styles/mapbox/streets-v11'
             },
             'properties': {
               'title': 'District Registrar Office',
-              'description': 'Mysore, Karnataka'
+              'description': 'Indira Gandhi Old Age Pension Scheme',
+              'office' : 'Sunnadakeri, Rahmania Mohalla, Mysuru, Karnataka 570004'
             }
           },
           {
@@ -149,7 +165,8 @@ style: 'mapbox://styles/mapbox/streets-v11'
             },
             'properties': {
               'title': 'Rajasthan Government Office',
-              'description': 'Jaiselmer, Rajasthan'
+              'description': 'Manav Kalyan Yojana',
+              'office' : 'Suthar Para, Jaisalmer, Rajasthan 345001'
             }
           },
           {
@@ -160,7 +177,8 @@ style: 'mapbox://styles/mapbox/streets-v11'
             },
             'properties': {
               'title': 'Government Office',
-              'description': 'Bamnai, Madhya Pradesh'
+              'description': 'Sarasati Sadhana Yojana',
+              'office': 'Bamnai, Madhya Pradesh 464990'
             }
           },
           {
@@ -171,7 +189,8 @@ style: 'mapbox://styles/mapbox/streets-v11'
             },
             'properties': {
               'title': 'Haryana Office',
-              'description': 'Jind, Haryana'
+              'description': 'Shravan Tirthdarshan Yojana',
+              'office' : 'Old Court Road, Jind, Haryana 126110, Rani Talab, Jind, Haryana 126102'
             }
           },
           {
@@ -182,7 +201,8 @@ style: 'mapbox://styles/mapbox/streets-v11'
             },
             'properties': {
               'title': 'Tahsildar Office',
-              'description': 'Nagla Bari, Uttar Pradesh'
+              'description': 'Government Hostel Scheme',
+              'office': 'Nagla Bari, Uttar Pradesh 283111'
             }
           },
           {
@@ -193,7 +213,8 @@ style: 'mapbox://styles/mapbox/streets-v11'
             },
             'properties': {
               'title': 'Government Office',
-              'description': 'Siddipet, Telangana'
+              'description': 'Swasthya Bima Yojana',
+              'office': '11-4-85, Bharath Nagar, Siddipet, Telangana 502103'
             }
           },
           {
@@ -204,7 +225,8 @@ style: 'mapbox://styles/mapbox/streets-v11'
             },
             'properties': {
               'title': 'AP Government Office',
-              'description': 'Guntur, Andhra Pradesh'
+              'description': 'Namo E Tabs Scheme',
+              'office': 'Brodipet, Guntur, Andhra Pradesh'
             }
           },
           {
@@ -215,7 +237,8 @@ style: 'mapbox://styles/mapbox/streets-v11'
             },
             'properties': {
               'title': 'PWD Office',
-              'description': 'Umerkote, Odisha'
+              'description': 'Manav Kalyan Yojana',
+              'office' : 'Umerkote, Odisha 764073'
             }
           },
           {
@@ -226,7 +249,8 @@ style: 'mapbox://styles/mapbox/streets-v11'
             },
             'properties': {
               'title': 'Divisional Office',
-              'description': 'Raipur, Chattisgarh'
+              'description': 'Senior Citizens Saving Scheme',
+               'office': 'Main Rd, Janta Colony, Raipur, Chhattisgarh 492001'
             }
           },
           {
@@ -237,7 +261,8 @@ style: 'mapbox://styles/mapbox/streets-v11'
             },
             'properties': {
               'title': 'Jharkhand Sarkar Karyalaya',
-              'description': 'Dhanbad, Jharkhand'
+              'description': 'Pandey Muhalla, Dhanbad, Jharkhand 826001',
+              'office': 'Manav Kalyan Yojana'
             }
           },
           {
@@ -247,8 +272,9 @@ style: 'mapbox://styles/mapbox/streets-v11'
               'coordinates': [88.39397, 22.58336]
             },
             'properties': {
-              'title': 'Govt. Office',
-              'description': 'Kolkata, West Bengal'
+              'title': 'Goverment Of West Bengal Office Of The Joint Director',
+              'description': 'Education Loan Interest Subsidy Scheme',
+              'office': 'No.55/6A, Bibhuti Bandyopadhyay Sarani Rd, Palm Ave, Ballygunge Park, Ballygunge, Kolkata, West Bengal 700019'
             }
           },
           {
@@ -258,8 +284,9 @@ style: 'mapbox://styles/mapbox/streets-v11'
               'coordinates': [80.23214, 13.01767]
             },
             'properties': {
-              'title': 'Government of Tamil Nadu',
-              'description': 'Chennai, Tamil Nadu'
+              'title': 'Tamil Development Department',
+              'description': 'Suryashakti Kisan Yojana',
+              'office': 'Egmore, Chennai, Tamil Nadu 600008'
             }
           },
           {
@@ -270,9 +297,23 @@ style: 'mapbox://styles/mapbox/streets-v11'
             },
             'properties': {
               'title': 'Janta Bhawan',
-              'description': 'Guwahati, Assam'
+              'description': 'Pradhan Mantri Fasal Bima Yojana',
+              'office': 'Secretariat Rd, Dispur, Guwahati, Assam 781006'
             }
           },
+          {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Point',
+              'coordinates': [72.53839, 23.05410]
+            },
+            'properties': {
+              'title': 'Land Registry Office',
+              'description': 'Gujarat Masiha Housing Scheme',
+              'office' : ' Memnagar, Ahmedabad, Gujarat 380052'
+            }
+          },
+
         ]
       };
 
@@ -299,6 +340,8 @@ style: 'mapbox://styles/mapbox/streets-v11'
                   marker.properties.title +
                   '</h3><p>' +
                   marker.properties.description +
+                  '</p><p>' + 
+                  marker.properties.office + 
                   '</p>'
               )
           )

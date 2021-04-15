@@ -129,7 +129,7 @@ function test(){
                 var id = childSnapshot.val().id;
                 if(applypending.includes(id))
                 {
-                   var status = prompt("Have you applied to "+name+"?", "Enter Yes/No");
+                   var status = prompt("Have you applied to "+name+"? Enter \n'Yes' if you have applied \n'Later' if you will apply later \n'No' if you dont want to apply!", "Enter Yes/Later/No");
                    if(status.toLowerCase()=="yes"){
                     var appid = prompt("Please Enter your Application ID for " + id);
                     var temp = '?' + id ;
@@ -168,8 +168,18 @@ function test(){
                     })
 
                   }
+                  else if(status.toLowerCase()=="no"){
+                    var temp = '?' + id ;
+                    pending = pending.replace(temp,"");
+                     //console.log(applydone);
+                     reff.update({
+                    showprompt: "no",
+                    applydone: applydone,
+                    applypending: pending
+                    });
+                  }
                    else{
-                     console.log('No');
+                     console.log('Later');
                      reff.update({
                       showprompt: "no"
                      });
