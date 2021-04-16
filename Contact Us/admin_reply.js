@@ -68,6 +68,15 @@ function sendEmail(){
         .then(function (message) {
           alert("mail sent successfully");
           ref.remove();
+          var reff=firebase.database().ref('Users/ADfh8gMpbyen3AAEF6AkNBy1D1j1');
+          reff.once("value").then(function(snapshot){
+            var resolved=snapshot.val().resolved;
+            resolved=parseInt(resolved);
+            resolved++;
+            reff.update({
+              resolved:resolved
+            })
+          });
           
         });
   });

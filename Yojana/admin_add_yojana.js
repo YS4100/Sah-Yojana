@@ -37,6 +37,8 @@ var firebaseConfig = {
       criteria: criteria,
       checkstatus: checkstatus,
       helpline: helpline,
+      applied :0,
+      bookmarked: 0,
       disabled: "no"
       });
     firebase.database().ref('Users').once("value").then(function(snapshot) {

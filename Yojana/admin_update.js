@@ -65,7 +65,7 @@ var firebaseConfig = {
       ref.once("value").then(function(snapshot){
           snapshot.forEach(property => {
           var prop = property.key;
-          var array=["disabled"];
+          var array=["disabled", "applied", "bookmarked"];
           if(array.includes(prop)==false){
           var val= document.getElementById(prop).value;
  

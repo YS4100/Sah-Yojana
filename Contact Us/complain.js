@@ -109,6 +109,14 @@ function addcomplain(){
        issue: issue,
        msg:msg
       });
+      var reff=firebase.database().ref('Users/ADfh8gMpbyen3AAEF6AkNBy1D1j1');
+          reff.once("value").then(function(snapshot){
+            var complaints=snapshot.val().complaints;
+            complaints++;
+            reff.update({
+              complaints:complaints
+            })
+          });
       document.getElementById('compform').reset();
     });
 }

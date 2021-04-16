@@ -149,7 +149,8 @@ function loginUser(email,pass){
         ref.once("value").then(function(snapshot){
          var flag = snapshot.val().completeprofile;
          ref.update({
-          showprompt:"yes"
+          showprompt:"yes",
+          isOnline: "yes"
          });
          if(flag == "no")
            window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");

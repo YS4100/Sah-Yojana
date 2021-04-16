@@ -126,7 +126,7 @@ document.getElementById('recommend').onclick=function(){
           snapshot.forEach(property => {
           var prop = property.key;
           var val = property.val();
-          var array=["name","gender","age","phone","address","state","city","country","bookmarked","email","caste","annualincome","bpl","occupation", "completeprofile", "applypending", "applydone", "showprompt", "appid"];
+          var array=["isOnline","name","gender","age","phone","address","state","city","country","bookmarked","email","caste","annualincome","bpl","occupation", "completeprofile", "applypending", "applydone", "showprompt", "appid"];
           if(array.includes(prop)==false){
           if(prop=="hectaresofland"){
               formdata.innerHTML+=`
@@ -222,7 +222,7 @@ document.getElementById('recommend').onclick=function(){
       ref.once("value").then(function(snapshot){
           snapshot.forEach(property => {
             var prop=property.key;
-            var arr =["completeprofile", "applypending", "applydone", "showprompt", "bookmarked", "appid"];
+            var arr =["completeprofile", "applypending", "applydone", "showprompt", "bookmarked", "appid", "isOnline"];
             //console.log(prop);
             if(arr.includes(prop)==false)
            {

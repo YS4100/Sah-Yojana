@@ -159,6 +159,15 @@ function bookmark()
     ref.update({
       'bookmarked':data
     });
+    var reff=firebase.database().ref('Yojanas/'+idd[0]);
+          reff.once("value").then(function(snapshot){
+            var bookmarked=snapshot.val().bookmarked;
+            //resolved=parseInt(resolved);
+            bookmarked++;
+            reff.update({
+              bookmarked:bookmarked
+            })
+          });
     //document.getElementById('bookmark_btn').disabled = true;
    }
    else

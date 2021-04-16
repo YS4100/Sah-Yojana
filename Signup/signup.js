@@ -184,6 +184,7 @@ function sendVerification(name,email,phone){
            completeprofile: "no",
            applydone: "abc",
            applypending: "abc",
+           isOnline: "no",
            showprompt: "no"
 
           });

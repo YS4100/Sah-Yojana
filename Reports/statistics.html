@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Statistics</title>
+	<link rel="stylesheet" type="text/css" href="style_statistics.css">
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
+</head>
+<body>
+	<div class='header' id='topheader'>
+			
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container text-uppercase ps-2">
+			<img class="logo" src="logoo.png" >
+		  <a class="navbar-brand" href="#">Sah-Yojana</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav ml-auto">
+		    <li class="nav-item">
+	        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\index_login_admin.html" >Home</a>
+	      	</li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\Yojana\yojana_admin.html" >Yojana</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\Contact Us\admin_complaint.html">Complaints</a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="">STATISTICS<span class="sr-only">(current)</span></a>
+	      </li>
+		      
+		    </ul>
+		  </div>
+		</div>
+		</nav>
+		<h1 align="center" style="margin-top: 50px">Statistics</h1>
+		<div>
+		<div class="card text-white bg-dark mb-3"  id="users">
+		  <div class="card-header" align="center">USERS</div>
+		  <div class="card-body" align="center">
+		    <p class="card-text" id="total_users"></p>
+		    <p class="card-text" id="active_users"></p>
+		  </div>
+		</div>
+
+		<div class="card text-white bg-dark mb-3"  id="yojanas">
+		  <div class="card-header" align="center">YOJANAS</div>
+		  <div class="card-body" align="center">
+		    <p class="card-text" id="active_yojanas"></p>
+		    <p class="card-text" id="disabled_yojanas"></p>
+		  </div>
+		</div>
+
+		<div class="card text-white bg-dark mb-3" id="complaints">
+		  <div class="card-header" align="center">COMPLAINTS</div>
+		  <div class="card-body" align="center">
+		    <p class="card-text" id="total_cmp"></p>
+		    <p class="card-text" id="resolved_cmp"></p>
+		  </div>
+		</div>
+		<br>
+		<div class="card text-white bg-dark mb-3" id="domains">
+		  <div class="card-header" align="center">CLASSIFICATION OF YOJANAS BY DOMAINS</div>
+		  <div class="card-body" align="center">
+		  	<table class="table table-dark table-borderless">
+			  <tbody>
+			    <tr align="center">
+			      <td><p class="card-text" id="agri"></p></td>
+			      <td><p class="card-text" id="health"></p></td>
+			    </tr>
+			    <tr align="center">
+			      <td><p class="card-text" id="senior"></p></td>
+			      <td><p class="card-text" id="edu"></p></td>
+			    </tr>
+			    <tr align="center">
+			      <td ><p class="card-text" id="soc"></p></td>
+			      <td><p class="card-text" id="homes"></p></td>
+			    </tr>
+
+			  </tbody>
+
+			</table>
+		  </div>
+		</div>
+	</div>
+
+
+	</div>
+	<div >
+	<button onclick="saveFile()" id="button">Download Statistics</button></div>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="https://cdn.jsdelivr.net/alasql/0.3/alasql.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.12/xlsx.core.min.js"></script>
+
+
+	<script src="statistics.js"></script>
+	
+</body>
+</html>

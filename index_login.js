@@ -102,6 +102,11 @@ function logout()
  const logoutBtn = document.querySelector('#logout');
     logoutBtn.addEventListener('click', e => {
     e.preventDefault();
+    var id=firebase.auth().currentUser.uid;
+         // console.log(id);
+          firebase.database().ref('Users/'+id).update({
+              isOnline: "no"
+            });
     firebase.auth().signOut();
     //console.log('User signed out!');
     window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index.html");
@@ -140,6 +145,14 @@ function test(){
                     showprompt: "no",
                     applydone: applydone,
                     applypending: pending
+                    });
+                     var refff=firebase.database().ref('Yojanas/'+id);
+                    refff.once("value").then(function(snapshot){
+                      var applied=snapshot.val().applied;
+                      applied++;
+                      refff.update({
+                        applied:applied
+                      })
                     });
                      if(appid)
                      {

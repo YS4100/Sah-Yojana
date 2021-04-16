@@ -15,7 +15,58 @@ body
 	position: relative;
 	background-size: cover;
 }
+.header h1
+{
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: normal;
+	letter-spacing: 10px;
+	
 
+	margin-top: 0;
+}
+hr{
+	background-color:white;
+}
+#users{
+	margin-left: 100px;
+	margin-top: 50px;
+	width:18rem;
+	position: absolute;
+}
+#complaints{
+	margin-left: 900px;
+	margin-top: 50px;
+	width:18rem;
+	position: absolute;
+	
+}
+#yojanas{
+	margin-left: 500px;
+	margin-top: 50px;
+	width:18rem;
+	position: absolute;
+	
+}
+#domains{
+	margin-left: 425px;
+	margin-top: 250px;
+	width:28rem;
+	position: absolute;
+	
+}
+#button{
+	width:250px;
+	padding: 10px;
+	border: 2px black solid;
+	border-radius: 100px;
+	background-color: transparent;
+	color:black;
+	font-weight: bold;
+	margin-top: 45px;
+	margin-bottom: 40px;
+	margin-left: 525px;
+}
 .logo{
 	height:40px;
 	padding: 0 5px;
@@ -62,29 +113,6 @@ select,input {
 	border-bottom: 1px solid black;*/
 }
 
-.header-buttons a{
-	position: absolute;
-	border: 1px solid black;
-	border-radius: 100px;
-	margin: 0 5px;
-	padding: 12px 35px;
-	outline:none;
-	color: black;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.4;
-	text-align: center;
-	margin-left: 550px;
-	margin-top: 25%;
-	font-weight: bold;
-
-}
-.header-buttons a:hover{
-	color:#50d1c0;
-	background: white;
-	text-decoration: none;
-	box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
-}
 .footer-basic {
   padding:3px 0;
   background-color:#808080;
