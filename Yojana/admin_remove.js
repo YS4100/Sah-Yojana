@@ -36,7 +36,7 @@ function disableyojana(){
 
   firebase.auth().onAuthStateChanged(user => {
     if(user){
-
+      console.log('hiiiiiiiiiiiiiiii');
       var queryString = location.search.substring(1);
       var id = queryString.split("?");
         //var user = firebase.auth().currentUser.uid;

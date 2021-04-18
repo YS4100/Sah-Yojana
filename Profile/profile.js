@@ -91,7 +91,10 @@ document.getElementById('recommend').onclick=function(){
 
  };
 })
-
+ function myURL()
+{
+  window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");  
+}
 function submit()
 {
   firebase.auth().onAuthStateChanged(user => {
@@ -109,230 +112,306 @@ function submit()
       var bpl = document.getElementById('bpl').value;
       var occupation = document.getElementById('occupation').value;
       //console.log('Hiii');
-      if(user=="" || age=="" || gender=="" || address=="" || city=="" || state=="" || country=="" || caste=="" || annualincome=="" || bpl=="" || occupation=="" ){
-        alert("Please Complete the Profile before submitting!");
+      if(user=="" || age=="" || gender=="none" || address=="" || city=="" || state=="" || country=="" || caste=="none" || annualincome=="" || bpl=="none" || occupation=="none" )
+      {
+        alert("Please complete all the fields before submitting!");
       }
       else
       {
-              if(occupation=='farmer')
-              {
-              var land = document.getElementById('land').value;
-              var scale = document.getElementById('scale').value;
-              firebase.database().ref('Users/' + user).update({
-                age : age,
-                gender :  gender,
-                address : address,
-                city : city,
-                state : state,
-                country : country,
-                caste : caste,
-                annualincome : annualincome,
-                bpl : bpl,
-                occupation : occupation,
-                hectaresofland : land,
-                scaleoffarming : scale,
-                completeprofile: "yes"
-              });
-            }
-            else if(occupation == 'student')
-            {
+        if(occupation=='farmer')
+        {
+                  var land = document.getElementById('land').value;
+                  var scale = document.getElementById('scale').value;
+                  if(land="" || scale=="none")
+                    alert("Please complete all the fields before submitting!");
+                  else
+                  {
+                    firebase.database().ref('Users/' + user).update({
+                    age : age,
+                    gender :  gender,
+                    address : address,
+                    city : city,
+                    state : state,
+                    country : country,
+                    caste : caste,
+                    annualincome : annualincome,
+                    bpl : bpl,
+                    occupation : occupation,
+                    hectaresofland : land,
+                    scaleoffarming : scale,
+                    completeprofile: "yes"
+                  });
+                  setTimeout(myURL,5000);
+          
+                }
+        }
+        else if(occupation=='job')
+        {
+                  var company= document.getElementById('companyjob').value;
+                  var typecompany= document.getElementById('typecompany').value;
+                  if(company=="" || typecompany=="none")
+                    alert("Please complete all the fields before submitting!");
+                  else{
+                  firebase.database().ref('Users/' + user).update({
+                    age : age,
+                    gender :  gender,
+                    address : address,
+                    city : city,
+                    state : state,
+                    country : country,
+                    caste : caste,
+                    annualincome : annualincome,
+                    bpl : bpl,
+                    occupation : occupation,
+                    company: company,
+                    typeofcompany:typecompany,
+                    completeprofile: "yes"
+                });
+                  setTimeout(myURL,5000);
+          
+                }
+        }
+        else if(occupation=='retired')
+        {
+                  var pension= document.getElementById('pension').value;
+                  if(penison=="none"){
+                    alert("Please complete all the fields before submitting!");
+                  }
+                  else{
+                  firebase.database().ref('Users/' + user).update({
+                    age : age,
+                    gender :  gender,
+                    address : address,
+                    city : city,
+                    state : state,
+                    country : country,
+                    caste : caste,
+                    annualincome : annualincome,
+                    bpl : bpl,
+                    occupation : occupation,
+                    pensioned: pension,
+                    completeprofile: "yes"
+                });
+                   setTimeout(myURL,5000);
+          
+                }
+        }
+        else if(occupation=='labourer')
+        {
+                  var companylab= document.getElementById('companylab').value;
+                  var typejob= document.getElementById('typejob').value;
+                  if(companylab=="" || typejob=="none")
+                    alert("Please complete all the fields before submitting!");
+                  else{
+                  firebase.database().ref('Users/' + user).update({
+                    age : age,
+                    gender :  gender,
+                    address : address,
+                    city : city,
+                    state : state,
+                    country : country,
+                    caste : caste,
+                    annualincome : annualincome,
+                    bpl : bpl,
+                    occupation : occupation,
+                    employedat: companylab,
+                    typeofjob: typejob,
+                    completeprofile: "yes"
+                });
+                   setTimeout(myURL,5000);
+                }
+        }
+         else if(occupation=='business')
+         {
+                  var details= document.getElementById('businessdetails').value;
+                  var partner= document.getElementById('partnership').value;
+                  if(details=="" || partner=="none")
+                    alert("Please complete all the fields before submitting!");
+                  else{
+                  firebase.database().ref('Users/' + user).update({
+                    age : age,
+                    gender :  gender,
+                    address : address,
+                    city : city,
+                    state : state,
+                    country : country,
+                    caste : caste,
+                    annualincome : annualincome,
+                    bpl : bpl,
+                    occupation : occupation,
+                    details: details,
+                    partnership: partner,
+                    completeprofile: "yes"
+                });
+                   setTimeout(myURL,5000);
+          
+                }
+          }
+        else if(occupation == 'student')
+        {
               var qualification = document.getElementById('qualification').value;
-              if(qualification=='school')
+              if(qualification=="none")
+                alert("Please complete all the fields before submitting!");
+              else
               {
-                var std = document.getElementById('std').value;
-                var type = document.getElementById('type').value;
-
-                firebase.database().ref('Users/' + user).update({
-                age : age,
-                gender :  gender,
-                address : address,
-                city : city,
-                state : state,
-                country : country,
-                caste : caste,
-                annualincome : annualincome,
-                bpl : bpl,
-                occupation : occupation,
-                qualification: qualification,
-                standard: std,
-                typeofschool:type,
-                completeprofile: "yes"
-              });
+                 if(qualification=='school')
+                  {
+                    var std = document.getElementById('std').value;
+                    var type = document.getElementById('type').value;
+                    if(std=="" || type=="none")
+                    alert("Please complete all the fields before submitting!");
+                    else
+                    {
+                    firebase.database().ref('Users/' + user).update({
+                    age : age,
+                    gender :  gender,
+                    address : address,
+                    city : city,
+                    state : state,
+                    country : country,
+                    caste : caste,
+                    annualincome : annualincome,
+                    bpl : bpl,
+                    occupation : occupation,
+                    qualification: qualification,
+                    standard: std,
+                    typeofschool:type,
+                    completeprofile: "yes"
+                  });
+                     setTimeout(myURL,5000);
+                  }
+                  }
+                  else if(qualification=='diploma')
+                  {
+                    var diplomayear=document.getElementById('diplomayear').value;
+                    var diplomabranch=document.getElementById('diplomabranch').value;
+                    if(diplomayear=="" || diplomabranch=="")
+                      alert("Please complete all the fields before submitting!");
+                    else{
+                    firebase.database().ref('Users/' + user).update({
+                    age : age,
+                    gender :  gender,
+                    address : address,
+                    city : city,
+                    state : state,
+                    country : country,
+                    caste : caste,
+                    annualincome : annualincome,
+                    bpl : bpl,
+                    occupation : occupation,
+                    qualification: qualification,
+                    year: diplomayear,
+                    branch:diplomabranch,
+                    completeprofile: "yes"
+                  });
+                     setTimeout(myURL,5000);
+          
+                  }
+                  }
+                  else if(qualification=='undergraduate')
+                  {
+                    var undergraduatedegree=document.getElementById('undergraduatedegree').value;
+                    var undergraduatebranch=document.getElementById('undergraduatebranch').value;
+                    var undergraduateyear=document.getElementById('undergraduateyear').value;
+                    if(undergraduatebranch=="" || undergraduatedegree=="none" || undergraduateyear=="")
+                      alert("Please complete all the fields before submitting!");
+                    else{
+                    firebase.database().ref('Users/' + user).update({
+                    age : age,
+                    gender :  gender,
+                    address : address,
+                    city : city,
+                    state : state,
+                    country : country,
+                    caste : caste,
+                    annualincome : annualincome,
+                    bpl : bpl,
+                    occupation : occupation,
+                    qualification: qualification,
+                    degree: undergraduatedegree,
+                    branch: undergraduatebranch,
+                    year: undergraduateyear,
+                    completeprofile: "yes"
+                  });
+                     setTimeout(myURL,5000);
+          
+                  }
+                  }
+                  else if(qualification=='graduate')
+                  {
+                    var graduatedegree=document.getElementById('graduatedegree').value;
+                    var graduatebranch=document.getElementById('graduatebranch').value;
+                    var graduateyear=document.getElementById('graduateyear').value;
+                    if(graduatebranch=="" || graduatedegree=="none" || graduateyear=="")
+                      alert("Please complete all the fields before submitting!");
+                    else{
+                    firebase.database().ref('Users/' + user).update({
+                    age : age,
+                    gender :  gender,
+                    address : address,
+                    city : city,
+                    state : state,
+                    country : country,
+                    caste : caste,
+                    annualincome : annualincome,
+                    bpl : bpl,
+                    occupation : occupation,
+                    qualification: qualification,
+                    degree: graduatedegree,
+                    branch: graduatebranch,
+                    year: graduateyear,
+                    completeprofile: "yes"
+                  });
+                     setTimeout(myURL,5000);
+          
+                  }
+                  }
+                  else if(qualification=='phd')
+                  {
+                    var phdbranch=document.getElementById('phdbranch').value;
+                    if(phdbranch==""){
+                      alert("Please complete all the fields before submitting!");
+                    }
+                    else{
+                    firebase.database().ref('Users/' + user).update({
+                    age : age,
+                    gender :  gender,
+                    address : address,
+                    city : city,
+                    state : state,
+                    country : country,
+                    caste : caste,
+                    annualincome : annualincome,
+                    bpl : bpl,
+                    occupation : occupation,
+                    qualification: qualification,
+                    branch: phdbranch,
+                    completeprofile: "yes"
+                  });
+                     setTimeout(myURL,5000);
+          
+                  }
+                  }
               }
-              else if(qualification=='diploma')
-              {
-                var diplomayear=document.getElementById('diplomayear').value;
-                var diplomabranch=document.getElementById('diplomabranch').value;
-                firebase.database().ref('Users/' + user).update({
-                age : age,
-                gender :  gender,
-                address : address,
-                city : city,
-                state : state,
-                country : country,
-                caste : caste,
-                annualincome : annualincome,
-                bpl : bpl,
-                occupation : occupation,
-                qualification: qualification,
-                year: diplomayear,
-                branch:diplomabranch,
-                completeprofile: "yes"
-              });
-              }
-              else if(qualification=='undergraduate')
-              {
-                var undergraduatedegree=document.getElementById('undergraduatedegree').value;
-                var undergraduatebranch=document.getElementById('undergraduatebranch').value;
-                var undergraduateyear=document.getElementById('undergraduateyear').value;
-                firebase.database().ref('Users/' + user).update({
-                age : age,
-                gender :  gender,
-                address : address,
-                city : city,
-                state : state,
-                country : country,
-                caste : caste,
-                annualincome : annualincome,
-                bpl : bpl,
-                occupation : occupation,
-                qualification: qualification,
-                degree: undergraduatedegree,
-                branch: undergraduatebranch,
-                year: undergraduateyear,
-                completeprofile: "yes"
-              });
-              }
-              else if(qualification=='graduate')
-              {
-                var graduatedegree=document.getElementById('graduatedegree').value;
-                var graduatebranch=document.getElementById('graduatebranch').value;
-                var graduateyear=document.getElementById('graduateyear').value;
-                firebase.database().ref('Users/' + user).update({
-                age : age,
-                gender :  gender,
-                address : address,
-                city : city,
-                state : state,
-                country : country,
-                caste : caste,
-                annualincome : annualincome,
-                bpl : bpl,
-                occupation : occupation,
-                qualification: qualification,
-                degree: graduatedegree,
-                branch: graduatebranch,
-                year: graduateyear,
-                completeprofile: "yes"
-              });
-              }
-              else if(qualification=='phd')
-              {
-                var phdbranch=document.getElementById('phdbranch').value;
-                
-                firebase.database().ref('Users/' + user).update({
-                age : age,
-                gender :  gender,
-                address : address,
-                city : city,
-                state : state,
-                country : country,
-                caste : caste,
-                annualincome : annualincome,
-                bpl : bpl,
-                occupation : occupation,
-                qualification: qualification,
-                branch: phdbranch,
-                completeprofile: "yes"
-              });
-              }
-            }
-
-            else if(occupation=='job'){
-              var company= document.getElementById('companyjob').value;
-              var typecompany= document.getElementById('typecompany').value;
-              firebase.database().ref('Users/' + user).update({
-                age : age,
-                gender :  gender,
-                address : address,
-                city : city,
-                state : state,
-                country : country,
-                caste : caste,
-                annualincome : annualincome,
-                bpl : bpl,
-                occupation : occupation,
-                company: company,
-                typeofcompany:typecompany,
-                completeprofile: "yes"
-            });
-          }
-
-          else if(occupation=='retired'){
-              var pension= document.getElementById('pension').value;
-              firebase.database().ref('Users/' + user).update({
-                age : age,
-                gender :  gender,
-                address : address,
-                city : city,
-                state : state,
-                country : country,
-                caste : caste,
-                annualincome : annualincome,
-                bpl : bpl,
-                occupation : occupation,
-                pensioned: pension,
-                completeprofile: "yes"
-            });
-          }
-
-          else if(occupation=='labourer'){
-              var companylab= document.getElementById('companylab').value;
-              var typejob= document.getElementById('typejob').value;
-              console.log('Hiii');
-              firebase.database().ref('Users/' + user).update({
-                age : age,
-                gender :  gender,
-                address : address,
-                city : city,
-                state : state,
-                country : country,
-                caste : caste,
-                annualincome : annualincome,
-                bpl : bpl,
-                occupation : occupation,
-                employedat: companylab,
-                typeofjob: typejob,
-                completeprofile: "yes"
-            });
-          }
-
-          else if(occupation=='business'){
-              var details= document.getElementById('businessdetails').value;
-              var partner= document.getElementById('partnership').value;
-              firebase.database().ref('Users/' + user).update({
-                age : age,
-                gender :  gender,
-                address : address,
-                city : city,
-                state : state,
-                country : country,
-                caste : caste,
-                annualincome : annualincome,
-                bpl : bpl,
-                occupation : occupation,
-                details: details,
-                partnership: partner,
-                completeprofile: "yes"
-            });
-          }
+        }
  
-          setTimeout(myURL,5000);
-           function myURL(){
-                  window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");  
-                 }
-       }
-}
+      
+
+ 
+      }
+    }
   });
 
 }
+
+            
+                
+
+             
+              
+
+             
+
+
+
+                  

@@ -180,3 +180,9 @@ function loginUser(email,pass){
   document.getElementById('login').reset();
     });
 }
+document.getElementById("email").addEventListener('keyup', function(){
+    document.getElementById("emailid").innerHTML = "";
+  });
+document.getElementById("pass").addEventListener('keyup', function(){
+    document.getElementById("password").innerHTML = "";
+  });

@@ -217,3 +217,19 @@ function createUser(name, email, phone, password){
       document.getElementById('signup').reset();
     })
 }
+document.getElementById("name").addEventListener('keyup', function(){
+    document.getElementById("nm").innerHTML = "";
+  });
+
+document.getElementById("email").addEventListener('keyup', function(){
+    document.getElementById("emailid").innerHTML = "";
+  });
+document.getElementById("phone").addEventListener('keyup', function(){
+    document.getElementById("mobile").innerHTML = "";
+  });
+document.getElementById("pass").addEventListener('keyup', function(){
+    document.getElementById("password").innerHTML = "";
+  });
+document.getElementById("confpass").addEventListener('keyup', function(){
+    document.getElementById("cpass").innerHTML = "";
+  });

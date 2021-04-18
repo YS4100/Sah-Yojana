@@ -33,6 +33,7 @@ var firebaseConfig = {
         var criteria=snapshot.val().criteria;
         var checkstatus = snapshot.val().checkstatus;
         var applylink=snapshot.val().applylink;
+        var helpline=snapshot.val().helpline;
 
         formdata.innerHTML+=`
             Name  : <input id="name" value="${name}" readonly><br><br>
@@ -47,6 +48,7 @@ var firebaseConfig = {
             Video  : <input id="video" value="${video}"><br><br>
             Criteria  : <input id="criteria" value="${criteria}"><br><br>
             Check Status Link :   <input id="checkstatuslink" value="${checkstatus}"><br><br>
+            Helpline : <input id="helpline" value="${helpline}"><br><br>
             Apply Link  : <input id="applylink" value="${applylink}"><br><br>
           `
       });
@@ -68,10 +70,17 @@ var firebaseConfig = {
           var array=["disabled", "applied", "bookmarked"];
           if(array.includes(prop)==false){
           var val= document.getElementById(prop).value;
- 
-          ref.update({
-            [prop] : val
-          });
+            if(val!="")
+            {
+               ref.update({
+              [prop] : val
+              });
+            }
+            else
+            {
+              alert("Field/s cannot be empty!!");
+            }
+
         }
         });
       }

@@ -91,18 +91,40 @@ document.getElementById('recommend').onclick=function(){
 
  };
 })
+function check(email,issue,msg){
+  var atposition=email.indexOf("@");  
+  var dotposition=email.lastIndexOf(".");
+  if(email==""){
+    alert("Please enter email ID!");
+    return false;
+  }
+  if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
+          alert("Please enter a valid email address!"); 
+          return false;
+  } 
+  if(issue=="none"){
+    alert("Please select an issue!");
+    return false;
+  } 
+  if(msg==""){
+    alert("Please enter details of the issue!");
+    return false;
+  }
+  return true;
+}
 function addcomplain(){
       //console.log('hiiiiiiiiiiiiii');
-      firebase.auth().onAuthStateChanged(user => {
-      var user = firebase.auth().currentUser.uid;
+      //firebase.auth().onAuthStateChanged(user => {
+      //var user = firebase.auth().currentUser.uid;
       var name=document.getElementById('name').value;
       var email=document.getElementById('email').value;
       var yojana=document.getElementById('yojananame').value;
       var issue=document.getElementById('issue').value;
       var msg=document.getElementById('msg').value;
+      if(check(email,issue,msg)){
       var ref=firebase.database().ref('Complaints');
+      console.log('hi');
       ref.push({
-       user: user,
        name: name,
        email:email,
        yojana: yojana,
@@ -118,6 +140,7 @@ function addcomplain(){
             })
           });
       document.getElementById('compform').reset();
-    });
+    }
+   // });
 }
 document.getElementById('submit').addEventListener('click',addcomplain);

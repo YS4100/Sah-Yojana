@@ -202,6 +202,12 @@ function test(){
            });
 
         }
+        else
+        {
+          reff.update({
+            showprompt: "no"
+          });
+        }
       });
       }
     });

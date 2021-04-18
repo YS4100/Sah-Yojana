@@ -52,7 +52,7 @@ var firebaseConfig = {
           }
         });
        document.getElementById('active_yojanas').innerHTML=`Active Yojanas : ${active_yojanas}<hr>`;
-        document.getElementById('disabled_yojanas').innerHTML=`Disabled Yojanas : ${disabled_yojanas}`;
+        document.getElementById('disabled_yojanas').innerHTML=`Inactive Yojanas : ${disabled_yojanas}`;
         document.getElementById('agri').innerHTML=`Agriculture : ${agri_yojanas}`;
         document.getElementById('senior').innerHTML=`Senior-Citizens : ${senior_yojanas}`;
         document.getElementById('homes').innerHTML=`Homes : ${homes_yojanas}`;
@@ -73,7 +73,7 @@ var firebaseConfig = {
             if(isOnline=="yes"){
               active_users++;
             }
-            document.getElementById('total_users').innerHTML=`Total Users : ${total_users}<hr>`;
+            document.getElementById('total_users').innerHTML=`Total Users : ${total_users-1}<hr>`;
             document.getElementById('active_users').innerHTML=`Active Users : ${active_users}`;
           });
      });

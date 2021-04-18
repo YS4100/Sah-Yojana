@@ -236,7 +236,7 @@ document.getElementById('recommend').onclick=function(){
             }
             else
             {
-              alert("Field cannot be empty!!");
+              alert("Field/s cannot be empty!!");
             }
            }
         });

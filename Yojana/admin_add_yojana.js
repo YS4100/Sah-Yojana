@@ -24,7 +24,12 @@ var firebaseConfig = {
     var helpline = document.getElementById('helpline').value;
     var criteria = document.getElementById('criteria').value;
     //console.log(name);
-    firebase.database().ref('Yojanas/' + id).set({
+    if(name=="" || id=="" || domain=="none" || desc=="" || video=="" || img=="" || elig=="" || guide=="" || applylink=="" || checkstatus=="" || helpline=="" || criteria==""){
+      alert("Please Enter all the fields before Submitting!")
+    }
+    else
+    {
+       firebase.database().ref('Yojanas/' + id).set({
       name:name,
       id:id,
       domain:domain,
@@ -62,5 +67,7 @@ var firebaseConfig = {
       });
     document.getElementById("addy").reset();
   }
+    }
+   
  document.getElementById('submit').addEventListener('click', addyojana);
  //window.addEventListener('load',emails);

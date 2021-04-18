@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Profile Page</title>
-	<link rel="stylesheet" type="text/css" href="style_profile.css">
-	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
+  <title>Profile Page</title>
+  <link rel="stylesheet" type="text/css" href="style_profile.css">
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
 </head>
-<body>
-	<div class='header' id='topheader'>
-			
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container text-uppercase ps-2">
-			<img class="logo" src="logoo.png" >
-		  <a class="navbar-brand" href="#">Sah-Yojana</a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
+<body style="background-color: #d5e6f0">
+  <div class='header' id='topheader'>
+      
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container text-uppercase ps-2">
+      <img class="logo" src="logoo.png" >
+      <a class="navbar-brand" href="#">Sah-Yojana</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		    <ul class="navbar-nav ml-auto">
-		      <li class="nav-item">
-		        <a class="nav-link" href="#" id="home">Home</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\About Us\about_us.html">About Us</a>
-		      </li>
-		    <li class="nav-item dropdown">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\About Us\about_us.html">About Us</a>
+          </li>
+        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Yojana
         </a>
@@ -38,20 +38,20 @@
           <a class="dropdown-item" href="#" id="applied">Applied Yojanas</a>
         </div>
       </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\FAQ\faq.html">FAQ</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\Contact Us\contact_us.html">Contact Us</a>
-		      </li>
-		      <li class="nav-item active">
-		        <a class="nav-link" href="#" id="profile">Profile<span class="sr-only">(current)</span></a>
-		      </li>
-		      
-		    </ul>
-		  </div>
-		</div>
-		</nav>
+          <li class="nav-item">
+            <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\FAQ\faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="C:\Users\Yashvi\Desktop\Sah-Yojana\Contact Us\contact_us.html">Contact Us</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#" id="profile">Profile<span class="sr-only">(current)</span></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    </nav>
 <form class="p-3">
   <h2 align="center"> CREATE PROFILE </h2><br>
   <h7 align="center"> Please fill up the form below in order to receive recommendations </h7><br><br> 
@@ -60,6 +60,7 @@
     <input type="number" name="" class="form-control" id="age" placeholder="Enter your Age">
     <label for="gender" >Gender:</label>
       <select name="gender" id="gender" class="form-control">
+        <option value="none">Select Gender</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
         <option value="others">Others</option>
@@ -75,6 +76,7 @@
 
     <label for="caste">Caste</label>
     <select name="caste" id="caste" class="form-control">
+      <option value="none">Select Caste</option>
         <option value="general">General</option>
         <option value="obc">OBC</option>
         <option value="sc">Scheduled Caste</option>
@@ -84,6 +86,7 @@
     <input type="number" name="" class="form-control" id="annualincome" placeholder="Enter your Annual Income">  
     <label for="bpl" >Do you fall under BPL category?</label>
       <select name="bpl" id="bpl" class="form-control">
+        <option value="none">Select option</option>
         <option value="yes">Yes</option>
         <option value="no">No</option>
       </select>
@@ -108,6 +111,7 @@
     <input type="number" name="" class="form-control" id="land" placeholder="">  
     <label for="scale">Scale of farming:</label>
     <select class="form-control" id="scale">
+      <option value="none">Select Scale</option>
       <option value="small">Small</option>
       <option value="marginal">Marginal</option>
       <option value="large">Large</option>
@@ -131,6 +135,7 @@
       <input type="number" name="" class="form-control" id="std" placeholder="Enter the standard in which you are currently studying">
       <label for="type">Type of School:</label>
       <select class="form-control" id="type">
+        <option value="none">Select Type of School</option>
       <option value="private">Private</option>
       <option value="government">Government</option>
     </select>
@@ -146,6 +151,7 @@
      <div class="form-group" id="undergraduate">
       <label for="undergraduatedegree">Degree:</label>
       <select class="form-control" id="undergraduatedegree">
+      <option value="none">Select Degree</option>
       <option value="btech">B.Tech/B.Eng</option>
       <option value="bsc">B.Sc.</option>
       <option value="bpharm">B.Pharm.</option>
@@ -162,6 +168,7 @@
     <div class="form-group" id="graduate">
       <label for="graduatedegree">Degree:</label>
       <select class="form-control" id="graduatedegree">
+      <option value="none">Select Degree</option>
       <option value="mtech">M.Tech/M.Eng/M.S.</option>
       <option value="msc">M.Sc.</option>
       <option value="mpharm">M.Pharm.</option>
@@ -185,6 +192,7 @@
       <input type="text" name="" class="form-control" id="companyjob" placeholder="Enter the company in which you are currently working">
       <label for="typecompany">Type of Company:</label>
       <select class="form-control" id="typecompany">
+      <option value="none">Select type of company</option>
       <option value="private">Private</option>
       <option value="government">Government</option>
     </select>
@@ -195,6 +203,7 @@
       <input type="text" name="" class="form-control" id="companylab" placeholder="Enter the company in which you are currently working">
       <label for="typejob">Type of Job:</label>
       <select class="form-control" id="typejob">
+      <option value="none">Select type of Job</option>
       <option value="full">Full Time</option>
       <option value="part">Part Time</option>
     </select>
@@ -205,6 +214,7 @@
       <input type="text" name="" class="form-control" id="businessdetails" placeholder="">
       <label for="partnership">Is your business in partnership?</label>
       <select class="form-control" id="partnership">
+      <option value="none">Select option</option>
       <option value="yes">Yes</option>
       <option value="no">No</option>
     </select>
@@ -213,6 +223,7 @@
     <div class="form-group" id="retired">
       <label for="pension">Are you Pensioned?</label>
       <select class="form-control" id="pension">
+      <option value="none">Select option</option>
       <option value="yes">Yes</option>
       <option value="part">No</option>
     </select>

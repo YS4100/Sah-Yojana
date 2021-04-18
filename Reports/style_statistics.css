@@ -15,14 +15,12 @@ body
 	position: relative;
 	background-size: cover;
 }
-.header h1
+.header h2
 {
 	text-transform: uppercase;
 	text-align: center;
 	font-weight: normal;
 	letter-spacing: 10px;
-	
-
 	margin-top: 0;
 }
 hr{
