@@ -68,6 +68,28 @@ document.getElementById('profile').onclick=function(){
     }); 
  }
 };
+document.getElementById('recommend').onclick=function(){
+     if(user==null)
+     {
+       window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");
+      }
+      else
+      {
+        window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Yojana/recommend.html");
+      }
+ };
+ document.getElementById('applied').onclick=function()
+ {
+  if(user==null)
+  {
+    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");
+  }
+  else
+  {
+    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Check Status/check_status.html");
+  }
+
+ };
 })
   function setter(){
     var queryString = location.search.substring(1);
@@ -189,7 +211,8 @@ function apply()
     var reff=firebase.database().ref('Users/'+userid);
     reff.once("value").then(function(snapshot){
    var pending=snapshot.val().applypending;
-   if((pending).search(idd[0])==-1){
+   var done=snapshot.val().applydone;
+   if((pending).search(idd[0])==-1 && (done).search(idd[0])==-1){
     //console.log(data);
     pending=pending+'?'+idd;
     reff.update({

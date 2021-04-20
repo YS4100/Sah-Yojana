@@ -167,7 +167,7 @@ function test(){
                           });
                      }
                    
-                    var sub = `Announcement: ${name}`;
+                    var sub = `Feedback: ${name}`;
                     var body = `<p>Hello ${user_name},<br><br>
                     We got to know that you have applied for <b>${name}</b>. Please submit your feedback so that we can help you through the process.<br><br>
                     Click <a href="https://forms.gle/NKXz1CbnHD4vH32A8">Here</a> to fill the feedback.<br><br>

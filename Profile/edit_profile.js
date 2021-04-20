@@ -99,6 +99,7 @@ document.getElementById('recommend').onclick=function(){
           var gender=snapshot.val().gender;
           var age=snapshot.val().age;
           var address=snapshot.val().address;
+          var area = snapshot.val().area;
           var city=snapshot.val().city;
           var state=snapshot.val().state;
           var country=snapshot.val().country;
@@ -107,6 +108,7 @@ document.getElementById('recommend').onclick=function(){
           var caste=snapshot.val().caste;
           var annualincome=snapshot.val().annualincome;
           var bpl=snapshot.val().bpl;
+          var ownhouse=snapshot.val().ownhouse;
           var occupation=snapshot.val().occupation;
           formdata.innerHTML+=`
             Name  : <input id="name" value=${name} readonly><br><br>
@@ -114,18 +116,20 @@ document.getElementById('recommend').onclick=function(){
             Age  : <input id="age" value=${age} ><br><br>
             Email  : <input id="email" value=${email} readonly><br><br>
             Address : <input id="address" value=${address}><br><br>
+            Area : <input id="area" value=${area}><br><br>
             City  : <input id="city" value=${city}><br><br>
             State  : <input id="state" value=${state}><br><br>
             Country  : <input id="country" value=${country}><br><br>
             Caste  : <input id="caste" value=${caste} readonly><br><br>
             Annual Income  : <input id="annualincome" value=${annualincome}><br><br>
             BPL  : <input id="bpl" value=${bpl}><br><br>
+            Own house : <input id="ownhouse" value=${ownhouse}><br><br>
             Occupation  : <input id="occupation" value=${occupation} readonly><br><br>
           `
           snapshot.forEach(property => {
           var prop = property.key;
           var val = property.val();
-          var array=["isOnline","name","gender","age","address","state","city","country","bookmarked","email","caste","annualincome","bpl","occupation", "completeprofile", "applypending", "applydone", "showprompt", "appid"];
+          var array=["isOnline","name","gender","age","address","area","state","city","country","bookmarked","email","caste","annualincome","bpl","ownhouse","occupation", "completeprofile", "applypending", "applydone", "showprompt", "appid"];
           if(array.includes(prop)==false){
           if(prop=="hectaresofland"){
               formdata.innerHTML+=`

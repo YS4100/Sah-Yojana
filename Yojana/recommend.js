@@ -145,7 +145,7 @@ document.getElementById('recommend').onclick=function(){
     ul.append(blog_card);
   }
 //agelow,agehigh,incomelow,incomehigh,bpl,state(list),country(list),gender,caste,occupation(list),qualification(list),std,scale(list),land,degree(list),year
-//pensioned,partnership,typeofcompany,typeofjob,typeofschool
+//pensioned,partnership,typeofcompany,typeofjob,typeofschool, area, ownhouse
 
 function check(criteria,userid,name,domain,desc,video,img,id,cnt){
     var cntyj=0;
@@ -160,6 +160,8 @@ function check(criteria,userid,name,domain,desc,video,img,id,cnt){
     var occ=snapshot.val().occupation;
     var state=snapshot.val().state;
     var country=snapshot.val().country;
+    var area=snapshot.val().area;
+    var ownhouse =snapshot.val().ownhouse;
     state=state.toLowerCase();
     country=country.toLowerCase();
     age=parseInt(age);
@@ -189,6 +191,16 @@ function check(criteria,userid,name,domain,desc,video,img,id,cnt){
       }
       else if(compare[0]=="bpl"){
         if(bpl.localeCompare(compare[1])==0){
+          cntyj=cntyj+1;
+        }
+      }
+       else if(compare[0]=="ownhouse"){
+        if(ownhouse.localeCompare(compare[1])==0){
+          cntyj=cntyj+1;
+        }
+      }
+      else if(compare[0]=="area"){
+        if(area.localeCompare(compare[1])==0){
           cntyj=cntyj+1;
         }
       }
