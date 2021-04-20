@@ -99,19 +99,19 @@ function submitForm(e){
   // Get values
   var name = getInputVal('name');
   var email = getInputVal('email');
-  var phone = getInputVal('phone');
+ /* var phone = getInputVal('phone');*/
   var pass = getInputVal('pass');
   var confpass = getInputVal('confpass');
 
   // Save message
-  if(checkForm(name, email, phone, pass, confpass)){
-  createUser(name, email, phone, pass, confpass);
+  if(checkForm(name, email, pass, confpass)){
+  createUser(name, email, pass, confpass);
 
   // Show alert
   // Clear form
 }
 }
-function checkForm(name, email, phone, password,confpass){
+function checkForm(name, email, password,confpass){
   var atposition=email.indexOf("@");  
   var dotposition=email.lastIndexOf(".");
   if(name==""){
@@ -128,7 +128,7 @@ function checkForm(name, email, phone, password,confpass){
           document.getElementById('emailid').innerHTML=" *Please enter a valid email address!";
           return false;  
       }  
-      if(mobile==""){
+      /*if(mobile==""){
         document.getElementById('mobile').innerHTML=" *Please enter the Mobile Number!";
       return false;
       }
@@ -139,7 +139,7 @@ function checkForm(name, email, phone, password,confpass){
       if(phone.length!=10){
         document.getElementById('mobile').innerHTML=" *Mobile Number should be of 10 digits!";
       return false;
-      }
+      }*/
     if(password==""){
       document.getElementById('password').innerHTML=" *Please enter the password!";
       return false;
@@ -167,7 +167,7 @@ function getInputVal(id){
 function myURL(){
                 window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");  
                }
-function sendVerification(name,email,phone){
+function sendVerification(name,email){
     var user = firebase.auth().currentUser;
     //console.log(user.uid);
     user.sendEmailVerification().then(function() {
@@ -178,7 +178,6 @@ function sendVerification(name,email,phone){
           console.log(id);
           firebase.database().ref('Users/'+id).set({
            name: name,
-           phone:phone,
            bookmarked:"abc?",
            email: email,
            completeprofile: "no",
@@ -206,10 +205,10 @@ function sendVerification(name,email,phone){
 }
 
 // Save message to firebase
-function createUser(name, email, phone, password){
+function createUser(name, email, password){
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
     firebase.auth().createUserWithEmailAndPassword(email,password).then(function(){
-        sendVerification(name,email,phone);
+        sendVerification(name,email);
         
     })
     .catch(error =>{
@@ -224,9 +223,9 @@ document.getElementById("name").addEventListener('keyup', function(){
 document.getElementById("email").addEventListener('keyup', function(){
     document.getElementById("emailid").innerHTML = "";
   });
-document.getElementById("phone").addEventListener('keyup', function(){
+/*document.getElementById("phone").addEventListener('keyup', function(){
     document.getElementById("mobile").innerHTML = "";
-  });
+  });*/
 document.getElementById("pass").addEventListener('keyup', function(){
     document.getElementById("password").innerHTML = "";
   });

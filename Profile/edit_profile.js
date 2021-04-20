@@ -102,7 +102,7 @@ document.getElementById('recommend').onclick=function(){
           var city=snapshot.val().city;
           var state=snapshot.val().state;
           var country=snapshot.val().country;
-          var phone=snapshot.val().phone;
+          /*var phone=snapshot.val().phone;*/
           var email=snapshot.val().email;
           var caste=snapshot.val().caste;
           var annualincome=snapshot.val().annualincome;
@@ -112,7 +112,6 @@ document.getElementById('recommend').onclick=function(){
             Name  : <input id="name" value=${name} readonly><br><br>
             Gender  : <input id="gender" value=${gender} readonly><br><br>
             Age  : <input id="age" value=${age} ><br><br>
-            Phone  : <input id="phone" value=${phone}><br><br>
             Email  : <input id="email" value=${email} readonly><br><br>
             Address : <input id="address" value=${address}><br><br>
             City  : <input id="city" value=${city}><br><br>
@@ -126,7 +125,7 @@ document.getElementById('recommend').onclick=function(){
           snapshot.forEach(property => {
           var prop = property.key;
           var val = property.val();
-          var array=["isOnline","name","gender","age","phone","address","state","city","country","bookmarked","email","caste","annualincome","bpl","occupation", "completeprofile", "applypending", "applydone", "showprompt", "appid"];
+          var array=["isOnline","name","gender","age","address","state","city","country","bookmarked","email","caste","annualincome","bpl","occupation", "completeprofile", "applypending", "applydone", "showprompt", "appid"];
           if(array.includes(prop)==false){
           if(prop=="hectaresofland"){
               formdata.innerHTML+=`
