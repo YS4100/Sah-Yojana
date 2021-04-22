@@ -23,9 +23,10 @@ var firebaseConfig = {
     var checkstatus = document.getElementById('checkstatuslink').value;
     var helpline = document.getElementById('helpline').value;
     var criteria = document.getElementById('criteria').value;
+    criteria=criteria.toLowerCase();
     //console.log(name);
-    if(name=="" || id=="" || domain=="none" || desc=="" || video=="" || img=="" || elig=="" || guide=="" || applylink=="" || checkstatus=="" || helpline=="" || criteria==""){
-      alert("Please Enter all the fields before Submitting!")
+    if(name=="" || id=="" || domain=="none" || desc=="" || elig=="" || guide=="" || applylink=="" || criteria==""){
+      alert("Please enter all the details before submitting!")
     }
     else
     {

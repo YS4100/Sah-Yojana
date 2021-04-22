@@ -55,13 +55,13 @@ function disableyojana(){
 }
 //document.getElementById('remove').addEventListener('click',removeyojana);
 document.getElementById('remove').addEventListener('click',function(){
-  setTimeout(myURL,5000);
+  setTimeout(myURL,2000);
 function myURL(){
           window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Yojana/yojana_admin.html");  
          }
        });
 document.getElementById('disable').addEventListener('click',function(){
-  setTimeout(myURL,5000);
+  setTimeout(myURL,2000);
 function myURL(){
           window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Yojana/yojana_admin.html");  
          }

@@ -40,7 +40,7 @@ function enableyojana(){
 //document.getElementById('remove').addEventListener('click',removeyojana);
 
 document.getElementById('enable').addEventListener('click',function(){
-  setTimeout(myURL,5000);
+  setTimeout(myURL,2000);
 function myURL(){
           window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Yojana/yojana_admin.html");  
          }

@@ -47,7 +47,7 @@ var firebaseConfig = {
             Image  : <input id="image" value="${image}"><br><br>
             Video  : <input id="video" value="${video}"><br><br>
             Criteria  : <input id="criteria" value="${criteria}"><br><br>
-            Check Status Link :   <input id="checkstatuslink" value="${checkstatus}"><br><br>
+            Check Status Link :   <input id="checkstatus" value="${checkstatus}"><br><br>
             Helpline : <input id="helpline" value="${helpline}"><br><br>
             Apply Link  : <input id="applylink" value="${applylink}"><br><br>
           `
@@ -69,6 +69,7 @@ var firebaseConfig = {
           var prop = property.key;
           var array=["disabled", "applied", "bookmarked"];
           if(array.includes(prop)==false){
+        //console.log(prop);
           var val= document.getElementById(prop).value;
             if(val!="")
             {
@@ -78,13 +79,20 @@ var firebaseConfig = {
             }
             else
             {
+              var arr=["image","video","helpline","checkstatus"];
+              if(arr.includes(prop)==false)
               alert("Field/s cannot be empty!!");
+              else
+              {
+                ref.update({
+                  [prop] : val
+                });
+              }
             }
 
         }
         });
-      }
-      );
+      });
     }
   });
   }

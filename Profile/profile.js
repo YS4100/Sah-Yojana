@@ -180,7 +180,7 @@ function submit()
         else if(occupation=='retired')
         {
                   var pension= document.getElementById('pension').value;
-                  if(penison=="none"){
+                  if(pension=="none"){
                     alert("Please complete all the fields before submitting!");
                   }
                   else{
@@ -195,7 +195,7 @@ function submit()
                     caste : caste,
                     annualincome : annualincome,
                     bpl : bpl,
-                     ownhouse : ownhouse,
+                    ownhouse : ownhouse,
                     occupation : occupation,
                     pensioned: pension,
                     completeprofile: "yes"
