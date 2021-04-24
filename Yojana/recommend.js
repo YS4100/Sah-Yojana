@@ -351,8 +351,9 @@ function fetch(){
           var criteria=ChildSnapshot.val().criteria;
           var crit = criteria.split(";");
           var disabled=ChildSnapshot.val().disabled;
-          if(check(crit,userid,name,domain,desc,video,img,id,cnt)==true && disabled=="no")
+          if(disabled=="no")
           {
+            if(check(crit,userid,name,domain,desc,video,img,id,cnt)==true)
             cnt++;
           }
         }
