@@ -90,7 +90,7 @@ document.getElementById('recommend').onclick=function(){
  };
 })
 
-  function addi(name, appid, link, helpline){
+ function addi(name, appid, link, helpline){
     document.getElementById('list').innerHTML+=`
     <div class="card">
    
@@ -98,6 +98,7 @@ document.getElementById('recommend').onclick=function(){
     <h5 class="card-title">${name}</h5>
     <p class="card-text">Your Application ID is: ${appid}<br>Helpline Number: ${helpline}</p>
     <a href="#" class="btn btn-primary" onclick="check('${link}')">Check Application Status</a>
+    <a href="#" class="btn btn-primary" onclick="copy('${appid}')">Copy Application ID</a>
   </div>
   </div>
   `
@@ -116,6 +117,17 @@ function check(link)
     window.location.replace(link);
   }
 }
+function copy(appid){
+  
+  var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value = appid;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+}
+
+
   function display(){
      firebase.auth().onAuthStateChanged(user => {
     if(user){
@@ -143,6 +155,7 @@ function check(link)
   });
    
   }
+
 
 
   window.addEventListener('load', display);

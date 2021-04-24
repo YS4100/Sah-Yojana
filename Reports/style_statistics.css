@@ -10,7 +10,7 @@ body
 	padding: 0;
 	font-family: Poppins, sans-serif;
 	background: linear-gradient(rgba(256,256,256,0.4),rgba(256,256,256,0.4)), url(background.jpg);
-	background-repeat: no-repeat;
+	background-repeat: repeat;
 	background-position: center;
 	position: relative;
 	background-size: cover;
@@ -61,9 +61,8 @@ hr{
 	background-color: transparent;
 	color:black;
 	font-weight: bold;
-	margin-top: 45px;
-	margin-bottom: 40px;
-	margin-left: 525px;
+	margin-top: 10px;
+	margin-left: 545px;
 }
 .logo{
 	height:40px;
@@ -111,17 +110,3 @@ select,input {
 	border-bottom: 1px solid black;*/
 }
 
-.footer-basic {
-  padding:3px 0;
-  background-color:#808080;
-  
-}
-
-
-.footer-basic .copyright {
-  margin-top:7px;
-  text-align:center;
-  font-size:13px;
-  color: white;
-  margin-bottom:7px;
-}
