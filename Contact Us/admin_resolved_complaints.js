@@ -11,7 +11,7 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-  function addi(name,issue,msg,yojana,key){
+  function addi(name,issue,msg,yojana,key,reply){
     document.getElementById('list').innerHTML+=`
     <div class="card">
   <div class="card-header">
@@ -19,8 +19,8 @@ var firebaseConfig = {
   </div>
   <div class="card-body">
     <h5 class="card-title">${issue}</h5>
-    <p class="card-text">${msg}</p>
-    <a href="admin_reply.html?${key}" class="btn btn-primary">Reply</a>
+    <p class="card-text">Complain: ${msg}</p>
+    <p class="card-text">Reply: ${reply}</p>
   </div>
   </div>
   `
@@ -37,10 +37,11 @@ var firebaseConfig = {
           var msg=ChildSnapshot.val().msg;
           var yojana=ChildSnapshot.val().yojana;
           var key = ChildSnapshot.key;
-          var resolved = ChildSnapshot.val().resolved;
-          if(resolved=="no")
+          var resolved= ChildSnapshot.val().resolved;
+          var reply= ChildSnapshot.val().reply;
+          if(resolved=="yes")
           {
-            addi(name,issue,msg,yojana,key);
+              addi(name,issue,msg,yojana,key,reply);
           }
         }
       );

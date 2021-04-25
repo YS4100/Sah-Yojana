@@ -67,7 +67,10 @@ function sendEmail(){
       })
         .then(function (message) {
           alert("mail sent successfully");
-          ref.remove();
+          ref.update({
+              reply: reply,
+              resolved: "yes"
+          });
           var reff=firebase.database().ref('Users/ADfh8gMpbyen3AAEF6AkNBy1D1j1');
           reff.once("value").then(function(snapshot){
             var resolved=snapshot.val().resolved;

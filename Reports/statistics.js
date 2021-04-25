@@ -121,6 +121,8 @@ window.saveFile = function saveFile() {
           });  
 }
 
-
+function func(){
+  window.location.replace('https://docs.google.com/spreadsheets/d/1yFIoVaQaCdrYCHdneUICcymtU2waDIMYy_KVG9Ns6SA/edit?usp=sharing');
+}
 
   window.addEventListener('load',fetch);

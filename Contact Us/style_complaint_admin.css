@@ -58,18 +58,26 @@ body
 	 z-index: 0;
 	 width: 880px;
 }
-.footer-basic {
-  padding:5px 0;
-  background-color:#808080;
-  margin-top: 5px;
+.header-buttons{
+	margin-bottom: 30px;
+}
+.header-buttons a{
+	border: 1px solid black;
+	border-radius: 100px;
+	margin: 0 5px;
+	padding: 12px 25px;
+	outline:none;
+	color: black;
+	font-size: 1rem;
+	font-weight: bold;
+	line-height: 1.4;
+	text-align: center;
+
 }
 
-
-
-.footer-basic .copyright {
-  margin-top:10px;
-  text-align:center;
-  font-size:13px;
-  color: white;
-  margin-bottom:10px;
+.header-buttons a:hover{
+	color:#50d1c0;
+	background: white;
+	text-decoration: none;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
 }

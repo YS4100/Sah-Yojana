@@ -129,7 +129,8 @@ function addcomplain(){
        email:email,
        yojana: yojana,
        issue: issue,
-       msg:msg
+       msg:msg,
+       resolved: "no"
       });
       var reff=firebase.database().ref('Users/ADfh8gMpbyen3AAEF6AkNBy1D1j1');
           reff.once("value").then(function(snapshot){
