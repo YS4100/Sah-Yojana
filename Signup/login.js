@@ -20,11 +20,11 @@ firebase.auth().onAuthStateChanged(user => {
  if(user==null)
  {
   //console.log("aaaaaaaaaaaaaaaaaaaaaa");
-  window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index.html");
+  window.location.replace("file:../index.html");
  }
  else if(user!=null)
  {
-    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");
+    window.location.replace("file:../index_login.html");
  }
 };
   document.getElementById('yojana').onclick=function(){
@@ -32,29 +32,29 @@ firebase.auth().onAuthStateChanged(user => {
  if(user==null)
  {
   //console.log("aaaaaaaaaaaaaaaaaaaaaa");
-  window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");
+  window.location.replace("file:login.html");
  }
  else if(user!=null)
  {
-    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Yojana/yojana.html");
+    window.location.replace("file:../Yojana/yojana.html");
  }
 };
 document.getElementById('bookmark').onclick=function(){
   //var user=firebase.auth().currentUser;
  if(user==null)
  {
-  window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");
+  window.location.replace("file:login.html");
  }
  else
  {
-    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Bookmark/bookmark.html");
+    window.location.replace("file:../Bookmark/bookmark.html");
  }
 };
 document.getElementById('profile').onclick=function(){
   //var user=firebase.auth().currentUser;
  if(user==null)
  {
-  window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");
+  window.location.replace("file:login.html");
  }
  else
  {
@@ -62,31 +62,31 @@ document.getElementById('profile').onclick=function(){
     firebase.database().ref('Users/' +temp ).once("value").then(function(snapshot){
        var flag = snapshot.val().completeprofile;
        if(flag == "no")
-         window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");
+         window.location.replace("file:../Profile/profile.html");
        else
-         window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/edit_profile.html");
+         window.location.replace("file:../Profile/edit_profile.html");
     }); 
  }
 };
 document.getElementById('recommend').onclick=function(){
      if(user==null)
      {
-       window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");
+       window.location.replace("file:login.html");
       }
       else
       {
-        window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Yojana/recommend.html");
+        window.location.replace("file:../Yojana/recommend.html");
       }
  };
  document.getElementById('applied').onclick=function()
  {
   if(user==null)
   {
-    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Signup/login.html");
+    window.location.replace("file:login.html");
   }
   else
   {
-    window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Check Status/check_status.html");
+    window.location.replace("file:../Check Status/check_status.html");
   }
 
  };
@@ -143,7 +143,7 @@ function loginUser(email,pass){
     var id=firebase.auth().currentUser.uid;
     if(firebase.auth().currentUser.emailVerified){
       if(email=="sahyojana@gmail.com")
-        window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login_admin.html");
+        window.location.replace("file:../index_login_admin.html");
       else{
         var ref = firebase.database().ref('Users/' +id );
         ref.once("value").then(function(snapshot){
@@ -153,9 +153,9 @@ function loginUser(email,pass){
           isOnline: "yes"
          });
          if(flag == "no")
-           window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/Profile/profile.html");
+           window.location.replace("file:../Profile/profile.html");
          else
-           window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index_login.html");
+           window.location.replace("file:../index_login.html");
       }); 
       }
   }

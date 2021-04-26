@@ -139,16 +139,6 @@ function closeNav() {
       }
       );
     });
-
-     //window.addEventListener('load', fetch);
-   /*  document.getElementById('all').addEventListener('click',fetchall);
-  document.getElementById('Agriculture').addEventListener('click',disp);
-  document.getElementById('Social-Welfare').addEventListener('click',disp);
-  document.getElementById('Education').addEventListener('click',disp);
-  document.getElementById('Homes').addEventListener('click',disp);
-  document.getElementById('Senior-Citizen').addEventListener('click',disp);
-  document.getElementById('Health').addEventListener('click',disp);*/
-  }
   function fetchall(){
     location.reload();
     firebase.database().ref('Yojanas').once("value").then(function(snapshot) {

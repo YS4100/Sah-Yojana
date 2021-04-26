@@ -85,7 +85,6 @@ function sendEmail(){
   });
   });
 }
-/*document.getElementById('send').addEventListener('click',sendEmail);
-*/
+
   window.addEventListener('load', display);
 

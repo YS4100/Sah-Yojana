@@ -46,7 +46,7 @@
 		<h1 class="font-weight-bold">SAH-YOJANA</h1>
 		<p>Helps you make the right choice.</p>
 		<div class="header-buttons">
-			<a href="#" id="logout">LOGOUT</a>
+			<a href="javascript:logout()" id="logout">LOGOUT</a>
 		</div>
 	</div>
 </section>
@@ -95,7 +95,7 @@
 	  e.preventDefault();
 	  firebase.auth().signOut();
 	  //console.log('User signed out!');
-	  window.location.replace("file://C:/Users/Yashvi/Desktop/Sah-Yojana/index.html");
+	  window.location.replace("file:index.html");
 	});	
 	</script>
 </body>
