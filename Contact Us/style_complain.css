@@ -27,6 +27,7 @@ body
 	background-position: center;
 	background-repeat: no-repeat;
 	position: relative;
+
 }
 .header-section{
 	width: 100%
@@ -84,7 +85,9 @@ input
 	font-size: 12px;
 	letter-spacing: 2px;
 }
-
+.header-buttons{
+	margin-top: 60px;
+}
 .header-buttons a{
 	position: absolute;
 	border: 1px solid black;

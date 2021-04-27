@@ -139,6 +139,7 @@ function closeNav() {
       }
       );
     });
+  }
   function fetchall(){
     location.reload();
     firebase.database().ref('Yojanas').once("value").then(function(snapshot) {
