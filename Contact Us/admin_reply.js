@@ -80,7 +80,7 @@ function sendEmail(){
               resolved:resolved
             })
           });
-          
+          window.location.replace('admin_complaint.html');
         });
   });
   });

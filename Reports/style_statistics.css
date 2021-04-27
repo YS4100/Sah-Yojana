@@ -26,29 +26,32 @@ body
 hr{
 	background-color:white;
 }
+#blogs{
+	display: relative; 
+}
 #users{
-	margin-left: 100px;
-	margin-top: 50px;
+	left: 100px;
+	top: 230px;
 	width:18rem;
 	position: absolute;
 }
 #complaints{
-	margin-left: 900px;
-	margin-top: 50px;
+	right: 100px;
+	top: 230px;
 	width:18rem;
 	position: absolute;
 	
 }
 #yojanas{
-	margin-left: 500px;
-	margin-top: 50px;
+	left: 39%;
+	top: 230px;
 	width:18rem;
 	position: absolute;
-	
+	margin: auto;
 }
 #domains{
-	margin-left: 425px;
-	margin-top: 250px;
+	left: 33%;
+	top: 430px;
 	width:28rem;
 	position: absolute;
 	
@@ -62,8 +65,8 @@ hr{
 	color:black;
 	font-weight: bold;
 	margin-top: 5px;
-	/*margin-bottom: 40px;*/
-	margin-left: 400px;
+	/*margin-bottom: 40px;
+	margin-left: 400px;*/
 }
 #button1{
 	width:250px;
@@ -120,4 +123,3 @@ select,input {
 	border: none;
 	border-bottom: 1px solid black;*/
 }
-
