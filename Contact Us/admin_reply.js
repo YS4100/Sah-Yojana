@@ -34,7 +34,10 @@ var firebaseConfig = {
 </form>
   `
   }
-
+function myURL()
+{
+  window.location.replace('admin_complaint.html');  
+}
   function display(){
     var queryString = location.search.substring(1);
     var key = queryString.split("?");
@@ -80,7 +83,7 @@ function sendEmail(){
               resolved:resolved
             })
           });
-          window.location.replace('admin_complaint.html');
+          setTimeout(myURL,3000);
         });
   });
   });
