@@ -103,3 +103,8 @@ input{
 {
 	margin-bottom: 20px;
 }
+textarea
+{
+width: 400px;
+float:right;
+}

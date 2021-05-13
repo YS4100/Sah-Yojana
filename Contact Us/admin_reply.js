@@ -36,7 +36,7 @@ var firebaseConfig = {
   }
 function myURL()
 {
-  window.location.replace('admin_complaint.html');  
+  window.location.href='admin_complaint.html';  
 }
   function display(){
     var queryString = location.search.substring(1);

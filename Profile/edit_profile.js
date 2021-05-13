@@ -12,45 +12,45 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 firebase.auth().onAuthStateChanged(user => {
    document.getElementById('home').onclick=function(){
-  
+ 
  if(user==null)
  {
   //console.log("aaaaaaaaaaaaaaaaaaaaaa");
-  window.location.replace("file:../index.html");
+  window.location.href='../index.html';
  }
  else if(user!=null)
  {
-    window.location.replace("file:../index_login.html");
+    window.location.href='../index_login.html';
  }
 };
   document.getElementById('yojana').onclick=function(){
-  
+ 
  if(user==null)
  {
   //console.log("aaaaaaaaaaaaaaaaaaaaaa");
-  window.location.replace("file:../Signup/login.html");
+  window.location.href='../Signup/login.html';
  }
  else if(user!=null)
  {
-    window.location.replace("file:../Yojana/yojana.html");
+    window.location.href='../Yojana/yojana.html';
  }
 };
 document.getElementById('bookmark').onclick=function(){
   //var user=firebase.auth().currentUser;
  if(user==null)
  {
-  window.location.replace("file:../Signup/login.html");
+  window.location.href='../Signup/login.html';
  }
  else
  {
-    window.location.replace("file:../Bookmark/bookmark.html");
+    window.location.href='../Bookmark/bookmark.html';
  }
 };
 document.getElementById('profile').onclick=function(){
   //var user=firebase.auth().currentUser;
  if(user==null)
  {
-  window.location.replace("file:../Signup/login.html");
+  window.location.href='../Signup/login.html';
  }
  else
  {
@@ -58,31 +58,31 @@ document.getElementById('profile').onclick=function(){
     firebase.database().ref('Users/' +temp ).once("value").then(function(snapshot){
        var flag = snapshot.val().completeprofile;
        if(flag == "no")
-         window.location.replace("file:profile.html");
+         window.location.href='profile.html';
        else
-         window.location.replace("file:edit_profile.html");
+         window.location.href='edit_profile.html';
     });  
  }
 };
 document.getElementById('recommend').onclick=function(){
      if(user==null)
      {
-       window.location.replace("file:../Signup/login.html");
+       window.location.href='../Signup/login.html';
       }
       else
       {
-        window.location.replace("file:../Yojana/recommend.html");
+        window.location.href='../Yojana/recommend.html';
       }
  };
  document.getElementById('applied').onclick=function()
  {
   if(user==null)
   {
-    window.location.replace("file:../Signup/login.html");
+    window.location.href='../Signup/login.html';
   }
   else
   {
-    window.location.replace("file:../Check Status/check_status.html");
+    window.location.href='../Check Status/check_status.html';
   }
 
  };
@@ -111,11 +111,11 @@ document.getElementById('recommend').onclick=function(){
           var ownhouse=snapshot.val().ownhouse;
           var occupation=snapshot.val().occupation;
           formdata.innerHTML+=`
-            Name  : <input id="name" value=${name} readonly><br><br>
+            Name  : <textarea id="name" rows="1"  readonly>${name}</textarea><br><br>
             Gender  : <input id="gender" value=${gender} readonly><br><br>
             Age  : <input id="age" value=${age} ><br><br>
             Email  : <input id="email" value=${email} readonly><br><br>
-            Address : <input id="address" value=${address}><br><br>
+            Address : <textarea id="address" rows="1"> ${address}</textarea><br><br>
             Area : <input id="area" value=${area}><br><br>
             City  : <input id="city" value=${city}><br><br>
             State  : <input id="state" value=${state}><br><br>
@@ -163,7 +163,7 @@ document.getElementById('recommend').onclick=function(){
             }
             else if(prop=="branch"){
               formdata.innerHTML+=`
-              Branch  : <input id=${prop} value=${val}><br><br>
+              Branch  : <textarea id=${prop} rows="1">${val}</textarea><br><br>
               `
             }
             else if(prop=="degree"){
@@ -173,7 +173,7 @@ document.getElementById('recommend').onclick=function(){
             }
             else if(prop=="company"){
               formdata.innerHTML+=`
-              Company  : <input id=${prop} value=${val}><br><br>
+              Company  : <textarea id=${prop} rows="1">${val}</textarea><br><br>
               `
             }
             else if(prop=="typeofcompany"){
@@ -188,7 +188,7 @@ document.getElementById('recommend').onclick=function(){
             }
             else if(prop=="employedat"){
               formdata.innerHTML+=`
-              Employed At  : <input id=${prop} value=${val}><br><br>
+              Employed At  : <textarea id=${prop} rows="1">${val}</textarea><br><br>
               `
             }
             else if(prop=="typeofjob"){
@@ -198,7 +198,7 @@ document.getElementById('recommend').onclick=function(){
             }
             else if(prop=="details"){
               formdata.innerHTML+=`
-              Details  : <input id=${prop} value=${val}><br><br>
+              Details  : <textarea id=${prop} rows="1">${val}</textarea><br><br>
               `
             }
             else if(prop=="partnership"){

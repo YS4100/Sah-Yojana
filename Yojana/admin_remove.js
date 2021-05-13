@@ -57,12 +57,12 @@ function disableyojana(){
 document.getElementById('remove').addEventListener('click',function(){
   setTimeout(myURL,2000);
 function myURL(){
-          window.location.replace("file:yojana_admin.html");  
+          window.location.href='yojana_admin.html';  
          }
        });
 document.getElementById('disable').addEventListener('click',function(){
   setTimeout(myURL,2000);
 function myURL(){
-          window.location.replace("file:yojana_admin.html");  
+          window.location.href='yojana_admin.html';  
          }
        });

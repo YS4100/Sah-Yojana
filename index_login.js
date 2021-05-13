@@ -20,11 +20,11 @@ firebase.auth().onAuthStateChanged(user => {
  if(user==null)
  {
   //console.log("aaaaaaaaaaaaaaaaaaaaaa");
-  window.location.replace("file:index.html");
+  window.location.href='index.html';
  }
  else if(user!=null)
  {
-    window.location.replace("file:index_login.html");
+    window.location.href='index_login.html';
  }
 };
   document.getElementById('yojana').onclick=function(){
@@ -32,29 +32,29 @@ firebase.auth().onAuthStateChanged(user => {
  if(user==null)
  {
   //console.log("aaaaaaaaaaaaaaaaaaaaaa");
-  window.location.replace("file:Signup/login.html");
+  window.location.href='Signup/login.html';
  }
  else if(user!=null)
  {
-    window.location.replace("file:Yojana/yojana.html");
+    window.location.href='Yojana/yojana.html';
  }
 };
 document.getElementById('bookmark').onclick=function(){
   //var user=firebase.auth().currentUser;
  if(user==null)
  {
-  window.location.replace("file:Signup/login.html");
+  window.location.href='Signup/login.html';
  }
  else
  {
-    window.location.replace("file:Bookmark/bookmark.html");
+    window.location.href='Bookmark/bookmark.html';
  }
 };
 document.getElementById('profile').onclick=function(){
   //var user=firebase.auth().currentUser;
  if(user==null)
  {
-  window.location.replace("file:Signup/login.html");
+  window.location.href='Signup/login.html';
  }
  else
  {
@@ -64,31 +64,31 @@ document.getElementById('profile').onclick=function(){
        var flag = snapshot.val().completeprofile;
        console.log(flag);
        if(flag == "no")
-         window.location.replace("file:Profile/profile.html");
+         window.location.href='Profile/profile.html';
        else
-         window.location.replace("file:Profile/edit_profile.html");
+         window.location.href='Profile/edit_profile.html';
     }); 
  }
  };
  document.getElementById('recommend').onclick=function(){
      if(user==null)
      {
-       window.location.replace("file:Signup/login.html");
+       window.location.href='Signup/login.html';
       }
       else
       {
-        window.location.replace("file:Yojana/recommend.html");
+        window.location.href='Yojana/recommend.html';
       }
  };
  document.getElementById('applied').onclick=function()
  {
   if(user==null)
   {
-    window.location.replace("file:Signup/login.html");
+    window.location.href='Signup/login.html';
   }
   else
   {
-    window.location.replace("file:Check Status/check_status.html");
+    window.location.href='Check Status/check_status.html';
   }
 
  };
@@ -109,7 +109,7 @@ function logout()
             });
     firebase.auth().signOut();
     //console.log('User signed out!');
-    window.location.replace("file:index.html");
+    window.location.href='index.html';
   }); 
 }
 function test(){

@@ -20,11 +20,11 @@ firebase.auth().onAuthStateChanged(user => {
  if(user==null)
  {
   //console.log("aaaaaaaaaaaaaaaaaaaaaa");
-  window.location.replace("file:../index.html");
+  window.location.href='../index.html';
  }
  else if(user!=null)
  {
-    window.location.replace("file:../index_login.html");
+    window.location.href='../index_login.html';
  }
 };
   document.getElementById('yojana').onclick=function(){
@@ -32,29 +32,29 @@ firebase.auth().onAuthStateChanged(user => {
  if(user==null)
  {
   //console.log("aaaaaaaaaaaaaaaaaaaaaa");
-  window.location.replace("file:../Signup/login.html");
+  window.location.href='../Signup/login.html';
  }
  else if(user!=null)
  {
-    window.location.replace("file:yojana.html");
+    window.location.href='yojana.html';
  }
 };
 document.getElementById('bookmark').onclick=function(){
   //var user=firebase.auth().currentUser;
  if(user==null)
  {
-  window.location.replace("file:../Signup/login.html");
+  window.location.href='../Signup/login.html';
  }
  else
  {
-    window.location.replace("file:../Bookmark/bookmark.html");
+    window.location.href='../Bookmark/bookmark.html';
  }
 };
 document.getElementById('profile').onclick=function(){
   //var user=firebase.auth().currentUser;
  if(user==null)
  {
-  window.location.replace("file:../Signup/login.html");
+  window.location.href='../Signup/login.html';
  }
  else
  {
@@ -62,31 +62,31 @@ document.getElementById('profile').onclick=function(){
     firebase.database().ref('Users/' +temp ).once("value").then(function(snapshot){
        var flag = snapshot.val().completeprofile;
        if(flag == "no")
-         window.location.replace("file:../Profile/profile.html");
+         window.location.href='../Profile/profile.html';
        else
-         window.location.replace("file:../Profile/edit_profile.html");
+         window.location.href='../Profile/edit_profile.html';
     }); 
  }
 };
 document.getElementById('recommend').onclick=function(){
      if(user==null)
      {
-       window.location.replace("file:../Signup/login.html");
+       window.location.href='../Signup/login.html';
       }
       else
       {
-        window.location.replace("file:recommend.html");
+        window.location.href='recommend.html';
       }
  };
  document.getElementById('applied').onclick=function()
  {
   if(user==null)
   {
-    window.location.replace("file:../Signup/login.html");
+    window.location.href='../Signup/login.html';
   }
   else
   {
-    window.location.replace("file:../Check Status/check_status.html");
+    window.location.href='../Check Status/check_status.html';
   }
 
  };
@@ -121,50 +121,7 @@ document.getElementById('recommend').onclick=function(){
     var elig=myData[4];*/
    
   }
-/*function bookmark()
-{
-  var queryString = location.search.substring(1);
-  var idd = queryString.split("?");
-  firebase.auth().onAuthStateChanged(user => {
-  if(user){
-  var user = firebase.auth().currentUser.uid;
-  var ref = firebase.database().ref('Users/').child(user);
-  ref.once("value").then(function(snapshot){
-   var data=snapshot.val().bookmarked;
-   if((data).search(idd[0])==-1){
-    //console.log(data);
-    data=data+idd+'?';
-    ref.update({
-      'bookmarked':data
-    });
-    //document.getElementById('bookmark_btn').disabled = true;
-   }
-   else
-   {
-    window.alert("Already bookmarked");
-   }
-  });
-}
-});
-}
 
-function apply()
-{
-  
-  var queryString = location.search.substring(1);
-  var idd = queryString.split("?");
-  firebase.auth().onAuthStateChanged(user => {
-  if(user){
-  //var user = firebase.auth().currentUser.uid;
-  var ref = firebase.database().ref('Yojanas/' + idd);
-  ref.once("value").then(function(snapshot){
-   var data=snapshot.val().applylink;
-   window.location.replace(data);
-  });
-}
-});
-}
-*/
 function bookmark()
 {
   var queryString = location.search.substring(1);
